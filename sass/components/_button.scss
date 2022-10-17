@@ -1,0 +1,16 @@
+.button {
+  height: 3rem;
+  width: auto;
+  border: 1px solid $color_action_foreground;
+  background-color: transparent;
+  padding: 4px 5px;
+  color: $color_action_foreground;
+  font-size: $default-font-size * 1.4;
+  text-align: center;
+  cursor: pointer;  
+}
+
+.button--xmark{
+  color: $color-black;
+  font-size: $default-font-size * 2;  
+}
