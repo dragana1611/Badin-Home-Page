@@ -1,0 +1,38 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* 10px = 1rem
+       10/16=0.625
+    */
+}
+
+body {
+  background-color: #fff;
+  background-color: lightgrey;
+}
+
+body,
+p,
+a,
+ul,
+li {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  font-size: 22px;
+}
+
+/*# sourceMappingURL=style.css.map */

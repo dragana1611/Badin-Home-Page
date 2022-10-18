@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../sass/base/_base.scss","../sass/abstracts/_variables.scss","../sass/base/_typography.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;EAGE;EACA;EACA;;;AAGF;EACE;AACA;AAAA;AAAA;;;AAKF;EACE,kBCTY;EDUZ;;;AAGF;AAAA;AAAA;AAAA;AAAA;EAKE;EACA;;;AAGF;EACE;;;AE9BF;EACE","file":"style.css"}

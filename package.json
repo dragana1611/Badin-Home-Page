@@ -1,0 +1,15 @@
+{
+  "name": "badinsoft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass ./sass/index.scss ./css/style.css --watch"
+  },
+  "keywords": [],
+  "author": "Dagana",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.54.4"
+  }
+}
