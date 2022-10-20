@@ -90,6 +90,11 @@ body .title-secondary {
   color: #fff;
 }
 
+.footer {
+  background-color: #000;
+  color: #fff;
+}
+
 .header {
   width: 100%;
   height: 1013px;
