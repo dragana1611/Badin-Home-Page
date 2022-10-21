@@ -133,9 +133,9 @@
     <section class="about">
       <div class="about__container">
         <div class="about__text-box">
-          <h3 class="title-secondary about__title-secondary">How we got here?</h3>
+          <h2 class="title-secondary about__title-secondary">How we got here?</h2>
           <div class="about__text-content">
-            <p class="about__text">
+            <p class="paragraph-text about__paragraph-text about__paragraph-text--first">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Vivamus at augue eget arcu dictum varius duis at. Neque vitae
@@ -148,16 +148,15 @@
               imperdiet proin fermentum leo vel orci. Ultricies mi eget mauris
               pharetra et ultrices neque.
             </p>
-            <p class="about__text">
+            <p class="paragraph__text about__paragraph-text about__paragraph-text--second">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               Vivamus at augue eget arcu dictum varius duis at. Neque vitae
               tempus quam pellentesque. Eu ultrices vitae auctor eu augue ut
               lectus arcu bibendum. Bibendum neque egestas congue quisque
               egestas. Cursus in hac habitasse platea dictumst quisque
-              sagittis purus sit.
-            </p>
-            <p class="about__text">
+              sagittis purus sit. <br><br>            
+            
               Scelerisque varius morbi enim nunc faucibus a pellentesque sit
               amet. Volutpat diam ut venenatis tellus in metus. Tellus in hac
               habitasse platea. Eu scelerisque felis imperdiet proin fermentum
@@ -176,25 +175,25 @@
     <section class="services">
       <div class="services__container">
         <div class="services__text-box">
-          <h3 class="services__title-secondary">What we do</h3>
+          <h2 class="title-secondary services__title-secondary">What we do</h2>
           <div class="services__text-content">
-            <p class="services__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            <p class="paragraph-text-light services__paragraph-text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum varius duis at.</p>
           </div>
         </div>
-        <div class="button">
-          <a href="#">
-            <span> Read more about services</span>
-          </a>
+        <a href="#" class="services__link">
+          <div class="button button__blue">          
+            <span> Read more about services</span>          
         </div>
+        </a>
 
         <div class="card">
-          <h5 class="card__heading-subtitle">
-            <span class="card__heading-subtitle-span ">Making big ideas a reality.</span>
-          </h5>
-          <h4 class="card__heading-title">
-            <span class="card__heading-title-span ">Building software products end-to-end</span>
+          <h4 class="card__heading-subtitle">
+            <span class="card__heading-subtitle-span card__heading-subtitle-span--blue">Making big ideas a reality.</span>
           </h4>
+          <h3 class="card__heading-title">
+            <span class="card__heading-title-span ">Building software products end-to-end</span>
+          </h3>
           <div class="card__icons">
             <span class="card__icon">
               <img src="./assets/images/terminal.png" alt="">
@@ -206,18 +205,20 @@
               <img src="./assets/images/crosshairs.png" alt="">
             </span>
           </div>
-          <div>
-            <img src="./assets/images/1-making-big-ideas-a-reality-2-x.png" alt="">
+          <div class="card__image-content">
+            <div class="card__image">
+              <img src="./assets/images/1-making-big-ideas-a-reality-2-x.png" alt="">
+            </div>
           </div>
         </div>
 
         <div class="card">
-          <h5 class="card__heading-subtitle">
-            <span class="card__heading-subtitle-span ">Enabling talent and expertise</span>
-          </h5>
-          <h4 class="card__heading-title">
-            <span class="card__heading-title-span ">Augmented teams and experts for great delivery</span>
+          <h4 class="card__heading-subtitle">
+            <span class="card__heading-subtitle-span card__heading-subtitle-span--red">Enabling talent and expertise</span>
           </h4>
+          <h3 class="card__heading-title">
+            <span class="card__heading-title-span ">Augmented teams and experts for great delivery</span>
+          </h3>
           <div class="card__icons">
             <span class="card__icon">
               <img src="./assets/images/cogs_2.png" alt="">
@@ -238,18 +239,20 @@
               <img src="./assets/images/pencil-ruler.png" alt="">
             </span>
           </div>
-          <div>
-            <img src="./assets/images/1-enabling-talent-and-expertise-2-x.png" alt="">
+          <div class="card__image-content">
+            <div class="card__image">
+              <img src="./assets/images/1-enabling-talent-and-expertise-2-x.png" alt="">
+            </div>
           </div>
         </div>
 
         <div class="card">
-          <h5 class="card__heading-subtitle">
-            <span class="card__heading-subtitle-span ">Sharing knowledge and experience</span>
-          </h5>
-          <h4 class="card__heading-title">
-            <span class="card__heading-title-span ">Consulting on technology, transformation and innovation</span>
+          <h4 class="card__heading-subtitle">
+            <span class="card__heading-subtitle-span card__heading-subtitle-span--green">Sharing knowledge and experience</span>
           </h4>
+          <h3 class="card__heading-title">
+            <span class="card__heading-title-span ">Consulting on technology, transformation and innovation</span>
+          </h3>
           <div class="card__icons">
             <span class="card__icon">
               <img src="./assets/images/list-check.png" alt="">
@@ -264,8 +267,10 @@
               <img src="./assets/images/graduation-cap.png" alt="">
             </span>
           </div>
-          <div>
-            <img src="./assets/images/1-asset-42-2-x.png" alt="">
+          <div class="card__image-content">
+            <div class="card__image">
+              <img src="./assets/images/1-asset-42-2-x.png" alt="">
+            </div>
           </div>
         </div>
       </div>
@@ -274,34 +279,34 @@
     <!-- section blog -->
     <section class="blog">
       <div class="blog__container">
-        <h2>Blog</h2>
-        <h3>Our latest articles</h3>
-        <div class="button">
-          <a href="#">
-            <span> View more blog posts</span>
-          </a>
-        </div>
+        
+        <h2 class="title-secondary blog__title-secondary">Our latest articles</h2>
+        <a href="#" class="blog__link">
+          <div class="button button__blue">          
+            <span> View more blog posts</span>          
+          </div>
+        </a>
         <div class="blog__card-content">
-          <div class="blog__card">
-            <span>
+          <div class="blog__card-box">
+            <span class="blog__card-image">
               <img src="./assets/home-images/psihologija.png" alt="">
             </span>
-            <h4>Psihologija feedback-a</h4>
-            <a href="#" class="btn-text">Read more &rarr;</a>
+            <h3 class="blog__card-title">Psihologija feedback-a</h3>
+            <a href="#" class="blog__card-link">Read more &rarr;</a>
           </div>
-          <div class="blog__card">
-            <span>
+          <div class="blog__card-box">
+            <span class="blog__card-image">
               <img src="./assets/home-images/knowledge.png" alt="">
             </span>
-            <h4>Knowledge sharing is caring - React Native EU Conference</h4>
-            <a href="#" class="btn-text">Read more &rarr;</a>
+            <h3 class="blog__card-title">Knowledge sharing is caring - React Native EU Conference</h3>
+            <a href="#" class="blog__card-link">Read more &rarr;</a>
           </div>
-          <div class="blog__card">
-            <span>
+          <div class="blog__card-box">
+            <span class="blog__card-image">
               <img src="./assets/home-images/agile.png" alt="">
             </span>
-            <h4>How can Agile affect your life outside of work?</h4>
-            <a href="#" class="btn-text">Read more &rarr;</a>
+            <h3 class="blog__card-title">How can Agile affect your life outside of work?</h3>
+            <a href="#" class="blog__card-link">Read more &rarr;</a>
           </div>
         </div>
       </div>
@@ -311,7 +316,7 @@
     <section class="testimonials">
       <div class="testimonials__container">
         <div class="testimonials__text-box">
-          <h3 class="testimonials__title-secondary">They Trusted Us</h3>
+          <h2 class="title-secondary testimonials__title-secondary">They Trusted Us</h2>
           <div class="testimonials__text-content">
             <p class="testimonials__text">We are very happy because we have happy clients.</p>
           </div>
@@ -321,7 +326,7 @@
           <!-- <div class="row align-items-center">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner">
-                <!-- CAROUSEL ITEM 1 -->
+                CAROUSEL ITEM 1 -->
                 <!-- <div class="carousel-item active">
                   <!-- 
                   <div class="testimonials__card">
@@ -344,7 +349,7 @@
                     <p class="fw-light">&nbsp;</p>
                   </div>
                 </div>
-                <!-- CAROUSEL ITEM 2 -->
+                <!-- CAROUSEL ITEM 2 
                 <div class="carousel-item">
                   <!--  
                   <div class="testimonials__card">
@@ -548,21 +553,20 @@
       <div class="hire-us__container">
         <div class="projects">
           <div class="hire-us__text-box">
-            <h2>Hire us</h2>
-            <h3>A project with Badin?</h3>
+            <h2 class="title-secondary hire-us__title-secondary">A project with Badin?</h2>            
             <div class="testimonials__text-content">
               <p class="testimonials__text">We are very happy because we have happy clients.</p>
             </div>
           </div>
-          <div class="button">
-            <a href="#">
-              <span> Request free consultation</span>
-            </a>
+          <a href="#" class="hire-us__link">
+            <div class="button button__blue">          
+              <span> Request free consultation</span>          
           </div>
+          </a>          
         </div>
         <div class="trustedby">
           <div class="trustedby__container">
-            <h5>Trusted by</h5>
+            <h3 class="heading-subtitle trustedby__heading-subtitle">Trusted by</h3>
             <div class="trustedby__image">
               <img src="./assets/images/logo-9.png" alt="" />
             </div>
@@ -587,7 +591,7 @@
     <section class="positions">
       <div class="positions__container">
         <div class="hire-us__text-box">
-          <h2>Open positions</h2>
+          <h2 class="title-secondary positions__title-secondary">Open positions</h2>
           <h3>Be part of the winning team</h3>
         </div>
         <div class="positions__cards">

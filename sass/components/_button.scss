@@ -1,16 +1,14 @@
-// .button {
-//   height: 3rem;
-//   width: auto;
-//   //border: 1px solid $color_action_foreground;
-//   background-color: transparent;
-//   padding: 4px 5px;
-//   //color: $color_action_foreground;
-//   font-size: $default-font-size * 1.4;
-//   text-align: center;
-//   cursor: pointer;  
-// }
+.button {
+  width: 100%;
+  height: 60px;
+  border-radius: 150px;
 
-// .button--xmark{
-//   color: $color-black;
-//   font-size: $default-font-size * 2;  
-// }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__blue {
+    height: 50px;
+    background-color: $color-blue;
+  }
+}

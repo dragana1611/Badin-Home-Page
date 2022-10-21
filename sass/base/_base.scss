@@ -3,7 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;  
+  box-sizing: inherit;
 }
 
 html {
@@ -13,8 +13,8 @@ html {
     */
 }
 
-body {    
-  background-color: $color_white;    
+body {
+  background-color: $color_white;
 }
 
 body,
@@ -30,3 +30,6 @@ li {
   list-style-type: none;
 }
 
+a {
+  cursor: pointer;
+}

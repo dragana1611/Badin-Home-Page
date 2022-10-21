@@ -39,15 +39,8 @@
       align-items: center;
     }
 
-    .button__header {
-      width: 100%;
-      height: 60px;
-      border-radius: 150px;
-      margin-top: 20px;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .button__header {      
+      margin-top: 20px;      
 
       &--quote {
         background-color: $color-white;

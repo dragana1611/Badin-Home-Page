@@ -1,3 +1,5 @@
+// sections
+
 .campanies{
     width: 100%;
     margin-top: 100px;
@@ -8,4 +10,31 @@
     width: 100%;
     margin-top: 60px;
     padding: 0 $padding-right 0 $padding-left;
+}
+
+.services{
+    width: 100%;
+    margin-top: 150px;
+    padding: 0 $padding-right 0 $padding-left;
+    background-color: $color-background-secondary;
+}
+
+.blog{
+    width: 100%;
+    margin-top: 100px;
+    padding: 0 $padding-right 0 $padding-left;
+}
+
+.testimonials{
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 $padding-right 0 $padding-left;
+    background-color: $color-background-secondary;
+}
+
+.hire-us{
+    width: 100%;
+    margin-top: 50px;
+    padding: 0 $padding-right 0 $padding-left;
+    background-color: $color-background-secondary;
 }

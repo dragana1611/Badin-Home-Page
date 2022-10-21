@@ -30,21 +30,43 @@ li {
   list-style-type: none;
 }
 
-body {
+a {
+  cursor: pointer;
+}
+
+body,
+p,
+a,
+ul,
+li {
   font-size: 16px;
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 600;
   font-style: normal;
+  color: rgba(34, 37, 46, 0.8);
 }
-body .title-secondary {
+
+.paragraph-text {
+  color: rgba(34, 37, 46, 0.8);
+}
+
+.paragraph-text-light {
+  color: #6b728e;
+}
+
+.title-secondary {
   font-family: "Kurale", serif;
+  font-family: "Alexander", serif;
   font-style: italic;
   font-size: 48px;
-  font-weight: bold;
-  font-stretch: normal;
+  font-weight: bolder;
   font-style: italic;
   line-height: 1.25;
-  letter-spacing: normal;
+  color: rgb(34, 37, 46);
+}
+
+.button {
+  color: #fff;
 }
 
 .header {
@@ -84,10 +106,59 @@ body .title-secondary {
   letter-spacing: -0.47px;
 }
 .header .hero .button__header--quote {
-  color: #22252e;
+  color: rgb(34, 37, 46);
 }
 .header .hero .button__header--life {
   color: #fff;
+}
+
+.services .card__heading-subtitle-span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.services .card__heading-subtitle-span--blue {
+  color: #317ade;
+}
+.services .card__heading-subtitle-span--red {
+  color: #ed701d;
+}
+.services .card__heading-subtitle-span--green {
+  color: #1ebf73;
+}
+.services .card__heading-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.blog__card-title {
+  font-size: 28px;
+  font-weight: bolder;
+}
+.blog__card-link {
+  font-weight: bolder;
+  text-decoration: underline;
+  line-height: 1.38;
+}
+
+.testimonials__text {
+  color: #999;
+}
+
+.hire-us .trustedby__heading-subtitle {
+  text-transform: uppercase;
+}
+
+.button {
+  width: 100%;
+  height: 60px;
+  border-radius: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button__blue {
+  height: 50px;
+  background-color: #317ade;
 }
 
 .footer {
@@ -132,13 +203,7 @@ body .title-secondary {
   align-items: center;
 }
 .header .hero .button__header {
-  width: 100%;
-  height: 60px;
-  border-radius: 150px;
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .header .hero .button__header--quote {
   background-color: #fff;
@@ -161,6 +226,88 @@ body .title-secondary {
 }
 .campanies__container img {
   transform: scale(0.85);
+}
+
+.about__title-secondary {
+  margin-bottom: 32px;
+}
+.about__text-box {
+  margin-bottom: 37px;
+}
+.about__images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.about__images img {
+  width: 95%;
+  height: 214px;
+  border-radius: 12px;
+  box-shadow: rgba(17, 17, 26, 0.4) 0px 4px 16px, rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.4) 0px 16px 56px;
+}
+
+.services__title-secondary {
+  margin-bottom: 32px;
+}
+.services .button__blue {
+  margin: 24px 0;
+}
+.services .card {
+  margin-bottom: 40px;
+}
+.services .card__heading-subtitle {
+  margin-bottom: 32px;
+}
+.services .card__heading-title {
+  margin-bottom: 16px;
+}
+.services .card__icons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.services .card__image-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.services .card__image img {
+  height: 300px;
+}
+
+.blog__title-secondary {
+  margin-bottom: 32px;
+}
+.blog .button__blue {
+  margin-bottom: 100px;
+}
+.blog__card-box {
+  margin-bottom: 12px;
+}
+.blog__card-image {
+  display: block;
+  margin-bottom: 32px;
+}
+.blog img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+.blog__card-title {
+  margin-bottom: 24px;
+}
+.blog__card-link {
+  margin: 0 7.3px 0 0;
+}
+
+.hire-us__title-secondary {
+  margin-bottom: 32px;
+}
+.hire-us .button__blue {
+  margin: 32px 0 50px 0;
 }
 
 .navigation {
@@ -217,6 +364,33 @@ body .title-secondary {
   width: 100%;
   margin-top: 60px;
   padding: 0 16px 0 16px;
+}
+
+.services {
+  width: 100%;
+  margin-top: 150px;
+  padding: 0 16px 0 16px;
+  background-color: #f9fafe;
+}
+
+.blog {
+  width: 100%;
+  margin-top: 100px;
+  padding: 0 16px 0 16px;
+}
+
+.testimonials {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 16px 0 16px;
+  background-color: #f9fafe;
+}
+
+.hire-us {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 16px 0 16px;
+  background-color: #f9fafe;
 }
 
 /*# sourceMappingURL=style.css.map */

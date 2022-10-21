@@ -1,18 +1,35 @@
-body {
+body,
+p,
+a,
+ul,
+li {
   font-size: 16px;
   @include font-primary-demi;
+  color: $color-primary-text;
+}
 
-  .title-secondary {
-    // @include font-secondary-italic;
-    font-family: 'Kurale', serif;
-    font-style: italic;
-    font-size: 48px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: italic;
-    line-height: 1.25;
-    letter-spacing: normal;   
-  }
+.paragraph-text {
+  color: $color-primary-text;
+}
+
+.paragraph-text-light {
+  color: $color-secondary-text;
+}
+
+.title-secondary {
+  // @include font-secondary-italic;
+  font-family: "Kurale", serif;
+  font-family: "Alexander", serif;
+  font-style: italic;
+  font-size: 48px;
+  font-weight: bolder;
+  font-style: italic;
+  line-height: 1.25;
+  color: $color-primary;
+}
+
+.button {
+  color: $color-white;
 }
 
 .header {
@@ -62,6 +79,53 @@ body {
   }
 }
 
-.about {
-  
+.services {
+  .card {
+    &__heading-subtitle-span {
+      font-size: 20px;
+      font-weight: bold;
+
+      &--blue {
+        color: $color-blue;
+      }
+
+      &--red {
+        color: $color-red;
+      }
+
+      &--green {
+        color: $color-green;
+      }
+    }
+
+    &__heading-title {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+}
+
+.blog {
+  &__card-title {
+    font-size: 28px;
+    font-weight: bolder;
+  }
+
+  &__card-link {
+    font-weight: bolder;
+    text-decoration: underline;
+    line-height: 1.38;
+  }
+}
+
+.testimonials {
+  &__text {
+    color: $color-grey-dark-1;
+  }
+}
+
+.hire-us {
+  .trustedby__heading-subtitle {
+    text-transform: uppercase;
+  }
 }

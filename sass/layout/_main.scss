@@ -1,13 +1,126 @@
-.campanies{
-    width: 100%;
-    &__container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+.campanies {
+  width: 100%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        img{
-            transform: scale(.85);
-        }
+    img {
+      transform: scale(0.85);
     }
+  }
+}
+
+.about {
+  &__title-secondary {
+    margin-bottom: 32px;
+  }
+
+  &__text-box {
+    margin-bottom: 37px;
+  }
+
+  &__images {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 95%;
+      height: 214px;
+      border-radius: 12px;
+      box-shadow: rgba(17, 17, 26, 0.4) 0px 4px 16px,
+        rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.4) 0px 16px 56px;
+    }
+  }
+}
+
+.services {
+  &__title-secondary {
+    margin-bottom: 32px;
+  }
+
+  .button__blue {
+    margin: 24px 0;
+  }
+
+  .card {
+    margin-bottom: 40px;
+    &__heading-subtitle {
+      margin-bottom: 32px;
+    }
+
+    &__heading-title {
+      margin-bottom: 16px;
+    }
+
+    &__icons {
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    &__image-content {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__image {
+      img {
+        height: 300px;
+      }
+    }
+  }
+}
+
+.blog {
+  &__title-secondary {
+    margin-bottom: 32px;
+  }
+
+  .button__blue {
+    margin-bottom: 100px;
+  }
+
+  &__card-box {
+    margin-bottom: 12px;
+  }
+
+  &__card-image {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px,
+      rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  }
+
+  &__card-title {
+    margin-bottom: 24px;
+  }
+
+  &__card-link {
+    margin: 0 7.3px 0 0;
+  }
+}
+
+.hire-us {
+  &__title-secondary {
+    margin-bottom: 32px;
+  }
+
+  .button {
+    &__blue {
+        margin: 32px 0 50px 0;
+    }
+  }
 }
