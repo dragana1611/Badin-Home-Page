@@ -1,22 +1,23 @@
 //colors
-$color-primary: rgb(34,37,46);//#22252e;
-$color-primary-text: rgba(34,37,46,.8);
+$color-primary: #22252e;
+$color-primary-text: rgba(34, 37, 46, 0.8);//#22252e
 $color-secondary-text: #6b728e;
-$color-secondary-text-light: rgb(107, 114, 142); //#6b728e
-
+$color-secondary-text-light: rgb(107, 114, 142, 0.5); //#6b728e
+$color-secondary-text-light-1: rgb(107, 114, 142, 0.8);
 
 $color-background-secondary: #f9fafe;
+$color-background-secondary-tertiary-2: #0e3378;
 
 $color-blue: #317ade;
 $color-red: #ed701d;
 $color-green: #1ebf73;
 
-$color-black: #000;
+$color-black: #1a1a1a;
 $color-white: #fff;
 $color_lightgrey: #f5f5f5;
-$color-grey-dark-1: #999;
-$color-grey-dark-2: #777;
-$color-grey-dark-3: #333;
+$color_lightgrey-1: #f8f8f8;
+$color-grey-dark-1: rgba(255, 255, 255, 0.5);
+$color-grey-dark: rgba(255, 255, 255, 0.15);
 
 //Font
 $default-font-size: 1rem;

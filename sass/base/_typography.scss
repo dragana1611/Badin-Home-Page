@@ -19,12 +19,15 @@ li {
 .title-secondary {
   // @include font-secondary-italic;
   font-family: "Kurale", serif;
-  font-family: "Alexander", serif;
   font-style: italic;
   font-size: 48px;
   font-weight: bolder;
   font-style: italic;
   line-height: 1.25;
+  color: $color-primary;
+}
+
+.heading-title {
   color: $color-primary;
 }
 
@@ -43,29 +46,20 @@ li {
       @include font-primary-bold;
       font-size: 48px;
       font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 1.25;
       letter-spacing: -1px;
     }
 
     &__text {
       margin: 32px 0;
-      opacity: 0.5;
+      color: $color-grey-dark-1;
       font-size: 20px;
-      font-weight: normal;
-      font-stretch: normal;
-      font-style: normal;
       line-height: 1.6;
-      letter-spacing: normal;
     }
 
     .button__header {
       font-size: 24px;
       font-weight: bold;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: normal;
       letter-spacing: -0.47px;
 
       &--quote {
@@ -80,10 +74,15 @@ li {
 }
 
 .services {
+  &__paragraph-text-light {
+    color: $color-secondary-text-light-1;
+    font-weight: 500;
+  }
+
   .card {
     &__heading-subtitle-span {
       font-size: 20px;
-      font-weight: bold;
+      font-weight: bolder;
 
       &--blue {
         color: $color-blue;
@@ -100,7 +99,8 @@ li {
 
     &__heading-title {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: bolder;
+      color: $color-primary;
     }
   }
 }
@@ -109,12 +109,18 @@ li {
   &__card-title {
     font-size: 28px;
     font-weight: bolder;
+
+    &--first {
+      word-break: break-word;
+      white-space: pre-line;
+    }
   }
 
   &__card-link {
     font-weight: bolder;
     text-decoration: underline;
     line-height: 1.38;
+    color: $color-primary;
   }
 }
 
@@ -125,7 +131,70 @@ li {
 }
 
 .hire-us {
-  .trustedby__heading-subtitle {
+  .trustedby__heading-title {
+    @include font-primary-demi;
     text-transform: uppercase;
+  }
+}
+
+.positions {
+  &__title-secondary {
+    margin-bottom: 50px;
+    padding-top: 131px;
+  }
+
+  &__heading-title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  &__text-content {
+    font-size: 18px; //font-family futurapt-demi
+    margin-bottom: 24px;
+    color: $color-secondary-text-light-1;
+  }
+
+  .button__blue--arrow {
+    font-size: 20px;
+  }
+
+  .button__blue--black {
+    font-size: 20px;
+    color: $color_lightgrey-1;
+  }
+}
+
+.experience {
+  color: $color_white;
+
+  &__title-secondary {
+    color: $color-background-secondary;
+    margin-bottom: 50px;
+  }
+}
+
+.info {
+  &__info-link {
+    font-size: 40px;
+  }
+}
+
+.footer {
+  
+  &__heading-title{
+    color: $color-white;
+    font-size: 20px;
+  }
+
+  p,
+  a,
+  ul,
+  li,span {
+    color: $color-grey-dark-1;
+  }
+
+  i {
+    font-size: 24px;
+    color: $color-white;
   }
 }

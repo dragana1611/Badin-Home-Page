@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: $color_white;
+  background-color: $color_white;  
 }
 
 body,
@@ -24,6 +24,10 @@ ul,
 li {
   text-decoration: none;
   box-sizing: border-box;
+}
+
+main{
+  padding: 0 $padding-right 0 $padding-left;
 }
 
 li {
