@@ -1,5 +1,11 @@
 // sections
 
+.hero{
+    width: 100%;
+    height: 1030px;
+    background-color: $color-black;
+}
+
 .campanies{
     width: 100%;
     margin-top: 100px;    
@@ -7,12 +13,11 @@
 
 .about{
     width: 100%;
-    margin-top: 60px;    
+    margin-top: 60px;        
 }
 
 .services{
-    width: 100%;
-    margin-top: 150px;    
+    width: 100%;       
     background-color: $color-background-secondary;
 }
 

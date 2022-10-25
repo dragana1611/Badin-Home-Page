@@ -1,60 +1,25 @@
 .header {
   width: 100%;
-  height: 1013px;
+  height: 100px;
 
   &__container {
     width: 100%;
     height: inherit;
-    padding: 0 $padding-right 0 $padding-left;
-    background-color: $color_black;
+    padding: 50px $padding-lr;
+    background-color: $color_black; 
+    
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__logo {
-    height: 40px;
-    margin-top: 50px;
-    flex: 0 1 70%;
+    width: 98px;
+    height: 35px;
 
-    img {
-      height: 35px;
+    .logo {
+      width: inherit;
+      height: inherit;
     }
-  }
-
-  .hero {
-    flex: 0 1 100%;
-    height: 400px;
-    &__text-box {
-      height: auto;
-    }
-
-    &__button-box {
-      width: 100%;
-    }
-
-    &__link {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .button__header {      
-      margin-top: 20px;      
-
-      &--quote {
-        background-color: $color-white;
-      }
-
-      &--life {
-        background-color: $color-grey-dark;  
-      }
-    }
-
-    &__img-box {
-      img {
-        height: 300px;
-      }
-    }
-  }
+  }  
 }

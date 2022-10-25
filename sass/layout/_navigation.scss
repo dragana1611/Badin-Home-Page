@@ -1,15 +1,14 @@
 .navigation {
- 
- flex: 0 1 30%;
- height: 40px;
- margin-top: 45px;
+ width: 24px;
+ height: 21px; 
 
   .sidebar {
     display: none;
   }
 
-  &__button{
-    height: 35px;    
+  &__button{ 
+    width: inherit;
+    height: inherit;       
     
     display: flex;
     justify-content: center;

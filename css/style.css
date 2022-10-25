@@ -7,10 +7,8 @@
 }
 
 html {
-  font-size: 62.5%;
-  /* 10px = 1rem
-       10/16=0.625
-    */
+  font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -24,10 +22,6 @@ ul,
 li {
   text-decoration: none;
   box-sizing: border-box;
-}
-
-main {
-  padding: 0 16px 0 16px;
 }
 
 li {
@@ -75,15 +69,16 @@ li {
 .button {
   color: #fff;
 }
+.button__blue {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .header {
   color: #fff;
 }
-.header .hero {
-  width: 100%;
-  height: 100%;
-}
-.header .hero__title {
+
+.hero__title {
   font-family: futura-pt, "Arial Condensed", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -91,22 +86,23 @@ li {
   font-weight: bold;
   line-height: 1.25;
   letter-spacing: -1px;
+  color: #fff;
 }
-.header .hero__text {
+.hero__text {
   margin: 32px 0;
   color: rgba(255, 255, 255, 0.5);
   font-size: 20px;
   line-height: 1.6;
 }
-.header .hero .button__header {
+.hero .button__header {
   font-size: 24px;
   font-weight: bold;
   letter-spacing: -0.47px;
 }
-.header .hero .button__header--quote {
+.hero .button__header--first {
   color: #22252e;
 }
-.header .hero .button__header--life {
+.hero .button__header--second {
   color: #fff;
 }
 
@@ -115,7 +111,7 @@ li {
   font-weight: 500;
 }
 .services .card__heading-subtitle-span {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bolder;
 }
 .services .card__heading-subtitle-span--blue {
@@ -128,7 +124,7 @@ li {
   color: #1ebf73;
 }
 .services .card__heading-title {
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bolder;
   color: #22252e;
 }
@@ -199,7 +195,8 @@ li {
 .footer p,
 .footer a,
 .footer ul,
-.footer li, .footer span {
+.footer li,
+.footer span {
   color: rgba(255, 255, 255, 0.5);
 }
 .footer i {
@@ -208,16 +205,16 @@ li {
 }
 
 .button {
-  width: 100%;
-  height: 60px;
+  height: 50px;
   border-radius: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .button__blue {
-  height: 50px;
+  padding: 12px 33px;
   background-color: #317ade;
+  border: none;
 }
 
 .footer {
@@ -226,7 +223,7 @@ li {
 }
 .footer__container {
   width: 100%;
-  padding: 50px 16px 0 16px;
+  padding: 50px 16px;
   width: 100%;
   margin-top: 100px;
   background-color: #1a1a1a;
@@ -290,50 +287,60 @@ li {
 
 .header {
   width: 100%;
-  height: 1013px;
+  height: 100px;
 }
 .header__container {
   width: 100%;
   height: inherit;
-  padding: 0 16px 0 16px;
+  padding: 50px 16px;
   background-color: #1a1a1a;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 .header__logo {
-  height: 40px;
-  margin-top: 50px;
-  flex: 0 1 70%;
-}
-.header__logo img {
+  width: 98px;
   height: 35px;
 }
-.header .hero {
-  flex: 0 1 100%;
-  height: 400px;
+.header__logo .logo {
+  width: inherit;
+  height: inherit;
 }
-.header .hero__text-box {
+
+.hero {
+  padding: 70px 16px;
+}
+.hero__text-box {
   height: auto;
 }
-.header .hero__button-box {
+.hero__button-box {
   width: 100%;
 }
-.header .hero__link {
+.hero__link {
+  display: block;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .hero .button__header {
-  margin-top: 20px;
+.hero .button__header {
+  width: 100%;
+  height: 56px;
+  margin-bottom: 20px;
+  padding: 16px 32px;
 }
-.header .hero .button__header--quote {
+.hero .button__header--first {
   background-color: #fff;
 }
-.header .hero .button__header--life {
-  background-color: rgba(255, 255, 255, 0.15);
+.hero .button__header--second {
+  background-color: #393939;
 }
-.header .hero__img-box img {
+.hero__img-box {
+  margin-top: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+.hero__img-box img {
   height: 300px;
 }
 
@@ -347,14 +354,21 @@ li {
   align-items: center;
 }
 .campanies__container img {
-  transform: scale(0.85);
+  width: 200px;
+  padding: 10px;
 }
 
+.about {
+  padding: 70px 16px;
+}
 .about__title-secondary {
   margin-bottom: 32px;
 }
 .about__text-box {
   margin-bottom: 37px;
+}
+.about__paragraph-text {
+  margin-bottom: 50px;
 }
 .about__images {
   width: 100%;
@@ -362,23 +376,32 @@ li {
   justify-content: center;
 }
 .about__images img {
-  width: 95%;
-  height: 214px;
+  width: 100%;
   border-radius: 12px;
-  box-shadow: rgba(17, 17, 26, 0.4) 0px 4px 16px, rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.4) 0px 16px 56px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px, rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px;
 }
 
+.services {
+  padding: 100px 16px 50px;
+}
 .services__title-secondary {
   margin-bottom: 32px;
+}
+.services__link {
+  display: block;
+  width: auto;
 }
 .services .button__blue {
   margin: 24px 0;
 }
-.services .card {
+.services .card-box {
+  margin-top: 50px;
+}
+.services .card:not(:last-child) {
   margin-bottom: 40px;
 }
 .services .card__heading-subtitle {
-  margin-bottom: 32px;
+  margin-bottom: 10px;
 }
 .services .card__heading-title {
   margin-bottom: 16px;
@@ -386,18 +409,31 @@ li {
 .services .card__icons {
   width: 100%;
   display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 10px;
   margin: 20px 0;
+}
+.services .card .icon {
+  width: 40px;
+  height: 40px;
 }
 .services .card__image-content {
   width: 100%;
+  margin-top: 15px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
-.services .card__image img {
-  height: 300px;
+.services .card__image .image-first {
+  width: 160px;
+  height: 250px;
+}
+.services .card__image .image-second {
+  width: 275px;
+  height: 250px;
+}
+.services .card__image .image-third {
+  width: 250px;
+  height: 310px;
 }
 
 .blog__title-secondary {
@@ -513,15 +549,15 @@ li {
 }
 
 .navigation {
-  flex: 0 1 30%;
-  height: 40px;
-  margin-top: 45px;
+  width: 24px;
+  height: 21px;
 }
 .navigation .sidebar {
   display: none;
 }
 .navigation__button {
-  height: 35px;
+  width: inherit;
+  height: inherit;
   display: flex;
   justify-content: center;
 }
@@ -556,6 +592,12 @@ li {
   top: 1rem;
 }
 
+.hero {
+  width: 100%;
+  height: 1030px;
+  background-color: #1a1a1a;
+}
+
 .campanies {
   width: 100%;
   margin-top: 100px;
@@ -568,7 +610,6 @@ li {
 
 .services {
   width: 100%;
-  margin-top: 150px;
   background-color: #f9fafe;
 }
 
