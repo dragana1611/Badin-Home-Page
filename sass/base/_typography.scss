@@ -18,7 +18,7 @@ li {
   font-weight: bolder !important;
 }
 
-.paragraph-text-italic{
+.paragraph-text-italic {
   @include font-primary-medium-italic;
   font-weight: bold;
   color: $color-primary;
@@ -40,12 +40,18 @@ li {
   color: $color-primary;
 }
 
+.title-shadow::before {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 0.74;
+}
+
 .button {
   color: $color-white;
 
   &__blue {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 800;
   }
 }
 
@@ -161,7 +167,7 @@ li {
       font-weight: bolder;
     }
 
-    &__paragraph-text-italic{
+    &__paragraph-text-italic {
       font-size: 20px;
     }
   }
@@ -171,6 +177,13 @@ li {
   .trustedby__heading-title {
     @include font-primary-demi;
     text-transform: uppercase;
+    color: $color-secondary-text;
+    font-size: 16px;
+  }
+
+  &__paragraph-text-light {
+    font-size: 16px;
+    font-weight: 500;
   }
 }
 
@@ -182,6 +195,8 @@ li {
 
   &__heading-title {
     font-size: 28px;
+    font-weight: 800;
+    line-height: 0.95;
     margin-bottom: 16px;
   }
 
@@ -203,6 +218,7 @@ li {
 
 .experience {
   color: $color_white;
+  font-size: 32px;
 
   &__title-secondary {
     color: $color-background-secondary;
@@ -211,8 +227,10 @@ li {
 }
 
 .info {
-  &__info-link {
-    font-size: 40px;
+  .info-text {
+    font-size: 40px;    
+    text-decoration: underline;
+    color: black;
   }
 }
 
@@ -231,7 +249,7 @@ li {
   }
 
   i {
-    font-size: 24px;
+    font-size: 20px;
     color: $color-white;
   }
 }

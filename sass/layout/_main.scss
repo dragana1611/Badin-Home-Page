@@ -212,6 +212,12 @@
   }
 
   .carousel {
+    &__item-box {
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+
     &__list {
       overflow: hidden;
       position: relative;
@@ -254,6 +260,22 @@
 }
 
 .hire-us {
+  padding: 0 $padding-lr;
+
+  .hire-us__container {
+  }
+
+  .title-shadow {
+    position: relative;
+  }
+
+  & .title-shadow::before {
+    content: "Need our help?";
+    position: absolute;
+    top: -15px;
+    opacity: 0.1;
+  }
+
   &__title-secondary {
     margin-bottom: 32px;
   }
@@ -265,32 +287,56 @@
   }
 
   .trustedby {
+    height: 216px;
+    padding: 50px 0;
     background-color: $color-background-secondary;
     overflow: hidden;
 
+    &__container {
+      width: 100%;
+    }
+
     &__heading-title {
       text-align: center;
+      margin-bottom: 50px;
     }
 
     &__image-box {
       width: 100%;
+      height: 50px;
 
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
+
+      img {
+        height: 50px;
+      }
     }
   }
 }
 
 .positions {
-  &__container {
-    width: 100%;
-    height: 1130px;
-  }
+  padding: 136px $padding-lr 100px;
 
   &__cards-container {
     width: 100%;
     margin: 0 auto 16px auto;
+  }
+
+  .title-shadow {
+    position: relative;
+  }
+
+  & .title-shadow::before {
+    content: "Open positions";
+    position: absolute;
+    top: -50px;
+    opacity: 0.1;
+  }
+
+  &__title-secondary {
+    padding: 0;
   }
 
   &__card {
@@ -308,21 +354,26 @@
   }
 
   .button__blue--arrow {
-    width: 158px;
+    //width: 158px;
   }
 
   .button__blue--black {
-    width: 257px;
+    //width: 257px;
     background-color: black;
     margin: 50px auto;
+    padding: 16px 32px;
   }
 }
 
 .gallery {
-  width: 100%;
-
+  padding: 100px 16px;
   &__image {
     width: 100%;
+
+    &--third,
+    &--sixth {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -330,6 +381,7 @@
       box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px,
         rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
     }
+
     &:not(:last-child) {
       margin-bottom: 40px;
     }
@@ -337,10 +389,47 @@
 }
 
 .experience {
-  width: 100%;
   &__container {
-    width: 100%;
+    //width: 100%;
     padding: 100px 0;
+    border: 1px solid red;
+  }
+
+  &__text-box {
+    padding-left: 16px;
+  }
+
+  &__marquee {
+    
+    margin-bottom: 60px;
+    // &:not(:nth-child(4)) {
+    //   margin-bottom: 60px;
+    // }
+  }
+
+  &__marquee-content {
+    height: 32px;
+    white-space: nowrap;    
+    opacity: 0.63;
+
+    &--first,
+    &--third {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &--second,
+    &--fourth {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+
+  .tool {
+    display: inline-block;
+    //margin-right: 40px;    
   }
 }
 
@@ -358,7 +447,6 @@
 
   &__title-secondary {
     margin-bottom: 50px;
-    border: 1px solid red;
   }
 
   img {
