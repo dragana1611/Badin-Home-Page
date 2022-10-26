@@ -3,38 +3,47 @@ p,
 a,
 ul,
 li {
-  font-size: 16px;
   @include font-primary-demi;
+  font-size: 16px;
   color: $color-primary-text;
 }
 
 .paragraph-text {
-  color: $color-primary-text;
+  line-height: 1.38;
+  font-weight: bolder;
 }
 
 .paragraph-text-light {
   color: $color-secondary-text;
+  font-weight: bolder !important;
+}
+
+.paragraph-text-italic{
+  @include font-primary-medium-italic;
+  font-weight: bold;
+  color: $color-primary;
 }
 
 .title-secondary {
-  // @include font-secondary-italic;
+  //@include font-secondary-italic;
   font-family: "Kurale", serif;
   font-style: italic;
   font-size: 48px;
-  font-weight: bolder;
+  font-weight: bold;
   font-style: italic;
   line-height: 1.25;
   color: $color-primary;
 }
 
 .heading-title {
+  font-weight: bolder;
   color: $color-primary;
 }
 
 .button {
   color: $color-white;
 
-  &__blue{
+  &__blue {
     font-size: 20px;
     font-weight: bold;
   }
@@ -48,7 +57,7 @@ li {
   &__title {
     @include font-primary-bold;
     font-size: 48px;
-    font-weight: bold;
+    font-weight: bolder;
     line-height: 1.25;
     letter-spacing: -1px;
     color: $color-white;
@@ -58,12 +67,13 @@ li {
     margin: 32px 0;
     color: $color-grey-dark-1;
     font-size: 20px;
+    font-weight: bolder;
     line-height: 1.6;
   }
 
   .button__header {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: bolder;
     letter-spacing: -0.47px;
 
     &--first {
@@ -77,7 +87,6 @@ li {
 }
 
 .services {
-  
   &__paragraph-text-light {
     color: $color-secondary-text-light-1;
     font-weight: 500;
@@ -129,8 +138,32 @@ li {
 }
 
 .testimonials {
-  &__text {
-    color: $color-grey-dark-1;
+  &__paragraph-text-light,
+  .arrow-btn {
+    font-size: 20px;
+  }
+
+  &__paragraph-text-light {
+    padding-right: 50px;
+  }
+
+  .arrow-btn--right {
+    color: $color-blue;
+  }
+
+  .carousel {
+    &__heading-title {
+      font-size: 24px;
+    }
+
+    &__heading-subtitle {
+      color: $color-secondary-text;
+      font-weight: bolder;
+    }
+
+    &__paragraph-text-italic{
+      font-size: 20px;
+    }
   }
 }
 
