@@ -1,13 +1,14 @@
 .button {  
   height: 50px;
   border-radius: 150px;
+  
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__blue {
-    padding: 12px 33px; //nije univerzalno   
+    padding: 12px 33px;   
     background-color: $color-blue;
     border: none;
   }

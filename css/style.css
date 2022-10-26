@@ -50,7 +50,7 @@ li {
 
 .paragraph-text-light {
   color: #6b728e;
-  font-weight: bolder !important;
+  font-weight: 900;
 }
 
 .paragraph-text-italic {
@@ -78,7 +78,7 @@ li {
 
 .title-shadow::before {
   font-size: 50px;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 0.74;
 }
 
@@ -87,7 +87,7 @@ li {
 }
 .button__blue {
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .header {
@@ -108,12 +108,12 @@ li {
   margin: 32px 0;
   color: rgba(255, 255, 255, 0.5);
   font-size: 20px;
-  font-weight: bolder;
+  font-weight: 600;
   line-height: 1.6;
 }
 .hero .button__header {
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: 900;
   letter-spacing: -0.47px;
 }
 .hero .button__header--first {
@@ -192,7 +192,8 @@ li {
 }
 .hire-us__paragraph-text-light {
   font-size: 16px;
-  font-weight: 500;
+  line-height: 1.38;
+  font-weight: 900;
 }
 
 .positions__title-secondary {
@@ -264,7 +265,7 @@ li {
 
 .footer {
   width: 100%;
-  height: 1167px;
+  overflow: hidden;
 }
 .footer__container {
   width: 100%;
@@ -306,6 +307,10 @@ li {
   justify-content: center;
   align-items: center;
 }
+.footer__link-social i {
+  border: 1px solid rgb(255, 0, 255);
+  transform: translateX(4px);
+}
 
 .footer__heading-title {
   margin-bottom: 24px;
@@ -340,7 +345,7 @@ li {
   width: 100%;
   height: inherit;
   padding: 50px 16px;
-  background-color: #1a1a1a;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -356,6 +361,7 @@ li {
 
 .hero {
   padding: 70px 16px;
+  position: relative;
 }
 .hero__text-box {
   height: auto;
@@ -387,8 +393,30 @@ li {
   width: 100%;
   overflow: hidden;
 }
-.hero__img-box img {
-  height: 300px;
+.hero__img-box .img-color-bg {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+.hero__img-box .img-grid {
+  position: absolute;
+  top: 80%;
+  overflow: hidden;
+}
+.hero__img-box .img-side-shape {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.hero__img-box .img-top-shape {
+  display: none;
+}
+.hero__img-content-bg {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .campanies {
@@ -406,10 +434,10 @@ li {
 }
 
 .about {
-  padding: 70px 16px;
+  padding: 70px 16px 100px;
 }
 .about__title-secondary {
-  margin-bottom: 32px;
+  margin-bottom: 50px;
 }
 .about__text-box {
   margin-bottom: 37px;
@@ -654,7 +682,6 @@ li {
 
 .experience__container {
   padding: 100px 0;
-  border: 1px solid red;
 }
 .experience__text-box {
   padding-left: 16px;
@@ -666,6 +693,7 @@ li {
   height: 32px;
   white-space: nowrap;
   opacity: 0.63;
+  overflow: hidden;
 }
 .experience__marquee-content--first, .experience__marquee-content--third {
   display: flex;
@@ -683,11 +711,22 @@ li {
 
 .info__container {
   width: 100%;
+  padding: 182px 16px 100px;
   display: flex;
   flex-direction: column;
 }
 .info__text-box {
   margin-bottom: 32px;
+}
+.info .title-shadow {
+  position: relative;
+}
+.info .title-shadow::before {
+  content: "Are you ready?";
+  position: absolute;
+  top: -70px;
+  line-height: 1.1;
+  opacity: 0.1;
 }
 .info__title-secondary {
   margin-bottom: 50px;
@@ -700,12 +739,10 @@ li {
   width: 24px;
   height: 21px;
 }
-.navigation .sidebar {
-  display: none;
-}
 .navigation__button {
   width: inherit;
   height: inherit;
+  all: unset;
   display: flex;
   justify-content: center;
 }
@@ -728,22 +765,14 @@ li {
   transition: all 0.2s;
 }
 .navigation__icon::before {
-  top: -0.8rem;
+  top: -10px;
 }
 .navigation__icon::after {
-  top: 0.8rem;
-}
-.navigation__button:hover .navigation__icon::before {
-  top: -1rem;
-}
-.navigation__button:hover .navigation__icon::after {
-  top: 1rem;
+  top: 10px;
 }
 
 .hero {
   width: 100%;
-  height: 1030px;
-  background-color: #1a1a1a;
 }
 
 .campanies {
@@ -792,7 +821,6 @@ li {
 
 .info {
   width: 100%;
-  margin-top: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

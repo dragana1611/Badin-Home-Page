@@ -1,5 +1,6 @@
 .hero {
   padding: 70px $padding-lr;
+  position: relative;
 
   &__text-box {
     height: auto;
@@ -37,9 +38,36 @@
     margin-top: 50px;
     width: 100%;
     overflow: hidden;
-    img {
-      height: 300px;
+
+    .img-color-bg {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      z-index: -1;
+      overflow: hidden;
     }
+
+    .img-grid {
+      position: absolute;
+      top: 80%;
+      overflow: hidden;
+    }
+
+    .img-side-shape {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
+    }
+
+    .img-top-shape {
+      display: none;
+    }
+  }
+
+  &__img-content-bg {
+    width: 100%;
+    overflow-x: hidden;
   }
 }
 
@@ -59,10 +87,10 @@
 }
 
 .about {
-  padding: 70px $padding-lr;
+  padding: 70px $padding-lr 100px;
 
   &__title-secondary {
-    margin-bottom: 32px;
+    margin-bottom: 50px;
   }
 
   &__text-box {
@@ -391,8 +419,7 @@
 .experience {
   &__container {
     //width: 100%;
-    padding: 100px 0;
-    border: 1px solid red;
+    padding: 100px 0;    
   }
 
   &__text-box {
@@ -400,7 +427,6 @@
   }
 
   &__marquee {
-    
     margin-bottom: 60px;
     // &:not(:nth-child(4)) {
     //   margin-bottom: 60px;
@@ -409,8 +435,9 @@
 
   &__marquee-content {
     height: 32px;
-    white-space: nowrap;    
+    white-space: nowrap;
     opacity: 0.63;
+    overflow: hidden;
 
     &--first,
     &--third {
@@ -428,14 +455,14 @@
   }
 
   .tool {
-    display: inline-block;
-    //margin-right: 40px;    
+    display: inline-block;    
   }
 }
 
 .info {
   &__container {
     width: 100%;
+    padding: 182px 16px 100px;;
 
     display: flex;
     flex-direction: column;
@@ -443,6 +470,18 @@
 
   &__text-box {
     margin-bottom: 32px;
+  }
+
+  .title-shadow {
+    position: relative;
+  }
+
+  & .title-shadow::before {
+    content: "Are you ready?";
+    position: absolute;
+    top: -70px;
+    line-height: 1.1;
+    opacity: 0.1;
   }
 
   &__title-secondary {

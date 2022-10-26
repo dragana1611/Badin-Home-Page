@@ -1,14 +1,11 @@
 .navigation {
  width: 24px;
- height: 21px; 
-
-  .sidebar {
-    display: none;
-  }
+ height: 21px;    
 
   &__button{ 
     width: inherit;
-    height: inherit;       
+    height: inherit;
+    all: unset;       
     
     display: flex;
     justify-content: center;
@@ -39,19 +36,12 @@
     }
 
     &::before {
-      top: -0.8rem;
+      top: -10px;
       //transform-origin: right;
     }
 
     &::after {
-      top: 0.8rem;
+      top: 10px;
     }
-  }
-
-  &__button:hover &__icon::before {
-    top: -1rem;
-  }
-  &__button:hover &__icon::after {
-    top: 1rem;
   }
 }

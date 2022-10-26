@@ -15,7 +15,7 @@ li {
 
 .paragraph-text-light {
   color: $color-secondary-text;
-  font-weight: bolder !important;
+  font-weight: 900;
 }
 
 .paragraph-text-italic {
@@ -42,7 +42,7 @@ li {
 
 .title-shadow::before {
   font-size: 50px;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 0.74;
 }
 
@@ -51,7 +51,7 @@ li {
 
   &__blue {
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 700;
   }
 }
 
@@ -73,13 +73,13 @@ li {
     margin: 32px 0;
     color: $color-grey-dark-1;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: 600;
     line-height: 1.6;
   }
 
   .button__header {
     font-size: 24px;
-    font-weight: bolder;
+    font-weight: 900;
     letter-spacing: -0.47px;
 
     &--first {
@@ -183,7 +183,8 @@ li {
 
   &__paragraph-text-light {
     font-size: 16px;
-    font-weight: 500;
+    line-height: 1.38;
+    font-weight: 900;
   }
 }
 
@@ -228,7 +229,7 @@ li {
 
 .info {
   .info-text {
-    font-size: 40px;    
+    font-size: 40px;
     text-decoration: underline;
     color: black;
   }
