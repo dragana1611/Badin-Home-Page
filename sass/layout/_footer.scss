@@ -4,10 +4,9 @@
 
   &__container {
     width: 100%;
-    padding: 50px $padding-lr;
+    padding: 50px $padding-lr 0;
 
-    width: 100%;
-    margin-top: 100px;
+    width: 100%;    
     background-color: $color-black;
   }
 
@@ -38,8 +37,7 @@
     gap: 15px;
   }
 
-  &__link-social {
-    display: block;
+  &__link-social {    
     width: 56px;
     height: 56px;
     border-radius: 20px;
@@ -54,7 +52,7 @@
 
     i {
       border: 1px solid rgb(255, 0, 255);
-      transform: translateX(4px);
+      transform: translateX(2px);
     }
   }
 }

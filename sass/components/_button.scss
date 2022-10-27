@@ -1,7 +1,7 @@
 .button {  
   height: 50px;
   border-radius: 150px;
-  
+  border: none;  
 
   display: flex;
   justify-content: center;
@@ -9,7 +9,6 @@
 
   &__blue {
     padding: 12px 33px;   
-    background-color: $color-blue;
-    border: none;
+    background-color: $color-blue;    
   }
 }

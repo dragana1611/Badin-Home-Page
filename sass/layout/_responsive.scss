@@ -1,0 +1,149 @@
+/* breakpoint 768px */
+@media screen and (min-width: 768px) {
+  .header__container,
+  .hero,
+  .campanies,
+  .about,
+  .services,
+  .testimonials,
+  .hire-us,
+  .positions,
+  .gallery,
+  .info,
+  .footer__container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero {
+    &__button-box {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__link {
+      width: 33%;
+      display: flex;
+      justify-content: flex-start;
+    }
+  }
+
+  .campanies {
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .hire-us {
+    &__paragraph-text-light {
+      width: 70%;
+    }
+  }
+
+  .positions {
+    & .title-shadow::before {
+      content: "Open positions";
+      position: absolute;
+      top: -15px;
+      opacity: 0.1;
+    }
+
+    &__card {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__heading-title {
+      flex: 0 1 75%;
+    }
+
+    &__link {
+      flex: 0 1 25%;
+    }
+  }
+  .info {
+    & .title-shadow::before {
+      content: "Are you ready?";
+      position: absolute;
+      top: -25px;
+      line-height: 1.1;
+      opacity: 0.1;
+    }
+
+    &__text-box {
+      width: 70%;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__image-box {
+      width: 100%;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: -150px;
+        left: 10%;
+      }
+    }
+  }
+}
+
+/* breakpoint 1024px */
+
+@media screen and (min-width: 1024px) {
+  .about {
+    .text-wrapper {
+      margin-bottom: 100px;
+    }
+
+    &__image {
+      .home-img {
+        object-fit: cover;
+      }
+
+      &--first {
+        display: block;
+        padding-bottom: 100px;
+        width: 80%;
+        border: 1px solid blueviolet;
+      }
+
+      &--second {
+        width: 512px;
+        border: 1px solid blueviolet;
+      }
+    }
+
+    &__text-box {
+      border: 1px solid rgb(43, 226, 52);
+      display: flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    .section-title {
+      border: 1px solid rgb(43, 226, 52);
+      flex: 0 1 25%;
+    }
+
+    &__text-content {
+      flex: 0 1 60%;
+      &:last-child {
+        padding-top: 50px;
+      }
+    }
+  }
+}
+
+/* breakpoint 1366px */
+@media screen and (min-width: 1366px) {
+}

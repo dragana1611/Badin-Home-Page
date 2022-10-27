@@ -89,6 +89,10 @@
 .about {
   padding: 70px $padding-lr 100px;
 
+  &__image--first {
+    display: none;
+  }
+
   &__title-secondary {
     margin-bottom: 50px;
   }
@@ -107,12 +111,12 @@
     display: flex;
     justify-content: center;
 
-    img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px,
-        rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px;
-    }
+    // img {
+    //   width: 100%;
+    //   border-radius: 12px;
+    //   box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px,
+    //     rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px;
+    // }
   }
 }
 
@@ -290,9 +294,6 @@
 .hire-us {
   padding: 0 $padding-lr;
 
-  .hire-us__container {
-  }
-
   .title-shadow {
     position: relative;
   }
@@ -395,31 +396,25 @@
 
 .gallery {
   padding: 100px 16px;
+
   &__image {
     width: 100%;
+
+    &:not(:nth-child(5)) {
+      margin-bottom: 40px;
+    }
 
     &--third,
     &--sixth {
       display: none;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px,
-        rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
+    }    
   }
 }
 
 .experience {
   &__container {
     //width: 100%;
-    padding: 100px 0;    
+    padding: 100px 0;
   }
 
   &__text-box {
@@ -455,14 +450,14 @@
   }
 
   .tool {
-    display: inline-block;    
+    display: inline-block;
   }
 }
 
 .info {
   &__container {
     width: 100%;
-    padding: 182px 16px 100px;;
+    padding: 182px 16px 100px;
 
     display: flex;
     flex-direction: column;

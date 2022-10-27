@@ -1,5 +1,5 @@
 .navigation {
- width: 24px;
+ width: 20px;
  height: 21px;    
 
   &__button{ 
@@ -22,8 +22,8 @@
     &::before,
     &::after {
       display: inline-block;
-      width: 24px;
-      height: 3px;
+      width: 20px;
+      height: 2px;
       background-color: $color-white;
     }
 
@@ -36,12 +36,12 @@
     }
 
     &::before {
-      top: -10px;
+      top: -7px;
       //transform-origin: right;
     }
 
     &::after {
-      top: 10px;
+      top: 7px;
     }
   }
 }
