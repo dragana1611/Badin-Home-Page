@@ -417,6 +417,7 @@ li {
 }
 
 .hero {
+  height: 1013px;
   padding: 70px 16px;
   position: relative;
 }
@@ -445,35 +446,18 @@ li {
 .hero .button__header--second {
   background-color: #393939;
 }
-.hero__img-box {
-  margin-top: 50px;
+.hero .img-box {
   width: 100%;
+  height: 1013px;
   overflow: hidden;
 }
-.hero__img-box .img-color-bg {
+.hero .img-box .img-color-bg {
+  height: 1013px;
   position: absolute;
   top: -100px;
-  left: 0;
-  z-index: -1;
-  overflow: hidden;
-}
-.hero__img-box .img-grid {
-  position: absolute;
-  top: 80%;
-  overflow: hidden;
-}
-.hero__img-box .img-side-shape {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
-}
-.hero__img-box .img-top-shape {
-  display: none;
-}
-.hero__img-content-bg {
-  width: 100%;
-  overflow-x: hidden;
+  left: 20px;
+  z-index: -1000;
+  object-fit: cover;
 }
 
 .campanies {
@@ -835,6 +819,37 @@ li {
   top: 7px;
 }
 
+/* breakpoint 1366px */
+@media screen and (min-width: 1366px) {
+  .navigation {
+    position: fixed;
+    top: 50%;
+    left: 16px;
+    z-index: 100;
+  }
+  .navigation__button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: transparent;
+    transform: translatex(-80px);
+  }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+    background-color: black;
+    width: 20px;
+  }
+  .navigation::after {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    transform: rotate(-90deg);
+    color: black;
+    content: "MENU";
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+}
 /* breakpoint 768px */
 @media screen and (min-width: 768px) {
   .header__container,
@@ -869,10 +884,7 @@ li {
     width: 70%;
   }
   .positions .title-shadow::before {
-    content: "Open positions";
-    position: absolute;
-    top: -15px;
-    opacity: 0.1;
+    top: -30px;
   }
   .positions__card {
     width: 100%;
@@ -995,21 +1007,22 @@ li {
   }
   .testimonials .testimonials-desktop {
     display: block;
+    overflow: visible;
   }
-  .testimonials .testimonials-mobile {
+  .testimonials .testimonials-desktop .testimonials-mobile {
     display: none;
   }
-  .testimonials__container {
+  .testimonials .testimonials-desktop__container {
     border: 1px solid rgb(0, 255, 98);
   }
-  .testimonials__paragraph-text-light {
+  .testimonials .testimonials-desktop__paragraph-text-light {
     width: 40%;
   }
-  .testimonials__carousel {
+  .testimonials .testimonials-desktop__carousel {
     height: 500px;
     border: 1px solid rgb(255, 0, 242);
   }
-  .testimonials .carousel-inner {
+  .testimonials .testimonials-desktop .carousel-inner {
     border: 1px solid rgb(143, 129, 64);
     width: 100%;
     height: 500px;
@@ -1017,20 +1030,20 @@ li {
     flex-direction: row;
     justify-content: space-between;
   }
-  .testimonials .carousel__list, .testimonials .carousel__item-content {
+  .testimonials .testimonials-desktop .carousel__list, .testimonials .testimonials-desktop .carousel__item-content {
+    overflow: visible;
     flex: 0 1 50%;
     position: relative;
     border: 1px solid red;
   }
-  .testimonials .carousel .carousel__quote {
+  .testimonials .testimonials-desktop .carousel .carousel__quote {
     width: 127px;
-    height: 105;
   }
-  .testimonials .carousel .carousel__quote--open {
+  .testimonials .testimonials-desktop .carousel .carousel__quote--open {
     position: absolute;
     top: -40px;
   }
-  .testimonials .carousel .carousel__quote--close {
+  .testimonials .testimonials-desktop .carousel .carousel__quote--close {
     position: absolute;
     right: 0;
   }
@@ -1049,6 +1062,9 @@ li {
   }
   .positions {
     margin-top: -80px;
+  }
+  .positions .title-shadow::before {
+    top: -30px;
   }
   .positions__link {
     display: flex;
@@ -1111,6 +1127,41 @@ li {
   }
 }
 /* breakpoint 1366px */
+@media screen and (min-width: 1366px) {
+  .hire-us {
+    margin-top: 0 !important;
+  }
+  .hire-us__container {
+    width: 100%;
+    height: 786px;
+    display: flex;
+    flex-direction: row;
+  }
+  .hire-us .trustedby__container,
+.hire-us .trustedby__image-box {
+    display: flex;
+    flex-direction: column;
+  }
+  .hire-us .projects {
+    padding-top: 160px;
+    flex: 0 1 70%;
+  }
+  .hire-us .trustedby {
+    height: inherit;
+    flex: 0 1 30%;
+  }
+  .hire-us .trustedby__image-box {
+    height: 700px;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 80px;
+  }
+  .hire-us .trustedby__image img {
+    transform: scale(1.8);
+  }
+}
 .hero {
   width: 100%;
 }

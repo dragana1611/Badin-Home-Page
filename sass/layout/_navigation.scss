@@ -1,23 +1,22 @@
 .navigation {
- width: 20px;
- height: 21px;    
+  width: 20px;
+  height: 21px;
 
-  &__button{ 
+  &__button {
     width: inherit;
     height: inherit;
-    all: unset;       
-    
+    all: unset;
+
     display: flex;
     justify-content: center;
   }
 
   &__icon {
-    
     position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+
     &,
     &::before,
     &::after {
@@ -42,6 +41,48 @@
 
     &::after {
       top: 7px;
+    }
+  }
+}
+
+/* breakpoint 1366px */
+@media screen and (min-width: 1366px) {
+  .navigation {
+    position: fixed;
+    top: 50%;
+    left: 16px;
+    z-index: 100;
+
+    &__button {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: transparent;
+      transform: translatex(-80px);
+      //padding: 0 125px 125px 0;
+
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+    }
+
+    &__icon,
+    &__icon::before,
+    &__icon::after {
+      background-color: black;
+      width: 20px;
+    }
+
+    &::after {
+      display: block;
+      position: absolute;
+      top: 40px;
+      left: 5px;
+      transform: rotate(-90deg);
+      color: black;
+      content: "MENU";
+      font-size: 1.2rem;
+      letter-spacing: 3px;
     }
   }
 }

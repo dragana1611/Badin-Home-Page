@@ -44,10 +44,7 @@
 
   .positions {
     & .title-shadow::before {
-      content: "Open positions";
-      position: absolute;
-      top: -15px;
-      opacity: 0.1;
+      top: -30px;
     }
 
     &__card {
@@ -139,8 +136,6 @@
     }
 
     &__text-box {
-      //overflow: hidden;
-
       display: flex;
       gap: 50px;
     }
@@ -204,70 +199,63 @@
   }
 
   .testimonials {
+    
     width: 100%;
     height: 100%;
     border: 1px solid rgb(0, 195, 255);
     .testimonials-desktop {
       display: block;
-    }
-    .testimonials-mobile {
-      display: none;
-    }
+      overflow: visible;
 
-    &__container {
-      border: 1px solid rgb(0, 255, 98);
-    }
+      .testimonials-mobile {
+        display: none;
+      }
 
-    &__paragraph-text-light {
-      width: 40%;
-    }
+      &__container {
+        border: 1px solid rgb(0, 255, 98);
+      }
 
-    &__carousel {
-      height: 500px;
-      border: 1px solid rgb(255, 0, 242);
-    }
+      &__paragraph-text-light {
+        width: 40%;
+      }
 
-    .carousel {
-      &-inner {
-        border: 1px solid rgb(143, 129, 64);
-        width: 100%;
+      &__carousel {
         height: 500px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        border: 1px solid rgb(255, 0, 242);
       }
 
-      &__list,
-      &__item-content {
-        flex: 0 1 50%;
-        position: relative;
-        border: 1px solid red;
-
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // align-items: flex-start;
-      }
-
-      .carousel__quote {
-        width: 127px;
-        height: 105;
-
-        &--open {
-          position: absolute;
-          top: -40px;
+      .carousel {
+        &-inner {
+          border: 1px solid rgb(143, 129, 64);
+          width: 100%;
+          height: 500px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
         }
 
-        &--close {
-          position: absolute;
-          right: 0;
+        &__list,
+        &__item-content {
+          overflow: visible;
+          flex: 0 1 50%;
+          position: relative;
+          border: 1px solid red;
+        }
+
+        .carousel__quote {
+          width: 127px;
+
+          &--open {
+            position: absolute;
+            top: -40px;
+          }
+
+          &--close {
+            position: absolute;
+            right: 0;
+          }
         }
       }
-
-      // &__item-box{
-      //   position: absolute;
-      //   top: 100px;
-      // }
     }
   }
 
@@ -290,6 +278,10 @@
 
   .positions {
     margin-top: -80px;
+
+    .title-shadow::before {
+      top: -30px;
+    }
 
     &__link {
       display: flex;
@@ -374,4 +366,46 @@
 
 /* breakpoint 1366px */
 @media screen and (min-width: 1366px) {
+  .hire-us {
+    margin-top: 0 !important;
+
+    &__container {
+      width: 100%;
+      height: 786px;
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    .trustedby__container,
+    .trustedby__image-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projects {
+      padding-top: 160px;
+      flex: 0 1 70%;
+    }
+    .trustedby {
+      height: inherit;
+      flex: 0 1 30%;
+
+      &__image-box {
+        height: 700px;
+        padding-top: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 80px;
+      }
+
+      &__image {
+        img {
+          transform: scale(1.8);
+        }
+      }
+    }
+  }
 }
