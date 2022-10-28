@@ -110,13 +110,6 @@
 
     display: flex;
     justify-content: center;
-
-    // img {
-    //   width: 100%;
-    //   border-radius: 12px;
-    //   box-shadow: rgba(17, 17, 26, 0.2) 0px 4px 16px,
-    //     rgba(17, 17, 26, 0.2) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px;
-    // }
   }
 }
 
@@ -229,6 +222,9 @@
 }
 
 .testimonials {
+  .testimonials-desktop{
+    display: none;
+  }
   padding: 50px 16px;
 
   &__title-secondary {
@@ -253,10 +249,12 @@
     &__list {
       overflow: hidden;
       position: relative;
+      margin-bottom: 32px;
+
       display: flex;
       align-items: flex-end;
       gap: 20px;
-      margin-bottom: 32px;
+      
 
       img {
         width: 80px;
@@ -292,7 +290,9 @@
 }
 
 .hire-us {
-  padding: 0 $padding-lr;
+  .projects{
+    padding: 0 $padding-lr;
+  }  
 
   .title-shadow {
     position: relative;
@@ -382,10 +382,6 @@
     align-items: flex-start;
   }
 
-  .button__blue--arrow {
-    //width: 158px;
-  }
-
   .button__blue--black {
     //width: 257px;
     background-color: black;
@@ -395,6 +391,9 @@
 }
 
 .gallery {
+  .gallery-desktop{
+    display: none;
+  }
   padding: 100px 16px;
 
   &__image {
@@ -407,32 +406,35 @@
     &--third,
     &--sixth {
       display: none;
-    }    
+    }
   }
 }
 
 .experience {
-  &__container {
-    //width: 100%;
-    padding: 100px 0;
+  &__container {    
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .section-title{
+    width: 50%;
   }
 
   &__text-box {
-    padding-left: 16px;
+    padding-left: 16px;       
   }
 
   &__marquee {
+    //height: 32px;
+    padding: 10px;
     margin-bottom: 60px;
-    // &:not(:nth-child(4)) {
-    //   margin-bottom: 60px;
-    // }
+    overflow-x: hidden;       
   }
 
   &__marquee-content {
-    height: 32px;
+    //height: 32px;
     white-space: nowrap;
-    opacity: 0.63;
-    overflow: hidden;
+    opacity: 0.63;    
 
     &--first,
     &--third {
@@ -446,6 +448,11 @@
       display: flex;
       flex-direction: row-reverse;
       gap: 40px;
+    }
+
+    .tool{
+      display: inline-block;
+      height: 32px;
     }
   }
 

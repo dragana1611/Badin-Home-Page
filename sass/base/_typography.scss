@@ -258,9 +258,11 @@ li {
   .paragraph-text,
   .paragraph-text-light {
     font-size: 20px;
+    font-weight: 600;
   }
 
-  .title-secondary {
+  .title-secondary,
+  .title-shadow::before {
     font-size: 90px;
   }
 
@@ -277,5 +279,38 @@ li {
       font-size: 22px;
       line-height: 1.55;
     }
-  }  
+  }
+
+  .services {
+    .card {
+      font-weight: 500;
+
+      &__heading-subtitle-span {
+        font-size: 18px;
+      }
+
+      &__heading-title {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .experience {
+    &__title-secondary {
+      font-size: 60px;
+    }
+  }
+
+  .info {
+    &__title-secondary,
+    .title-shadow::before {
+      font-size: 48px;
+    }
+  }
+
+  .footer {
+    &__heading-title {
+      font-size: 20px;
+    }
+  }
 }
