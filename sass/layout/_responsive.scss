@@ -24,11 +24,9 @@
 
     &__images {
       height: 650px;
-      border: 5px solid rgb(143, 129, 64);
     }
     &__img-content-bg {
       height: 650px;
-      border: 5px solid rgb(64, 79, 143);
 
       .composition-bg__img--p1 {
         top: 57%;
@@ -337,30 +335,115 @@
   }
 
   .hero {
-    .hero-desktop {
-      display: block;
-    }
-
     .hero-mobile {
       display: none;
     }
 
+    .hero-desktop {
+      display: block;
+    }
+
+    width: 100%;
+    height: 1029px;
+
+    background: url(./assets/images/hero-bg.png) no-repeat left top,
+      url(./assets/images/grid-elem.png) no-repeat left top;
+    background-size: cover, cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
     padding-left: 245px;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
 
     &__container {
-      display: block;
-      width: 100vw;
+      max-width: 1660px;
       height: 1029px;
+      background-color: transparent;
+      position: relative;
+    }
+
+    &__text-content {
+      width: 60%;
     }
 
     &__img-content-bg {
+      height: 1029;
+      width: 100%;
       position: absolute;
       top: 0;
+      left: 0;
+
+      .composition-bg {
+        width: 100%;
+        height: 1029px;
+        position: relative;
+
+        &__img--p1 {
+          width: 100%;
+          position: absolute;
+          right: 0;
+          top: 5px;
+        }
+
+        &__img--p2 {
+          position: absolute;
+          top: 0;
+          right: 200px;
+        }
+      }
     }
 
-    .img-top-shape {
+    &__images {
+      width: 100%;
       height: 1029px;
-      height: 88px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      //z-index: 1000;
+      border: 3px solid red;
+    }
+
+    &__img-content {
+      width: 100%;
+      height: 1029px;
+      border: 3px solid rgb(195, 0, 255);
+    }
+
+    .composition {
+      width: 100%;
+      height: 1029px;
+      transform: translateX(10%);
+      position: relative;
+      border: 3px solid rgb(0, 26, 255);
+
+      &__img--p1 {
+        width: 1000px !important;
+        position: absolute;
+        top: 0 !important;
+        left: 700px !important;
+      }
+
+      &__img--p4 {
+        position: absolute;
+        top: 108px;
+        left: 0;
+      }
+
+      &__img--p2 {
+        width: 176px !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      &__img--p3 {
+        width: 146px;
+        position: absolute;
+        top: 600px;
+        left: 0;
+      }
     }
   }
 
@@ -377,7 +460,10 @@
     padding-left: 245px;
     overflow: hidden;
 
-    .home-img {
+    .home-img--top {
+      width: 910px;
+    }
+    .home-img--bottom {
       transform: translateX(5%);
     }
   }
@@ -397,41 +483,43 @@
 
     .testimonials-mobile {
       display: none;
-    }
-
-    &__container {
-      border: 1px solid rgb(0, 255, 98);
-    }
+    }    
 
     &__paragraph-text-light {
       width: 40%;
     }
 
     &__carousel {
-      height: 500px;
-      border: 1px solid rgb(4, 0, 255);
+      height: 500px;      
     }
 
     .carousel {
       &-inner {
-        border: 1px solid rgb(143, 129, 64);
         width: 100%;
         height: 500px;
         display: flex;
         flex-direction: row;
+        position: relative;
       }
 
       &__list {
         height: 500px;
-        flex: 0 1 35%;
+        flex: 0 1 32%;
         position: relative;
       }
 
+      &__timeline {
+        height: 100%;
+        flex: 0 1 5%;
+        position: relative;        
+      }
+
       &__item-content {
-        height: 500px;
-        flex: 0 1 65%;
-        position: relative;
-        border: 1px solid red;
+        //
+        flex: 0 1 63%;
+
+        display: flex;
+        flex-direction: column;
       }
 
       &__list {
@@ -470,47 +558,92 @@
         }
       }
 
-      // .carousel__quote {
-      //   width: 127px;
+      &__item-box {
+        padding: 100px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-      //   &--open {
-      //     position: absolute;
-      //     top: -40px;
-      //   }
+        &::before,
+        &::after {
+          display: inline-block;
+          width: 24px;
+          height: 2px;
+          background-color: $color-white;
+        }
 
-      //   &--close {
-      //     position: absolute;
-      //     right: 0;
-      //   }
-      // }
+        &::before {
+          content: "";
+          display: block;
+          width: 100px;
+          height: 100px;
+          background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-open.svg")
+            no-repeat center center;
+          background-size: contain;
+          position: absolute;
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: 100px;
+          height: 100px;
+          padding: 5px;
+          background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg")
+            no-repeat center center;
+          background-size: contain;
+          position: absolute;
+        }
 
-      // .timeline {
-      //   position: absolute;
-      //   left: 0;
-      //   top: 135px;
-      //   height: 250px;
-      //   padding-top: 32px;
-      //   width: 3px;
-      //   display: flex;
-      //   flex-direction: column;
-      //   align-items: center;
+        &::before {
+          top: -40px;
+        }
 
-      //   .span {
-      //     display: block;
-      //     width: 13px;
-      //     height: 13px;
-      //     border-radius: 50%;
-      //     background-color: #f9fafe;
-      //     margin-bottom: 32px;
-      //     border: 2px solid #dae0fe;
-      //   }
-      // }
+        &::after {
+          bottom: 100px;
+          right: 100px;
+        }
+      }
+
+      &__paragraph-text-italic {
+        margin-bottom: 32px;
+      }
+
+      .carousel__timeline {
+        position: absolute;
+        left: 400px;
+        top: 100px;
+
+        width: 3px;
+        height: 250px;
+        background-color: $color-timeline;
+        border-radius: 1px;
+        padding-top: 32px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+
+        span {
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-radius: 50%;
+          background-color: $color-background-secondary;
+          margin-bottom: 32px;
+          border: 2px solid $color-timeline;
+        }
+      }
     }
   }
 
   .hire-us {
     .projects {
       padding-left: 245px;
+    }
+
+    .button__blue {
+      display: block;
     }
   }
 
