@@ -1,90 +1,135 @@
 .hero {
-  height: 1013px;
-  padding: 70px $padding-lr;
-  position: relative;
+  .hero-desktop {
+    display: none;
+  }
+
+  height: 1113px;
+  // background: url("../../assets/images/hero-bg.png") no-repeat left center;
+  //   background-size: cover;
+
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: -100;
+  background-color: rgb(0, 0, 0);
+
+  &__container {
+    width: 100%;
+    height: inherit;
+    position: relative;
+  }
 
   &__text-box {
     height: auto;
+    padding: 250px $padding-lr 0;
   }
 
   &__button-box {
     width: 100%;
-  }
+    padding: 0 $padding-lr;
 
-  &__link {
-    display: block;
-    width: 100%;
+    &__link {
+      width: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .button__header {
-    width: 100%;
-    height: 56px;
-    margin-bottom: 20px;
-    padding: 16px 32px;
-
-    &--first {
-      background-color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    &--second {
-      background-color: $color-grey-dark-2;
+    .button__header {
+      width: 100%;
+      height: 56px;
+      margin-bottom: 20px;
+      padding: 16px 32px;
+
+      &--first {
+        background-color: $color-white;
+      }
+
+      &--second {
+        background-color: $color-grey-dark-2;
+      }
     }
   }
 
-  .img-box {
+  &__images {
     width: 100%;
-    height: 1013px;
+    height: 450px;
     overflow: hidden;
+    position: relative;
+  }
 
-    //   &--first {
-    //
-    //     overflow: hidden;
-    //   }
+  &__img-content-bg {
+    width: 100%;
+    height: 450px;
+    // background: url(../../assets/images/grid-elem.png) no-repeat center center;
+    // background-size: cover;
+    position: relative;
 
-    //   &--second {
-    //     height: 650px;
-    //     overflow: hidden;
-    //   }
-
-    //   &--third {
-    //     height: 325px;
-    //     overflow: hidden;
-    //   }
-
-    .img-color-bg {
-      height: 1013px;
-      position: absolute;
-      top: -100px;
-      left: 20px;
-      z-index: -1000;
-
-      object-fit: cover;
+    .composition-bg__img {
+      &--p1 {
+        width: 450px;
+        position: absolute;
+        bottom: 15px;
+        right: 0;
+        z-index: 20;
+        object-fit: cover;
+      }
     }
+  }
 
-    // .img-grid {
-    //   height: inherit;
-    //   position: absolute;
-    //   top: 52%;
+  &__img-content {
+    width: 100%;
+    height: 450px;
+    z-index: 1000;
 
-    //   object-fit: cover;
-    // }
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    // .img-side-shape {
-    //   height: inherit;
-    //   position: absolute;
-    //   left: -147px;
-    //   bottom: 98px;
+    .composition {
+      height: inherit;
+      position: relative;
 
-    //   object-fit: cover;
-    // }
+      .composition__img {
+        &--p1 {
+          width: 450px;
+          position: absolute;
+          top: 25%;
+          right: -23%;
+          object-fit: cover;
+        }
+
+        &--p2 {
+          width: 70px;
+          position: absolute;
+          top: 75%;
+          right: 62%;
+          object-fit: cover;
+        }
+
+        &--p3 {
+          width: 60px;
+          position: absolute;
+          top: 67%;
+          right: -4%;
+          object-fit: cover;
+        }
+
+        &--p4 {
+          width: 50px;
+          position: absolute;
+          top: 35%;
+          right: 50%;
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
 
 .campanies {
+  margin-top: 1000px;
   width: 100%;
   &__container {
     display: flex;
@@ -238,7 +283,8 @@
   .testimonials-desktop {
     display: none;
   }
-  padding: 50px 16px;
+  padding: 50px $padding-lr;
+  overflow: hidden;
 
   &__title-secondary {
     margin-bottom: 24px;
@@ -259,8 +305,7 @@
       }
     }
 
-    &__list {
-      overflow: hidden;
+    &__list {      
       position: relative;
       margin-bottom: 32px;
 
@@ -303,7 +348,7 @@
 
 .hire-us {
   .projects {
-    padding: 0 $padding-lr;
+    padding: 100px $padding-lr;
   }
 
   .title-shadow {
@@ -423,6 +468,8 @@
 }
 
 .experience {
+  height: 750px;
+
   &__container {
     padding-top: 100px;
     padding-bottom: 60px;
@@ -493,7 +540,7 @@
   & .title-shadow::before {
     content: "Are you ready?";
     position: absolute;
-    top: -70px;
+    top: -75px;
     line-height: 1.1;
     opacity: 0.1;
   }

@@ -1,5 +1,5 @@
 .navigation {
-  width: 20px;
+  width: 24px;
   height: 21px;
 
   &__button {
@@ -21,7 +21,7 @@
     &::before,
     &::after {
       display: inline-block;
-      width: 20px;
+      width: 24px;
       height: 2px;
       background-color: $color-white;
     }
@@ -35,18 +35,18 @@
     }
 
     &::before {
-      top: -7px;
+      top: -5px;
       //transform-origin: right;
     }
 
     &::after {
-      top: 7px;
+      top: 5px;
     }
   }
 }
 
-/* breakpoint 1366px */
-@media screen and (min-width: 1366px) {
+/* breakpoint 1660px */
+@media screen and (min-width: 1660px) {
   .navigation {
     position: fixed;
     top: 50%;
@@ -58,12 +58,7 @@
       width: 100px;
       border-radius: 50%;
       background-color: transparent;
-      transform: translatex(-80px);
-      //padding: 0 125px 125px 0;
-
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
+      transform: translatex(-80px);      
     }
 
     &__icon,
