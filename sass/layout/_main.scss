@@ -4,13 +4,14 @@
   }
   width: 100%;
   height: 1113px;
-  background-image: url(../../assets/images/hero-bg.png) ;
-  background-size: cover;
-  
+  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat;   
+  background-size: 100% , cover;  
+
   position: absolute;
   top: -100px;
   left: 0;
-  z-index: -100;
+
+  overflow: hidden;
 
   &__container {
     width: 100%;
@@ -54,15 +55,13 @@
   &__images {
     width: 100%;
     height: 450px;
-    //overflow: hidden;
-    background: url(../../assets/images/grid-elem.png) no-repeat left top;
-    background-size: cover;
+
     position: relative;
   }
 
   &__img-content-bg {
     width: 100%;
-    height: 450px;    
+    height: 450px;
     position: relative;
 
     .composition-bg__img {
@@ -71,7 +70,7 @@
         position: absolute;
         bottom: 15px;
         right: 0;
-        z-index: 20;
+        z-index: 2;
         object-fit: cover;
       }
     }
@@ -80,7 +79,7 @@
   &__img-content {
     width: 100%;
     height: 450px;
-    z-index: 1000;
+    z-index: 4;
 
     position: absolute;
     top: 0;
@@ -130,6 +129,7 @@
 .campanies {
   margin-top: 1000px;
   width: 100%;
+
   &__container {
     display: flex;
     flex-direction: column;
@@ -467,6 +467,7 @@
 }
 
 .experience {
+  width: $animation-parent-width;
   height: 750px;
 
   &__container {
@@ -499,6 +500,8 @@
       display: flex;
       flex-direction: row;
       gap: 40px;
+
+      animation: scroll-left linear 10s infinite alternate;
     }
 
     &--second,
@@ -512,11 +515,7 @@
       display: inline-block;
       height: 32px;
     }
-  }
-
-  .tool {
-    display: inline-block;
-  }
+  }  
 }
 
 .info {

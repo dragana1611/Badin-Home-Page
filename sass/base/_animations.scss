@@ -1,1 +1,6 @@
+@keyframes scroll-left{
+    
+  100%{translate: calc(-100% + $animation-parent-width);}       
+}
+
 

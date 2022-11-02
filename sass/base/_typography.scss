@@ -42,7 +42,7 @@ li {
 
 .title-shadow::before {
   font-size: 50px;
-  font-weight: 900;  
+  font-weight: 900;
   line-height: 0.74;
 }
 
@@ -311,6 +311,24 @@ li {
   .footer {
     &__heading-title {
       font-size: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero-dt {
+    h1 {
+      font-size: 120px;
+      font-weight: bolder;
+      line-height: 1.25;
+      letter-spacing: -2.33px;
+      color: $color-white;
+    }
+
+    &__text {
+      font-size: 22px;
+      line-height: 1.55;
+      color: $color-secondary-text-light;
     }
   }
 }

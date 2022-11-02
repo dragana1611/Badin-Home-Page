@@ -1,7 +1,9 @@
 .header {
   width: 100%;
   height: 100px;
+  z-index: 2;
   background-color: transparent;
+  position: relative;  
 
   &__container {
     width: 100%;

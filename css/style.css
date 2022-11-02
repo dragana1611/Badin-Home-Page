@@ -31,12 +31,21 @@ a {
   cursor: pointer;
 }
 
+.container {
+  overflow: hidden;
+}
+
 .home-img {
   width: 100%;
   border-radius: 12px;
   box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
+@keyframes scroll-left {
+  100% {
+    translate: calc(-100% + 100px);
+  }
+}
 body,
 p,
 a,
@@ -295,6 +304,20 @@ li {
     font-size: 20px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .hero-dt h1 {
+    font-size: 120px;
+    font-weight: bolder;
+    line-height: 1.25;
+    letter-spacing: -2.33px;
+    color: #fff;
+  }
+  .hero-dt__text {
+    font-size: 22px;
+    line-height: 1.55;
+    color: rgba(107, 114, 142, 0.5);
+  }
+}
 .button {
   height: 50px;
   border-radius: 150px;
@@ -404,7 +427,9 @@ li {
 .header {
   width: 100%;
   height: 100px;
+  z-index: 2;
   background-color: transparent;
+  position: relative;
 }
 .header__container {
   width: 100%;
@@ -426,12 +451,12 @@ li {
 .hero {
   width: 100%;
   height: 1113px;
-  background-image: url(../../assets/images/hero-bg.png);
-  background-size: cover;
+  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat;
+  background-size: 100%, cover;
   position: absolute;
   top: -100px;
   left: 0;
-  z-index: -100;
+  overflow: hidden;
 }
 .hero .hero-desktop {
   display: none;
@@ -470,8 +495,6 @@ li {
 .hero__images {
   width: 100%;
   height: 450px;
-  background: url(../../assets/images/grid-elem.png) no-repeat left top;
-  background-size: cover;
   position: relative;
 }
 .hero__img-content-bg {
@@ -484,13 +507,13 @@ li {
   position: absolute;
   bottom: 15px;
   right: 0;
-  z-index: 20;
+  z-index: 2;
   object-fit: cover;
 }
 .hero__img-content {
   width: 100%;
   height: 450px;
-  z-index: 1000;
+  z-index: 4;
   position: absolute;
   top: 0;
   left: 0;
@@ -790,6 +813,7 @@ li {
 }
 
 .experience {
+  width: 100px;
   height: 750px;
 }
 .experience__container {
@@ -815,6 +839,7 @@ li {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  animation: scroll-left linear 10s infinite alternate;
 }
 .experience__marquee-content--second, .experience__marquee-content--fourth {
   display: flex;
@@ -824,9 +849,6 @@ li {
 .experience__marquee-content .tool {
   display: inline-block;
   height: 32px;
-}
-.experience .tool {
-  display: inline-block;
 }
 
 .info__container {
@@ -921,6 +943,39 @@ li {
     font-size: 1.2rem;
     letter-spacing: 3px;
   }
+  .navigation__navbar.open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1500;
+    width: 0;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+  .navigation__item {
+    margin: 400px;
+  }
+  .navigation__button.open .navigation__icon {
+    background-color: transparent;
+  }
+  .navigation__button.open .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  .navigation__button.open .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
 }
 /* breakpoint 768px */
 @media screen and (min-width: 768px) {
@@ -930,8 +985,6 @@ li {
   .hero__container {
     width: 100%;
     height: inherit;
-    display: flex;
-    flex-direction: row;
   }
   .hero__button-box {
     display: flex;
@@ -1171,106 +1224,126 @@ li {
 }
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
-  .header {
+  .header__container {
     padding-left: 245px;
   }
   .hero {
-    width: 100%;
-    height: 1029px;
-    background: url(./assets/images/hero-bg.png) no-repeat left top, url(./assets/images/grid-elem.png) no-repeat left top;
-    background-size: cover, cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    padding-left: 245px;
-    overflow-x: hidden;
-    background-color: rgb(0, 0, 0);
+    width: 100vw;
+    height: 1100px;
+    padding-right: 0;
+    overflow: hidden;
+    background: url(../assets/images/grid-elem@2x.png) no-repeat center right, url(../assets/images/hero-bg.png) no-repeat;
+    background-size: 50%, cover;
   }
   .hero .hero-mobile {
     display: none;
   }
   .hero .hero-desktop {
     display: block;
-  }
-  .hero__container {
-    max-width: 1660px;
-    height: 1029px;
-    background-color: transparent;
-    position: relative;
-  }
-  .hero__text-content {
-    width: 60%;
-  }
-  .hero__img-content-bg {
-    height: 1029;
     width: 100%;
+    height: 1029px;
+    margin-right: 0;
+  }
+  .hero .hero-dt {
+    width: 100vw;
+    height: 1029px;
+  }
+  .hero .hero-dt__text-content {
+    width: 100%;
+    padding: 250px 245px 0;
+  }
+  .hero .hero-dt__text {
+    width: 470px;
+    margin: 50px 0;
+  }
+  .hero .hero-dt__button-box {
+    width: 40%;
+    display: flex;
+    gap: 10px;
+  }
+  .hero .hero-dt__link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero .hero-dt .button__header {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 20px;
+    padding: 16px 32px;
+  }
+  .hero .hero-dt .button__header--first {
+    background-color: #fff;
+  }
+  .hero .hero-dt .button__header--second {
+    background-color: #393939;
+  }
+  .hero .hero-dt__img-content-bg {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
   }
-  .hero__img-content-bg .composition-bg {
+  .hero .hero-dt__img-content-bg .composition-bg {
     width: 100%;
     height: 1029px;
     position: relative;
   }
-  .hero__img-content-bg .composition-bg__img--p1 {
+  .hero .hero-dt__img-content-bg .composition-bg__img--p1 {
     width: 100%;
     position: absolute;
+    top: 100px;
     right: 0;
-    top: 5px;
   }
-  .hero__img-content-bg .composition-bg__img--p2 {
+  .hero .hero-dt__img-content-bg .composition-bg__img--p2 {
     position: absolute;
-    top: 0;
+    top: 100px;
     right: 200px;
   }
-  .hero__images {
+  .hero .hero-dt__images {
     width: 100%;
     height: 1029px;
     position: absolute;
     top: 0;
     right: 0;
-    border: 3px solid red;
   }
-  .hero__img-content {
+  .hero .hero-dt .composition {
     width: 100%;
-    height: 1029px;
-    border: 3px solid rgb(195, 0, 255);
-  }
-  .hero .composition {
-    width: 100%;
-    height: 1029px;
-    transform: translateX(10%);
+    height: 100%;
+    transform: translate(55%, 35%);
     position: relative;
-    border: 3px solid rgb(0, 26, 255);
   }
-  .hero .composition__img--p1 {
-    width: 1000px !important;
+  .hero .hero-dt .composition__img--p1 {
+    width: 900px;
     position: absolute;
-    top: 0 !important;
-    left: 700px !important;
-  }
-  .hero .composition__img--p4 {
-    position: absolute;
-    top: 108px;
+    top: 50px0;
     left: 0;
   }
-  .hero .composition__img--p2 {
+  .hero .hero-dt .composition__img--p2 {
     width: 176px !important;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 470px;
+    left: -60px;
   }
-  .hero .composition__img--p3 {
+  .hero .hero-dt .composition__img--p3 {
     width: 146px;
     position: absolute;
-    top: 600px;
-    left: 0;
+    top: 380px;
+    left: 570px;
+  }
+  .hero .hero-dt .composition__img--p4 {
+    position: absolute;
+    top: -150px;
+    left: 450px;
   }
   .campanies {
-    padding-left: 245px;
-    padding-right: 245px;
+    margin: 1113px 245px 0 245px;
+    overflow: hidden;
+  }
+  .campanies__container {
+    width: 1350px;
   }
   .campanies img {
     transform: scale(1.5);

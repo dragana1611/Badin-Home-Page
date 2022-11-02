@@ -12,8 +12,7 @@ html {
 }
 
 body {
-  background-color: $color_white;
-  //position: relative;
+  background-color: $color_white;  
 }
 
 body,
@@ -31,6 +30,10 @@ li {
 
 a {
   cursor: pointer;
+}
+
+.container{
+  overflow: hidden;
 }
 
 .home-img {

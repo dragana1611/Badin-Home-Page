@@ -6,9 +6,6 @@
     &__container {
       width: 100%;
       height: inherit;
-
-      display: flex;
-      flex-direction: row;
     }
 
     &__button-box {
@@ -330,126 +327,154 @@
 
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
-  .header {
+  .header__container {
     padding-left: 245px;
   }
 
   .hero {
+    width: 100vw;
+    height: 1100px;
+    padding-right: 0;
+    overflow: hidden;
+
+    background: url(../assets/images/grid-elem@2x.png) no-repeat center right,
+      url(../assets/images/hero-bg.png) no-repeat;
+    background-size: 50%, cover;
+
     .hero-mobile {
       display: none;
     }
 
     .hero-desktop {
       display: block;
-    }
-
-    width: 100%;
-    height: 1029px;
-
-    background: url(./assets/images/hero-bg.png) no-repeat left top,
-      url(./assets/images/grid-elem.png) no-repeat left top;
-    background-size: cover, cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -10;
-    padding-left: 245px;
-    overflow-x: hidden;
-    background-color: rgb(0, 0, 0);
-
-    &__container {
-      max-width: 1660px;
-      height: 1029px;
-      background-color: transparent;
-      position: relative;
-    }
-
-    &__text-content {
-      width: 60%;
-    }
-
-    &__img-content-bg {
-      height: 1029;
       width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
+      height: 1029px;
+      margin-right: 0;
+    }
 
-      .composition-bg {
+    .hero-dt {
+      width: 100vw;
+      height: 1029px;
+
+      &__text-content {
         width: 100%;
-        height: 1029px;
-        position: relative;
+        padding: 250px 245px 0;
+      }
 
-        &__img--p1 {
-          width: 100%;
-          position: absolute;
-          right: 0;
-          top: 5px;
+      &__text {
+        width: 470px;
+        margin: 50px 0;
+      }
+
+      &__button-box {
+        width: 40%;
+
+        display: flex;
+        gap: 10px;
+      }
+
+      &__link {
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .button__header {
+        width: 100%;
+        height: 56px;
+        margin-bottom: 20px;
+        padding: 16px 32px;
+
+        &--first {
+          background-color: $color-white;
         }
 
-        &__img--p2 {
-          position: absolute;
-          top: 0;
-          right: 200px;
+        &--second {
+          background-color: $color-grey-dark-2;
         }
       }
-    }
 
-    &__images {
-      width: 100%;
-      height: 1029px;
-      position: absolute;
-      top: 0;
-      right: 0;
-      //z-index: 1000;
-      border: 3px solid red;
-    }
+      &__img-content-bg {
+        width: 100%;
+        height: 100%;
 
-    &__img-content {
-      width: 100%;
-      height: 1029px;
-      border: 3px solid rgb(195, 0, 255);
-    }
-
-    .composition {
-      width: 100%;
-      height: 1029px;
-      transform: translateX(10%);
-      position: relative;
-      border: 3px solid rgb(0, 26, 255);
-
-      &__img--p1 {
-        width: 1000px !important;
-        position: absolute;
-        top: 0 !important;
-        left: 700px !important;
-      }
-
-      &__img--p4 {
-        position: absolute;
-        top: 108px;
-        left: 0;
-      }
-
-      &__img--p2 {
-        width: 176px !important;
         position: absolute;
         top: 0;
         left: 0;
+
+        .composition-bg {
+          width: 100%;
+          height: 1029px;
+          position: relative;
+
+          &__img--p1 {
+            width: 100%;
+            position: absolute;
+            top: 100px;
+            right: 0;
+          }
+
+          &__img--p2 {
+            position: absolute;
+            top: 100px;
+            right: 200px;
+          }
+        }
       }
 
-      &__img--p3 {
-        width: 146px;
+      &__images {
+        width: 100%;
+        height: 1029px;
         position: absolute;
-        top: 600px;
-        left: 0;
+        top: 0;
+        right: 0;
+      }
+
+      .composition {
+        width: 100%;
+        height: 100%;
+        transform: translate(55%, 35%);
+        position: relative;
+
+        &__img--p1 {
+          width: 900px;
+          position: absolute;
+          top: 50px0;
+          left: 0;
+        }
+
+        &__img--p2 {
+          width: 176px !important;
+          position: absolute;
+          top: 470px;
+          left: -60px;
+        }
+
+        &__img--p3 {
+          width: 146px;
+          position: absolute;
+          top: 380px;
+          left: 570px;
+        }
+
+        &__img--p4 {
+          position: absolute;
+          top: -150px;
+          left: 450px;
+        }
       }
     }
   }
 
   .campanies {
-    padding-left: 245px;
-    padding-right: 245px;
+    margin: 1113px 245px 0 245px;
+    overflow: hidden;
+
+    &__container {
+      width: 1350px;
+    }
 
     img {
       transform: scale(1.5);
@@ -483,14 +508,14 @@
 
     .testimonials-mobile {
       display: none;
-    }    
+    }
 
     &__paragraph-text-light {
       width: 40%;
     }
 
     &__carousel {
-      height: 500px;      
+      height: 500px;
     }
 
     .carousel {
@@ -511,7 +536,7 @@
       &__timeline {
         height: 100%;
         flex: 0 1 5%;
-        position: relative;        
+        position: relative;
       }
 
       &__item-content {
@@ -619,10 +644,10 @@
         background-color: $color-timeline;
         border-radius: 1px;
         padding-top: 32px;
-        
+
         display: flex;
         flex-direction: column;
-        align-items: center;        
+        align-items: center;
 
         span {
           display: block;
@@ -716,7 +741,7 @@
     .section-title {
       width: 100%;
       text-align: center;
-    }
+    }    
   }
 
   .info {
