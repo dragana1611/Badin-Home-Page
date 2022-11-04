@@ -1,17 +1,22 @@
 "use strict";
 
+//animated hamburger button
+const menuBtn = document.querySelector("#toggle");
 const hamburger = document.getElementById("hamburger");
-console.log(hamburger)
+console.log(hamburger);
 const navMenu = document.getElementById("nav-menu");
-console.log(navMenu)
-hamburger.addEventListener("click", (e) => {
-  hamburger.classList.toggle("open");
-  navMenu.classList.toggle("open");
-});
+const menuItems = document.querySelector("#overlay");
+console.log(menuItems);
 
-document.querySelectorAll(".navigation__link").forEach((lnk) => {
-  lnk.addEventListener("click", () => {
-    hamburger.classList.remove(".open");
-    navMenu.classList.remove("open");
-  });
-});
+const toggleMenu = (e) =>{
+  e.preventDefault();
+  menuItems.classList.toggle("open");
+  menuBtn.classList.toggle("full-menu");
+}
+
+menuBtn.addEventListener("click", toggleMenu, false);
+// document.querySelectorAll(".navigation__link").forEach((lnk) => {
+//   lnk.addEventListener("click", () => {
+//     menuBtn.classList.remove(".open");    
+//   });
+// });
