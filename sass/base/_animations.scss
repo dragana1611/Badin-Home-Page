@@ -1,49 +1,28 @@
-.navigation {
-  @keyframes fadeInRight {
-    0% {
-      opacity: 0;
-      left: 20%;
-    }
-
-    100% {
-      opacity: 1;
-      left: 0;
-    }
-  }
-}
-
 // animated hamburger button
-/* breakpoint 1660px */
-@media screen and (min-width: 1660px) {
-  // &__navbar.open {
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100vh;
-  //   z-index: 1500;
 
-  //   width: 0;
-  //   opacity: 0;
-  //   transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  // }
-
-  // &__list {
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-  //   transform: translate(-50%, -50%);
-  //   list-style: none;
-  //   text-align: center;
-  //   width: 100%;
-  // }
-
-  // &__item {
-  //   margin: 400px;
-  // }
-}
+  @keyframes fadeIn {
+   
+    100% { opacity: 1; }
+  }
 
 @keyframes scroll-left {
   100% {
     translate: calc(-100% + $animation-parent-width);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }

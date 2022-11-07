@@ -3,9 +3,9 @@
     display: none;
   }
   width: 100%;
-  height: 1113px;
-  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat;   
-  background-size: 100% , cover;  
+  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom,
+    url(../assets/images/hero-bg.png) no-repeat;
+  background-size: 150%, cover;
 
   position: absolute;
   top: -100px;
@@ -15,7 +15,6 @@
 
   &__container {
     width: 100%;
-    height: inherit;
     position: relative;
   }
 
@@ -54,72 +53,80 @@
 
   &__images {
     width: 100%;
-    height: 450px;
-
+    transform: translateY(5px);
     position: relative;
   }
 
   &__img-content-bg {
     width: 100%;
-    height: 450px;
+    height: 500px;
     position: relative;
 
-    .composition-bg__img {
-      &--p1 {
-        width: 450px;
-        position: absolute;
-        bottom: 15px;
-        right: 0;
-        z-index: 2;
-        object-fit: cover;
+    .composition-bg {
+      height: 500px;
+
+      &__img {
+        &--p1 {
+          width: 100%;
+          height: inherit;
+          position: absolute;
+          right: 0;
+          z-index: 2;
+          object-fit: cover;
+        }
       }
     }
   }
 
   &__img-content {
     width: 100%;
-    height: 450px;
     z-index: 4;
 
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
 
     .composition {
-      height: inherit;
+      height: 500px;
       position: relative;
 
       .composition__img {
+        opacity: 0;
+        animation: fadeIn 1.5s forwards,
+                   moveInRight 1s ease-out;
         &--p1 {
           width: 450px;
           position: absolute;
-          top: 25%;
+          top: 30%;
           right: -23%;
           object-fit: cover;
+          animation-delay: 0s
         }
 
         &--p2 {
           width: 70px;
           position: absolute;
-          top: 75%;
-          right: 62%;
+          bottom: 5px;
+          right: 260px;
           object-fit: cover;
+          animation-delay: .5s;
         }
 
         &--p3 {
           width: 60px;
           position: absolute;
-          top: 67%;
+          bottom: 50px;
           right: -4%;
           object-fit: cover;
+          animation-delay: .7s;
         }
 
         &--p4 {
           width: 50px;
           position: absolute;
-          top: 35%;
-          right: 50%;
+          top: 200px;
+          right: 200px;
           object-fit: cover;
+          animation-delay: 1s;
         }
       }
     }
@@ -144,7 +151,9 @@
 }
 
 .about {
-  padding: 70px $padding-lr 100px;
+  &__container {
+    padding: 70px $padding-lr 100px;
+  }
 
   &__image--first {
     display: none;
@@ -171,7 +180,9 @@
 }
 
 .services {
-  padding: 100px 16px 50px;
+  &__container {
+    padding: 100px $padding-lr 50px;
+  }
 
   &__title-secondary {
     margin-bottom: 32px;
@@ -184,7 +195,6 @@
 
   .button__blue {
     margin: 24px 0;
-    //width: auto;
   }
 
   .card-box {
@@ -244,46 +254,50 @@
   }
 }
 
-.blog {
-  &__title-secondary {
-    margin-bottom: 32px;
-  }
+// .blog {
+//   &__title-secondary {
+//     margin-bottom: 32px;
+//   }
 
-  .button__blue {
-    margin-bottom: 100px;
-  }
+//   .button__blue {
+//     margin-bottom: 100px;
+//   }
 
-  &__card-box {
-    margin-bottom: 12px;
-  }
+//   &__card-box {
+//     margin-bottom: 12px;
+//   }
 
-  &__card-image {
-    display: block;
-    margin-bottom: 32px;
-  }
+//   &__card-image {
+//     display: block;
+//     margin-bottom: 32px;
+//   }
 
-  img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px,
-      rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
-  }
+//   img {
+//     width: 100%;
+//     border-radius: 12px;
+//     box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px,
+//       rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+//   }
 
-  &__card-title {
-    margin-bottom: 24px;
-  }
+//   &__card-title {
+//     margin-bottom: 24px;
+//   }
 
-  &__card-link {
-    margin: 0 7.3px 0 0;
-  }
-}
+//   &__card-link {
+//     margin: 0 7.3px 0 0;
+//   }
+// }
 
 .testimonials {
   .testimonials-desktop {
     display: none;
   }
-  padding: 50px $padding-lr;
+
   overflow: hidden;
+
+  &__container {
+    padding: 50px $padding-lr;
+  }
 
   &__title-secondary {
     margin-bottom: 24px;
@@ -402,8 +416,9 @@
 }
 
 .positions {
-  padding: 136px $padding-lr 100px;
-
+  &__container {
+    padding: 100px $padding-lr;
+  }
   &__cards-container {
     width: 100%;
     margin: 0 auto 16px auto;
@@ -439,8 +454,7 @@
   }
 
   .button__blue--black {
-    //width: 257px;
-    background-color: black;
+    background-color: $color-black-base;
     margin: 50px auto;
     padding: 16px 32px;
   }
@@ -450,7 +464,10 @@
   .gallery-desktop {
     display: none;
   }
-  padding: 100px 16px;
+
+  &__container {
+    padding: 100px $padding-lr;
+  }
 
   &__image {
     width: 100%;
@@ -484,16 +501,14 @@
   }
 
   &__marquee {
-    //height: 32px;
     padding: 10px;
     margin-bottom: 60px;
     overflow-x: hidden;
   }
 
   &__marquee-content {
-    //height: 32px;
     white-space: nowrap;
-    opacity: 0.63;
+    opacity: 0.65;
 
     &--first,
     &--third {
@@ -515,13 +530,13 @@
       display: inline-block;
       height: 32px;
     }
-  }  
+  }
 }
 
 .info {
   &__container {
     width: 100%;
-    padding: 182px 16px 100px;
+    padding: 182px $padding-lr 100px;
 
     display: flex;
     flex-direction: column;

@@ -14,9 +14,23 @@ const toggleMenu = (e) =>{
   menuBtn.classList.toggle("full-menu");
 }
 
-menuBtn.addEventListener("click", toggleMenu, false);
-// document.querySelectorAll(".navigation__link").forEach((lnk) => {
-//   lnk.addEventListener("click", () => {
-//     menuBtn.classList.remove(".open");    
-//   });
-// });
+menuBtn.addEventListener("click", toggleMenu);
+document.querySelectorAll(".navigation__link").forEach((lnk) => {
+  lnk.addEventListener("click", () => {
+    menuBtn.classList.remove(".open");    
+  });
+});
+
+
+//scroll - change font color
+
+// let rootElement = document.documentElement;
+
+// const handleScroll = () => {
+//   if (rootElement.offsetHeight < 1100 || (rootElement.offsetHeight > 8107 && rootElement.offsetHeight > 8616)){
+//     //show button
+//     hamburger.style.backgroundColor = 'white'
+//     hamburger.style.color = 'white'
+//   } 
+// }
+// document.addEventListener("scroll", handleScroll);

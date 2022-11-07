@@ -1,7 +1,9 @@
 /* breakpoint 768px */
 @media screen and (min-width: 768px) {
   .hero {
-    height: 650px;
+    background-position: left bottom, inherit;
+    background-size: 80%, cover;
+    height: 880px;
 
     &__container {
       width: 100%;
@@ -9,6 +11,7 @@
     }
 
     &__button-box {
+      width: 70%;
       display: flex;
       gap: 20px;
     }
@@ -19,24 +22,27 @@
       justify-content: flex-start;
     }
 
-    &__images {
-      height: 650px;
-    }
     &__img-content-bg {
-      height: 650px;
-
       .composition-bg__img--p1 {
-        top: 57%;
+        top: clamp(-100px, -100px, -200px);
+        right: clamp(-10px, -10px, -50px);
+        object-fit: fill;
       }
     }
 
     &__img-content {
-      height: inherit;
-      top: 25%;
+      height: 100%;
+      top: 0;
     }
   }
 
+  .composition {
+    bottom: clamp(155px, 155px, 250px);
+    right: 180px;
+  }
+
   .campanies {
+    margin-top: 700px;
     &__container {
       display: flex;
       flex-direction: row;
@@ -110,32 +116,38 @@
 
 @media screen and (min-width: 1024px) {
   .hero {
-    height: 800px;
+    height: 100vh;
 
     &__images {
-      height: 800px;
+      height: 700px;
     }
 
     &__img-content-bg {
-      height: 800px;
+      height: 700px;
+    }
+
+    .composition-bg {
+      height: 700px;
     }
 
     .composition-bg__img--p1 {
-      width: 600px;
-      right: -10px;
-      top: 53%;
+      top: clamp(20%, 25%, 30%);
+      object-fit: fill;
     }
 
-    &__img-content .composition {
-      &__img--p1 {
-        width: 600px;
+    .composition {
+      top: 5%;
+      right: 25%;
 
-        left: 100px;
+      &__img {
+        transform: scale(150%);
       }
     }
   }
 
   .campanies {
+    margin-top: 950px;
+
     &__image {
       flex: 0 1 20%;
       transform: scale(0.7);
@@ -332,145 +344,154 @@
   }
 
   .hero {
-    width: 100vw;
-    height: 1100px;
-    padding-right: 0;
-    overflow: hidden;
-
-    background: url(../assets/images/grid-elem@2x.png) no-repeat center right,
-      url(../assets/images/hero-bg.png) no-repeat;
-    background-size: 50%, cover;
-
     .hero-mobile {
       display: none;
     }
+    width: 100%;
+    height: 1125px;
+    background: url(../assets/images/grid-elem@2x.png) no-repeat center center,
+      url(../assets/images/hero-bg.png) no-repeat;
+    background-size: 50%, cover;
 
     .hero-desktop {
       display: block;
       width: 100%;
       height: 1029px;
-      margin-right: 0;
-    }
+      overflow: hidden;
 
-    .hero-dt {
-      width: 100vw;
-      height: 1029px;
+      background-size: 50%;
 
-      &__text-content {
-        width: 100%;
-        padding: 250px 245px 0;
-      }
+      .hero-dt {
+        width: 100vw;
+        height: 1029px;
 
-      &__text {
-        width: 470px;
-        margin: 50px 0;
-      }
-
-      &__button-box {
-        width: 40%;
-
-        display: flex;
-        gap: 10px;
-      }
-
-      &__link {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .button__header {
-        width: 100%;
-        height: 56px;
-        margin-bottom: 20px;
-        padding: 16px 32px;
-
-        &--first {
-          background-color: $color-white;
+        &__text-content {
+          width: 100%;
+          padding: 250px 245px 0;
         }
 
-        &--second {
-          background-color: $color-grey-dark-2;
+        &__text {
+          width: 470px;
+          margin: 50px 0;
         }
-      }
 
-      &__img-content-bg {
-        width: 100%;
-        height: 100%;
+        &__button-box {
+          width: 40%;
 
-        position: absolute;
-        top: 0;
-        left: 0;
+          display: flex;
+          gap: 10px;
+        }
 
-        .composition-bg {
+        &__link {
+          width: 100%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .button__header {
+          width: 100%;
+          height: 56px;
+          margin-bottom: 20px;
+          padding: 16px 32px;
+
+          &--first {
+            background-color: $color-white;
+          }
+
+          &--second {
+            background-color: $color-grey-dark-2;
+          }
+        }
+
+        &__img-content-bg {
+          width: 100%;
+          height: 100%;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          .composition-bg {
+            width: 100%;
+            height: 1029px;
+            position: relative;
+
+            &__img--p1 {
+              width: 100%;
+              position: absolute;
+              top: 100px;
+              right: 0;
+            }
+
+            &__img--p2 {
+              position: absolute;
+              top: 100px;
+              right: 200px;
+            }
+          }
+        }
+
+        &__images {
           width: 100%;
           height: 1029px;
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .composition {
+          width: 100%;
+          height: 100%;
+          transform: translate(83%, 30%);
           position: relative;
 
+          &__img {
+            transform: scale(1);
+            opacity: 0;
+            animation: fadeIn 1.5s forwards,
+                        moveInRight 1s ease-out;
+          }
+
           &__img--p1 {
-            width: 100%;
+            width: 843px;
             position: absolute;
-            top: 100px;
-            right: 0;
+            top: 50px;
+            left: 0;
+            animation-delay: 0s
           }
 
           &__img--p2 {
+            width: 176px;
             position: absolute;
-            top: 100px;
-            right: 200px;
+            top: 470px;
+            left: -60px;
+            animation-delay: .5s;
           }
-        }
-      }
 
-      &__images {
-        width: 100%;
-        height: 1029px;
-        position: absolute;
-        top: 0;
-        right: 0;
-      }
+          &__img--p3 {
+            width: 145px;
+            position: absolute;
+            top: 380px;
+            left: 570px;
+            animation-delay: .5;
+          }
 
-      .composition {
-        width: 100%;
-        height: 100%;
-        transform: translate(55%, 35%);
-        position: relative;
-
-        &__img--p1 {
-          width: 900px;
-          position: absolute;
-          top: 50px0;
-          left: 0;
-        }
-
-        &__img--p2 {
-          width: 176px !important;
-          position: absolute;
-          top: 470px;
-          left: -60px;
-        }
-
-        &__img--p3 {
-          width: 146px;
-          position: absolute;
-          top: 380px;
-          left: 570px;
-        }
-
-        &__img--p4 {
-          position: absolute;
-          top: -150px;
-          left: 450px;
+          &__img--p4 {
+            width: 106px;
+            position: absolute;
+            top: -150px;
+            left: 400px;
+            animation-delay: 1s;
+          }
         }
       }
     }
   }
 
   .campanies {
-    margin: 1113px 245px 0 245px;
-    overflow: hidden;
+    margin: 1000px 245px 0 245px;
 
     &__container {
       width: 1350px;
@@ -741,7 +762,7 @@
     .section-title {
       width: 100%;
       text-align: center;
-    }    
+    }
   }
 
   .info {

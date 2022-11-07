@@ -7,6 +7,7 @@ $color-secondary-text-light-1: rgb(107, 114, 142, 0.8);
 
 $color-background-secondary: #f9fafe;
 $color-background-tertiary: #0e3378;
+$color-background-tertiary-light: rgba(14, 51, 120, .6);
 
 $color-blue: #317ade;
 $color-red: #ed701d;
@@ -37,9 +38,13 @@ $font-weight-bolder: 900;
 $font-family-primary: futura-pt, "Arial Condensed", sans-serif;
 $font-family-secondary: lust, "Courier", serif;
 
-//
+//padding / margin - mobile / desktop
 $padding-lr: 16px;
+$padding-dt-lr: 245px;
+
 
 //animation
-
 $animation-parent-width:100px;
+
+//link width
+//$link-width: auto;
