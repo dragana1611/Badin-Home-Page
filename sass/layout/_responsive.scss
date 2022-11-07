@@ -450,8 +450,7 @@
           &__img {
             transform: scale(1);
             opacity: 0;
-            animation: fadeIn 1.5s forwards,
-                        moveInRight 1s ease-out;
+            animation: fadeIn 1.5s forwards, moveInRight 1s ease-out;
           }
 
           &__img--p1 {
@@ -459,7 +458,7 @@
             position: absolute;
             top: 50px;
             left: 0;
-            animation-delay: 0s
+            animation-delay: 0s;
           }
 
           &__img--p2 {
@@ -467,7 +466,7 @@
             position: absolute;
             top: 470px;
             left: -60px;
-            animation-delay: .5s;
+            animation-delay: 0.5s;
           }
 
           &__img--p3 {
@@ -475,7 +474,7 @@
             position: absolute;
             top: 380px;
             left: 570px;
-            animation-delay: .5;
+            animation-delay: 0.5;
           }
 
           &__img--p4 {
@@ -657,7 +656,7 @@
 
       .carousel__timeline {
         position: absolute;
-        left: 400px;
+        left: 35%;
         top: 100px;
 
         width: 3px;
@@ -722,6 +721,12 @@
       &--first,
       &--third {
         transform: translateY(-100px);
+
+        &.moveMe,
+        &.moveMe {
+          transition: transform 1s ease;
+          transform: translateY(-100px);
+        }
       }
 
       &--first {
@@ -730,12 +735,6 @@
         display: flex;
         flex-direction: column;
         gap: 40px;
-      }
-
-      &--second {
-        img {
-          //height: 430px;
-        }
       }
 
       &--third {

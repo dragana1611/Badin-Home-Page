@@ -48,7 +48,12 @@ a {
 }
 @keyframes scroll-left {
   100% {
-    translate: calc(-100% + 100px);
+    translate: calc(-100% - 100vw);
+  }
+}
+@keyframes scroll-right {
+  100% {
+    translate: calc(100% + 100vw);
   }
 }
 @keyframes moveInRight {
@@ -62,6 +67,28 @@ a {
   100% {
     opacity: 1;
     transform: translate(0);
+  }
+}
+@keyframes fly1 {
+  0% {
+    transform: rotate(0) translate(200px) rotate(0);
+  }
+  50% {
+    transform: rotate(-2turn) translate(600px) rotate(2turn);
+  }
+  100% {
+    transform: rotate(0) translate(200px) rotate(0);
+  }
+}
+@keyframes fly2 {
+  0% {
+    transform: rotate(0), translate(200px), rotate(0);
+  }
+  50% {
+    transform: rotate(2turn), translate(600px), rotate(-2turn);
+  }
+  100% {
+    transform: rotate(0), translate(200px), rotate(0);
   }
 }
 body,
@@ -468,7 +495,8 @@ li {
 
 .hero {
   width: 100%;
-  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat;
+  background-color: transparent;
+  background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat center right;
   background-size: 150%, cover;
   position: absolute;
   top: -100px;
@@ -481,6 +509,52 @@ li {
 .hero__container {
   width: 100%;
   position: relative;
+}
+.hero .aurora-animation {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hero .aurora-animation__wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.hero .aurora-animation .animated-circle {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: absolute;
+  filter: blur(130px);
+  opacity: 0.5;
+  transform: rotate(0) translate(200px) rotate(0);
+}
+.hero .aurora-animation .animated-circle--one {
+  background-color: #a327be;
+  bottom: 100px;
+  left: 200px;
+  animation: fly1 60s linear infinite both;
+}
+.hero .aurora-animation .animated-circle--two {
+  background-color: #317ade;
+  top: -200px;
+  left: -200px;
+  animation: fly2 60s linear infinite both;
+}
+.hero .aurora-animation .animated-circle--three {
+  top: -60px;
+  right: 400px;
+  background-color: #f7b500;
+  animation: fly1 60s linear infinite both;
+}
+.hero .aurora-animation .animated-circle--four {
+  bottom: 100px;
+  right: 100px;
+  background-color: #6dd400;
+  animation: fly2 60s linear infinite both;
 }
 .hero__text-box {
   height: auto;
@@ -752,8 +826,8 @@ li {
   margin-bottom: 50px;
 }
 .hire-us .trustedby__image-box {
-  width: 100%;
   height: 50px;
+  animation: scroll-left 20s linear infinite;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -815,7 +889,7 @@ li {
 }
 
 .experience {
-  width: 100px;
+  width: 100vw;
   height: 750px;
 }
 .experience__container {
@@ -841,12 +915,13 @@ li {
   display: flex;
   flex-direction: row;
   gap: 40px;
-  animation: scroll-left linear 10s infinite alternate;
+  animation: scroll-left 20s linear infinite alternate;
 }
 .experience__marquee-content--second, .experience__marquee-content--fourth {
   display: flex;
   flex-direction: row-reverse;
   gap: 40px;
+  animation: scroll-right 20s linear infinite alternate;
 }
 .experience__marquee-content .tool {
   display: inline-block;
@@ -937,7 +1012,7 @@ li {
   top: 7px;
 }
 .navigation__background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -1011,7 +1086,6 @@ li {
   position: relative;
   margin: 160px auto;
   text-align: center;
-  border: 2px solid rgb(0, 255, 0);
 }
 .navigation__item {
   display: block;
@@ -1022,7 +1096,6 @@ li {
   opacity: 0;
 }
 .navigation__link {
-  border: 1px solid red;
   display: inline-block;
   width: auto;
   position: relative;
@@ -1078,11 +1151,10 @@ li {
 
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
-  .navigation {
+  .navigation__navbar {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
   }
   .navigation__logo {
     position: absolute;
@@ -1097,19 +1169,19 @@ li {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     top: 40%;
     left: 60px;
+    color: #fff;
     background-color: transparent;
     transform: translatex(-80px);
   }
   .navigation__button::after {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 40px;
     left: 55px;
     transform: rotate(-90deg);
-    color: black;
     content: "MENU";
     font-size: 1.2rem;
     letter-spacing: 3px;
@@ -1121,20 +1193,18 @@ li {
     left: 100px;
     transition: all 0.3s;
   }
-  .navigation__button.full-menu::after {
-    color: #fff;
-  }
   .navigation__button__icon, .navigation__button__icon::before, .navigation__button__icon::after {
     background-color: black;
     width: 20px;
   }
   .navigation__background.open .navigation__list {
-    height: 515px;
-    transform: translate(-600px, -300px);
+    position: absolute;
+    top: -150px;
+    left: 245px;
+    text-align: left;
   }
   .navigation__background.open .navigation__list a {
     font-size: 48px;
-    text-align: left;
   }
 }
 /* breakpoint 768px */
@@ -1654,7 +1724,7 @@ li {
   }
   .testimonials .carousel .carousel__timeline {
     position: absolute;
-    left: 400px;
+    left: 35%;
     top: 100px;
     width: 3px;
     height: 250px;
@@ -1704,6 +1774,10 @@ li {
     flex: 0 1 33%;
   }
   .gallery__grid-wrap--first, .gallery__grid-wrap--third {
+    transform: translateY(-100px);
+  }
+  .gallery__grid-wrap--first.moveMe, .gallery__grid-wrap--first.moveMe, .gallery__grid-wrap--third.moveMe, .gallery__grid-wrap--third.moveMe {
+    transition: transform 1s ease;
     transform: translateY(-100px);
   }
   .gallery__grid-wrap--first {

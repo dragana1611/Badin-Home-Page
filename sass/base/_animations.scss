@@ -1,13 +1,20 @@
 // animated hamburger button
 
-  @keyframes fadeIn {
-   
-    100% { opacity: 1; }
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
   }
+}
 
 @keyframes scroll-left {
   100% {
-    translate: calc(-100% + $animation-parent-width);
+    translate: calc(-100% - $animation-parent-width);
+  }
+}
+
+@keyframes scroll-right {
+  100% {
+    translate: calc(100% + $animation-parent-width);
   }
 }
 
@@ -26,3 +33,30 @@
     transform: translate(0);
   }
 }
+
+//aurora
+@keyframes fly1 {
+  0% {
+    transform: rotate(0) translate(200px) rotate(0);
+  }
+  50% {
+    transform: rotate(-2turn) translate(600px) rotate(2turn);
+  }
+  100% {
+    transform: rotate(0) translate(200px) rotate(0);
+  }
+}
+
+@keyframes fly2 {
+  0% {
+    transform: rotate(0), translate(200px), rotate(0);
+  }
+  50% {
+    transform: rotate(2turn), translate(600px), rotate(-2turn);
+  }
+  100% {
+    transform: rotate(0), translate(200px), rotate(0);
+  }
+}
+
+

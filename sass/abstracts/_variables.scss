@@ -9,6 +9,11 @@ $color-background-secondary: #f9fafe;
 $color-background-tertiary: #0e3378;
 $color-background-tertiary-light: rgba(14, 51, 120, .6);
 
+$color-aurora-circle-one:#a327be;
+$color-aurora-circle-two:#317ade;
+$color-aurora-circle-three:#f7b500;
+$color-aurora-circle-four:#6dd400;
+
 $color-blue: #317ade;
 $color-red: #ed701d;
 $color-green: #1ebf73;
@@ -44,7 +49,4 @@ $padding-dt-lr: 245px;
 
 
 //animation
-$animation-parent-width:100px;
-
-//link width
-//$link-width: auto;
+$animation-parent-width: 100vw;

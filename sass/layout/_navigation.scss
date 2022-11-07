@@ -70,7 +70,7 @@
   }
 
   &__background {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -92,7 +92,7 @@
 
       .navigation__navbar {
         height: 512px;
-        top: 200px;
+        top: 200px;        
       }
 
       .navigation__item {
@@ -145,7 +145,6 @@
     position: absolute;
     top: 31px;
     left: 16px;
-    //z-index: 150;
 
     .logo {
       width: inherit;
@@ -162,12 +161,11 @@
     z-index: 75;
   }
 
-  &__list {    
+  &__list {
     position: relative;
     margin: 160px auto;
 
-    text-align: center;
-    border: 2px solid rgb(0, 255, 0);
+    text-align: center;    
   }
 
   &__item {
@@ -179,8 +177,7 @@
     opacity: 0;
   }
 
-  &__link {
-    border: 1px solid red;
+  &__link {    
     display: inline-block;
     width: auto;
     position: relative;
@@ -195,7 +192,7 @@
       content: "";
       width: 0;
       height: 45px;
-      
+
       background-color: $color-background-tertiary-light;
       position: absolute;
       left: 20%;
@@ -246,14 +243,15 @@
   }
 }
 
-//
+
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
   .navigation {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
+    &__navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
     &__logo {
       position: absolute;
@@ -270,20 +268,21 @@
       height: 100px;
       width: 100px;
       border-radius: 50%;
-      position: absolute;
+      position: fixed;
       top: 40%;
       left: 60px;
+      color: $color-white;
 
       background-color: transparent;
       transform: translatex(-80px);
 
       &::after {
         display: block;
-        position: absolute;
+        position: fixed;
         top: 40px;
         left: 55px;
         transform: rotate(-90deg);
-        color: $color-black-base;
+
         content: "MENU";
         font-size: 1.2rem;
         letter-spacing: 3px;
@@ -296,9 +295,9 @@
         left: 100px;
         transition: all 0.3s;
 
-        &::after {
-          color: $color-white;
-        }
+        // &::after {
+        //   //color: $color-white;
+        // }
       }
 
       &__icon,
@@ -310,13 +309,13 @@
     }
 
     &__background.open &__list {
-      height: 515px;
-
-      transform: translate(-600px, -300px);
+      position: absolute;
+      top: -150px;
+      left: 245px;   
+      text-align: left;   
 
       a {
-        font-size: 48px;
-        text-align: left;
+        font-size: 48px;        
       }
     }
   }
