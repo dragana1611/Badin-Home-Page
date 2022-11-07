@@ -1012,7 +1012,7 @@ li {
   top: 7px;
 }
 .navigation__background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1077,14 +1077,14 @@ li {
 .navigation__navbar {
   width: 100%;
   height: 100%;
-  position: absolut;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 75;
 }
 .navigation__list {
   position: relative;
-  margin: 160px auto;
+  margin: -50px auto;
   text-align: center;
 }
 .navigation__item {
@@ -1140,7 +1140,7 @@ li {
 .navigation__contact-wrapper {
   position: absolute;
   bottom: 100px;
-  left: calc((100% - 280px) / 2);
+  left: calc((100% - 250px) / 2);
   text-align: center;
 }
 .navigation__contact-wrapper a,
@@ -1199,7 +1199,7 @@ li {
   }
   .navigation__background.open .navigation__list {
     position: absolute;
-    top: -150px;
+    top: 0px;
     left: 245px;
     text-align: left;
   }
@@ -1628,11 +1628,11 @@ li {
     width: 40%;
   }
   .testimonials__carousel {
-    height: 500px;
+    height: 532px;
   }
   .testimonials .carousel-inner {
     width: 100%;
-    height: 500px;
+    height: inherit;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -1652,31 +1652,28 @@ li {
     display: flex;
     flex-direction: column;
   }
-  .testimonials .carousel__list {
-    position: relative;
+  .testimonials .carousel__item {
+    position: absolute;
+    transition: right 0.5s ease, top 0.5s ease;
+    transform: translate(0, -50%);
   }
   .testimonials .carousel__item--first {
-    position: absolute;
     top: 35%;
     right: 40px;
   }
   .testimonials .carousel__item--second {
-    position: absolute;
     top: 10%;
     right: 150px;
   }
   .testimonials .carousel__item--third {
-    position: absolute;
     top: 40.2%;
     right: 270px;
   }
   .testimonials .carousel__item--fourth {
-    position: absolute;
     top: 70%;
     right: 250px;
   }
   .testimonials .carousel__item--fifth {
-    position: absolute;
     top: 80%;
     right: 75px;
   }

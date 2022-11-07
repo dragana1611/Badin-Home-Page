@@ -535,13 +535,13 @@
     }
 
     &__carousel {
-      height: 500px;
+      height: 532px;
     }
 
     .carousel {
       &-inner {
         width: 100%;
-        height: 500px;
+        height: inherit;
         display: flex;
         flex-direction: row;
         position: relative;
@@ -560,44 +560,38 @@
       }
 
       &__item-content {
-        //
         flex: 0 1 63%;
 
         display: flex;
         flex-direction: column;
       }
 
-      &__list {
-        position: relative;
-      }
-
       &__item {
+        position: absolute;
+        transition: right 0.5s ease, top 0.5s ease;
+        transform: translate(0, -50%);
+
         &--first {
-          position: absolute;
           top: 35%;
           right: 40px;
         }
 
         &--second {
-          position: absolute;
           top: 10%;
           right: 150px;
         }
 
         &--third {
-          position: absolute;
           top: 40.2%;
           right: 270px;
         }
 
         &--fourth {
-          position: absolute;
           top: 70%;
           right: 250px;
         }
 
         &--fifth {
-          position: absolute;
           top: 80%;
           right: 75px;
         }
