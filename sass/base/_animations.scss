@@ -59,4 +59,304 @@
   }
 }
 
+//carousel
+@keyframes carouselImageActive {
+  0% {
+    top: 40%;
+    right: 40px;
+    transform: scale(1.5);
+  }
 
+  15% {
+    top: 40%;
+    right: 40px;
+    transform: scale(1.5);
+  }
+
+  20% {
+    top: 80%;
+    right: 75px;
+    transform: scale(1);
+  }
+
+  35% {
+    top: 80%;
+    right: 75px;
+    transform: scale(1);
+  }
+
+  40% {
+    top: 70%;
+    right: 250px;
+    transform: scale(1);
+  }
+
+  55% {
+    top: 70%;
+    right: 250px;
+    transform: scale(1);
+  }
+
+  60% {
+    top: 40%;
+    right: 270px;
+    transform: scale(1);
+  }
+
+  75% {
+    top: 40%;
+    right: 270px;
+    transform: scale(1);
+  }
+
+  80% {
+    top: 15%;
+    right: 150px;
+    transform: scale(1);
+  }
+
+  95% {
+    top: 15%;
+    right: 150px;
+    transform: scale(1);
+  }
+
+  100% {
+    top: 40%;
+    right: 40px;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes carouselImageTop {
+  0% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  15% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  20% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  35% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  40% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  55% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  60% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  75% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  80% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+  95% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+
+  100% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+}
+
+@keyframes carouselImageTopLeft {
+  0% {
+    top: 40%;
+    right: 270px;
+    transform: scale(1);
+  }
+  15% {
+    top: 40%;
+    right: 270px;
+    transform: scale(1);
+  }
+  20% {
+    top: 15%;
+    right: 150px;
+    transform: scale(1);
+  }
+  35% {
+    top: 15%;
+    right: 150px;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  55% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  60% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  75% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  80% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  95% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  100% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+}
+
+@keyframes carouselImageBottomLeft {
+  0% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  15% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  20% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+  35% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+  40% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  55% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  60% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  75% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  80% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  95% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  100% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+}
+
+@keyframes carouselImageBottom {
+  0% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  15% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+  20% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  35% {
+    transform: scale(1);
+    top: 70%;
+    right: 250px;
+  }
+  40% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+  55% {
+    transform: scale(1);
+    top: 40%;
+    right: 270px;
+  }
+  60% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  75% {
+    transform: scale(1);
+    top: 15%;
+    right: 150px;
+  }
+  80% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  95% {
+    transform: scale(1.5);
+    top: 40%;
+    right: 40px;
+  }
+  100% {
+    transform: scale(1);
+    top: 80%;
+    right: 75px;
+  }
+}
