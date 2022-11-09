@@ -195,15 +195,10 @@
 
       background-color: $color-background-tertiary-light;
       position: absolute;
-      left: 20%;
       transform: translateX(-15px);
       z-index: -1;
 
       transition: width 0.6s ease, height 0.6s ease;
-      transition-duration: 0.6s, 0.6s;
-      transition-timing-function: ease, ease;
-      transition-delay: 0s, 0s;
-      transition-property: width, height;
     }
 
     &--first {
@@ -233,7 +228,6 @@
     position: absolute;
     bottom: 100px;
     left: calc((100% - 250px) / 2);
-    
     text-align: center;
 
     a,
@@ -265,13 +259,12 @@
     }
 
     &__button {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
+      height: 80px;
+      width: 30px;
       position: fixed;
       top: 40%;
-      left: 60px;
-      color: $color-white;
+      left: 120px;
+      color: $color-primary;
 
       background-color: transparent;
       transform: translatex(-80px);
@@ -279,8 +272,8 @@
       &::after {
         display: block;
         position: fixed;
-        top: 40px;
-        left: 55px;
+        top: 30px;
+        left: 20px;
         transform: rotate(-90deg);
 
         content: "MENU";
@@ -294,18 +287,31 @@
         top: 40%;
         left: 100px;
         transition: all 0.3s;
-
-        // &::after {
-        //   //color: $color-white;
-        // }
       }
 
-      &__icon,
-      &__icon::before,
-      &__icon::after {
-        background-color: $color-black-base;
-        width: 20px;
+      &:hover {
+        #hamburger {
+          width: 40px;
+
+          &::after {
+            width: 30px;
+          }
+        }
       }
+
+      &:hover .hero{
+margin-left:300px;
+      }
+    }
+
+    &__icon,
+    &__icon::before,
+    &__icon::after {
+      background-color: $color-black-base;
+      width: 20px;
+    }
+
+    &__background.open &__button {
     }
 
     &__background.open &__list {

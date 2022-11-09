@@ -360,3 +360,190 @@
     right: 75px;
   }
 }
+
+//testimonials timeline animation
+@keyframes timelineDotOne {
+  0% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  16% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  17% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+
+  95% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+
+  96% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  100% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+}
+
+@keyframes timelineDotTwo {
+  17% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+
+  18% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  35% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  36% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+}
+
+@keyframes timelineDotThree {
+  36% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+  37% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  55% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+  56% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+}
+
+@keyframes timelineDotFour {
+  0% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+
+  56% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+  57% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+  75% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+
+  76% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+
+  100% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+}
+
+@keyframes timelineDotFive {
+  0% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+  75% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+  77% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+  95% {
+    background-color: $color-blue;
+    border: 1px solid $color-blue;
+  }
+  96% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+  100% {
+    background-color: $color-background-secondary;
+    border: 2px solid $color-timeline;
+  }
+}
+
+@keyframes swipeTextOne {
+  0% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  17% {
+    transform: translate(0, 60px);
+    opacity: 0;
+  }
+  95% {
+    transform: translate(0, -40px);
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes swipeTextTwo {
+  0% {
+    opacity: 0;
+  }
+  13% {
+    transform: translate(0,-120px);
+  }
+  16% {
+    opacity: 0;
+  }
+  17% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(0,0);
+  }
+  
+  35% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+  37% {
+    transform: translate(0,60px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

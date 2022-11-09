@@ -376,6 +376,171 @@ a {
     right: 75px;
   }
 }
+@keyframes timelineDotOne {
+  0% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  16% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  17% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  95% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  96% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  100% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+}
+@keyframes timelineDotTwo {
+  17% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  18% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  35% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  36% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+}
+@keyframes timelineDotThree {
+  36% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  37% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  55% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  56% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+}
+@keyframes timelineDotFour {
+  0% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  56% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  57% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  75% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  76% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  100% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+}
+@keyframes timelineDotFive {
+  0% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  75% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  77% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  95% {
+    background-color: #317ade;
+    border: 1px solid #317ade;
+  }
+  96% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+  100% {
+    background-color: #f9fafe;
+    border: 2px solid #dae0fe;
+  }
+}
+@keyframes swipeTextOne {
+  0% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  17% {
+    transform: translate(0, 60px);
+    opacity: 0;
+  }
+  95% {
+    transform: translate(0, -40px);
+    opacity: 0;
+  }
+  96% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes swipeTextTwo {
+  0% {
+    opacity: 0;
+  }
+  13% {
+    transform: translate(0, -120px);
+  }
+  16% {
+    opacity: 0;
+  }
+  17% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  37% {
+    transform: translate(0, 60px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 body,
 p,
 a,
@@ -1397,14 +1562,9 @@ li {
   height: 45px;
   background-color: rgba(14, 51, 120, 0.6);
   position: absolute;
-  left: 20%;
   transform: translateX(-15px);
   z-index: -1;
   transition: width 0.6s ease, height 0.6s ease;
-  transition-duration: 0.6s, 0.6s;
-  transition-timing-function: ease, ease;
-  transition-delay: 0s, 0s;
-  transition-property: width, height;
 }
 .navigation__link--first {
   position: relative;
@@ -1451,21 +1611,20 @@ li {
     height: inherit;
   }
   .navigation__button {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
+    height: 80px;
+    width: 30px;
     position: fixed;
     top: 40%;
-    left: 60px;
-    color: #fff;
+    left: 120px;
+    color: #22252e;
     background-color: transparent;
     transform: translatex(-80px);
   }
   .navigation__button::after {
     display: block;
     position: fixed;
-    top: 40px;
-    left: 55px;
+    top: 30px;
+    left: 20px;
     transform: rotate(-90deg);
     content: "MENU";
     font-size: 1.2rem;
@@ -1478,7 +1637,16 @@ li {
     left: 100px;
     transition: all 0.3s;
   }
-  .navigation__button__icon, .navigation__button__icon::before, .navigation__button__icon::after {
+  .navigation__button:hover #hamburger {
+    width: 40px;
+  }
+  .navigation__button:hover #hamburger::after {
+    width: 30px;
+  }
+  .navigation__button:hover .hero {
+    margin-left: 300px;
+  }
+  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     background-color: black;
     width: 20px;
   }
@@ -1942,7 +2110,6 @@ li {
     height: 100px;
     border-radius: 40%;
     position: absolute;
-    border: 1px solid red;
   }
   .testimonials .carousel__item--first {
     animation: carouselImageActive 30s infinite;
@@ -1976,9 +2143,6 @@ li {
   .testimonials .carousel__item-box {
     padding: 100px;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   .testimonials .carousel__item-box::before, .testimonials .carousel__item-box::after {
     display: inline-block;
@@ -2000,7 +2164,6 @@ li {
     display: block;
     width: 100px;
     height: 100px;
-    padding: 5px;
     background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg") no-repeat center center;
     background-size: contain;
     position: absolute;
@@ -2011,6 +2174,9 @@ li {
   .testimonials .carousel__item-box::after {
     bottom: 100px;
     right: 100px;
+  }
+  .testimonials .carousel__item-box--one {
+    animation: swipeTextOne 30s infinite;
   }
   .testimonials .carousel__paragraph-text-italic {
     margin-bottom: 32px;
@@ -2028,14 +2194,29 @@ li {
     flex-direction: column;
     align-items: center;
   }
-  .testimonials .carousel .carousel__timeline span {
+  .testimonials .carousel .carousel__timeline .timeline-dot {
     display: block;
     width: 13px;
     height: 13px;
     border-radius: 50%;
     background-color: #f9fafe;
-    margin-bottom: 32px;
     border: 2px solid #dae0fe;
+    margin-bottom: 32px;
+  }
+  .testimonials .carousel .carousel__timeline .timeline-dot--one {
+    animation: timelineDotOne 30s infinite;
+  }
+  .testimonials .carousel .carousel__timeline .timeline-dot--two {
+    animation: timelineDotTwo 30s infinite;
+  }
+  .testimonials .carousel .carousel__timeline .timeline-dot--three {
+    animation: timelineDotThree 30s infinite;
+  }
+  .testimonials .carousel .carousel__timeline .timeline-dot--four {
+    animation: timelineDotFour 30s infinite;
+  }
+  .testimonials .carousel .carousel__timeline .timeline-dot--five {
+    animation: timelineDotFive 30s infinite;
   }
   .hire-us .projects {
     padding-left: 245px;

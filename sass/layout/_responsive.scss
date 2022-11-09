@@ -572,8 +572,6 @@
         border-radius: 40%;
         position: absolute;
 
-        border: 1px solid red;
-
         &--first {
           animation: carouselImageActive 30s infinite;
           transition: right 0.5s ease, top 0.5s ease;
@@ -612,10 +610,7 @@
 
       &__item-box {
         padding: 100px;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;   
 
         &::before,
         &::after {
@@ -640,7 +635,7 @@
           display: block;
           width: 100px;
           height: 100px;
-          padding: 5px;
+
           background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg")
             no-repeat center center;
           background-size: contain;
@@ -654,6 +649,10 @@
         &::after {
           bottom: 100px;
           right: 100px;
+        }
+
+        &--one {
+          animation: swipeTextOne 30s infinite;
         }
       }
 
@@ -676,14 +675,34 @@
         flex-direction: column;
         align-items: center;
 
-        span {
+        .timeline-dot {
           display: block;
           width: 13px;
           height: 13px;
           border-radius: 50%;
           background-color: $color-background-secondary;
-          margin-bottom: 32px;
           border: 2px solid $color-timeline;
+          margin-bottom: 32px;
+
+          &--one {
+            animation: timelineDotOne 30s infinite;
+          }
+
+          &--two {
+            animation: timelineDotTwo 30s infinite;
+          }
+
+          &--three {
+            animation: timelineDotThree 30s infinite;
+          }
+
+          &--four {
+            animation: timelineDotFour 30s infinite;
+          }
+
+          &--five {
+            animation: timelineDotFive 30s infinite;
+          }
         }
       }
     }
