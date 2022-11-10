@@ -9,7 +9,7 @@
     position: absolute;
     top: 30px;
     right: 16px;
-    z-index: 1000;
+    z-index: 6;
 
     display: flex;
     justify-content: center;
@@ -258,6 +258,19 @@
       }
     }
 
+    &__hamurger-link {
+      display: block;
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 200px;
+      border: 1px solid rgb(255, 0, 0);
+
+      &:hover &__button {
+        transform: scale(2);
+      }
+    }
+
     &__button {
       height: 80px;
       width: 30px;
@@ -287,20 +300,6 @@
         top: 40%;
         left: 100px;
         transition: all 0.3s;
-      }
-
-      &:hover {
-        #hamburger {
-          width: 40px;
-
-          &::after {
-            width: 30px;
-          }
-        }
-      }
-
-      &:hover .hero{
-margin-left:300px;
       }
     }
 

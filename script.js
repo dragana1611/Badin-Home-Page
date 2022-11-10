@@ -21,20 +21,27 @@ document.querySelectorAll(".navigation__link").forEach((lnk) => {
   });
 });
 
-//scroll - change font color
+//scroll - change color of hamburger button
 
-// let rootElement = document.documentElement;
+let rootElement = document.documentElement;
 
-// const handleScroll = () => {
-//   if (rootElement.offsetHeight < 1100 || (rootElement.offsetHeight > 8107 && rootElement.offsetHeight > 8616)){
-//     //show button
-//     hamburger.style.backgroundColor = 'white'
-//     hamburger.style.color = 'white'
-//   }
-// }
-// document.addEventListener("scroll", handleScroll);
+const handleScroll = () => {
+  const element = document.querySelector(".hero");
+  console.log(element);
 
-//gallery scroll-up
+  let elementy = element.scrollHeight;
+
+  let x = element.scrollWidth;
+  console.log(x);
+  const clienty = element.clientHeight;
+  console.log(clienty);
+  if (clienty > elementy) {
+    hamburger.style.backgroundColor = "red";
+  }
+};
+handleScroll();
+
+//gallery translate-up
 const appear = document.querySelectorAll(".appear");
 console.log(appear);
 const cb = (entries) => {

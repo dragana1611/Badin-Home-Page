@@ -1415,7 +1415,7 @@ li {
   position: absolute;
   top: 30px;
   right: 16px;
-  z-index: 1000;
+  z-index: 6;
   display: flex;
   justify-content: center;
 }
@@ -1610,6 +1610,17 @@ li {
     width: inherit;
     height: inherit;
   }
+  .navigation__hamurger-link {
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 200px;
+    border: 1px solid rgb(255, 0, 0);
+  }
+  .navigation__hamurger-link:hover .navigation__hamurger-link__button {
+    transform: scale(2);
+  }
   .navigation__button {
     height: 80px;
     width: 30px;
@@ -1636,15 +1647,6 @@ li {
     top: 40%;
     left: 100px;
     transition: all 0.3s;
-  }
-  .navigation__button:hover #hamburger {
-    width: 40px;
-  }
-  .navigation__button:hover #hamburger::after {
-    width: 30px;
-  }
-  .navigation__button:hover .hero {
-    margin-left: 300px;
   }
   .navigation__icon, .navigation__icon::before, .navigation__icon::after {
     background-color: black;
