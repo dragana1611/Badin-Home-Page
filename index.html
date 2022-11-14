@@ -28,6 +28,11 @@
 
   <body>
     <div class="container">
+      <div id="progress" class="progress">
+        <span id="progress-value" class="progress-value"
+          ><i class="fa-solid fa-arrow-up"></i
+        ></span>
+      </div>
       <!-- header -->
       <header class="header">
         <div class="header__container">
@@ -108,16 +113,16 @@
       </div>
       <main>
         <!-- section hero -->
-        <section class="hero">
-          <div class="hero__container">
-            <div class="aurora-animation">
-              <div class="aurora-animation__wrapper">
-                <div class="animated-circle animated-circle--one"></div>
-                <div class="animated-circle animated-circle--two"></div>
-                <div class="animated-circle animated-circle--three"></div>
-                <div class="animated-circle animated-circle--four"></div>
-              </div>
+        <section class="hero dark-bg">
+          <div class="aurora-animation">
+            <div class="aurora-animation__wrapper">
+              <div class="animated-circle animated-circle--one"></div>
+              <div class="animated-circle animated-circle--two"></div>
+              <div class="animated-circle animated-circle--three"></div>
+              <div class="animated-circle animated-circle--four"></div>
             </div>
+          </div>
+          <div class="hero__container">
             <div class="hero-mobile">
               <div class="hero__text-content">
                 <div class="hero__text-box">
@@ -128,12 +133,12 @@
                   </p>
                 </div>
                 <div class="hero__button-box">
-                  <a href="#" class="link hero__link">
+                  <a href="#" class="link hero__link hero__link--first">
                     <button class="button button__header button__header--first">
                       What we do
                     </button>
                   </a>
-                  <a href="#" class="link hero__link">
+                  <a href="#" class="link hero__link hero__link--second">
                     <button
                       class="button button__header button__header--second"
                     >
@@ -394,7 +399,7 @@
               </a>
             </div>
             <div class="card-box">
-              <div class="card">
+              <a href="#" class="card">
                 <h4 class="heading-subtitle card__heading-subtitle">
                   <span
                     class="card__heading-subtitle-span card__heading-subtitle-span--blue"
@@ -438,8 +443,8 @@
                     />
                   </div>
                 </div>
-              </div>
-              <div class="card">
+              </a>
+              <a href="#" class="card">
                 <h4 class="heading-subtitle card__heading-subtitle">
                   <span
                     class="card__heading-subtitle-span card__heading-subtitle-span--red"
@@ -504,9 +509,9 @@
                     />
                   </div>
                 </div>
-              </div>
+              </a>
 
-              <div class="card">
+              <a href="#" class="card">
                 <h4 class="heading-subtitle card__heading-subtitle">
                   <span
                     class="card__heading-subtitle-span card__heading-subtitle-span--green"
@@ -558,7 +563,7 @@
                     />
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -924,55 +929,162 @@
                 <button class="button button__blue">Let's connect</button>
               </a>
             </div>
-            <div class="trustedby">
-              <div class="trustedby__container">
-                <h3 class="heading-title trustedby__heading-title">
+            <div class="trustedby-mob">
+              <div class="trustedby-mob__container">
+                <h3 class="heading-title trustedby-mob__heading-title">
                   Trusted by
                 </h3>
-                <div class="trustedby__image-box">
-                  <div class="trustedby__image">
+                <div class="trustedby-mob__image-box">
+                  <div class="trustedby-mob__marquee-content">
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-1.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-2.png" alt="" />
+                    </div>
+                    <div class="trustedby__image">
+                      <img src="./assets/images/logo-3.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-4.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-5.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-6.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-7.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-8.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-9.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-10.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-11.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-12.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-13.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-14.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-15.png" alt="" />
+                    </div>
+                  </div>
+                  <div
+                    class="trustedby-mob__marquee-content"
+                    aria-hidden="true"
+                  >
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-1.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-2.png" alt="" />
+                    </div>
+                    <div class="trustedby__image">
+                      <img src="./assets/images/logo-3.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-4.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-5.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-6.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-7.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-8.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-9.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-10.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-11.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-12.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-13.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-14.png" alt="" />
+                    </div>
+                    <div class="trustedby-mob__image">
+                      <img src="./assets/images/logo-15.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="trustedby-dt">
+              <div class="trustedby-dt__container">
+                <h3 class="heading-title trustedby-dt__heading-title">
+                  Trusted by
+                </h3>
+                <div class="trustedby-dt__image-box">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-1.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-2.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-3.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-4.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-5.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-6.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-7.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-8.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-9.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-10.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-11.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-12.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-13.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-14.png" alt="" />
                   </div>
-                  <div class="trustedby__image">
+                  <div class="trustedby-dt__image">
                     <img src="./assets/images/logo-15.png" alt="" />
                   </div>
                 </div>
@@ -1090,45 +1202,75 @@
               <div class="gallery__grid-wrap gallery__grid-wrap--first appear">
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-1.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-2.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-3.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
               </div>
 
               <div class="gallery__grid-wrap gallery__grid-wrap--second">
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-4.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
               </div>
 
               <div class="gallery__grid-wrap gallery__grid-wrap--third appear">
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-6.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
                 <div class="gallery__image-wrap">
                   <img
-                    class="home-img"
+                    class="home-img-dt"
                     src="./assets/home-images/home-gallery-5.png"
                   />
+                  <div class="gallery__overlay">
+                    <i
+                      class="fa-solid fa-magnifying-glass-plus gallery-zoom-icon"
+                    ></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1136,7 +1278,7 @@
         </section>
 
         <!-- section experience -->
-        <section class="experience">
+        <section class="experience dark-bg">
           <div class="experience__container">
             <div class="experience__text-box">
               <div class="section-title">
@@ -1364,7 +1506,7 @@
       </main>
 
       <!-- footer -->
-      <footer class="footer">
+      <footer class="footer dark-bg">
         <div class="footer__container">
           <div class="footer__flex-wrap">
             <!-- footer social -->
@@ -1462,7 +1604,7 @@
                       <a href="#">info@badin.rs</a>
                     </li>
                     <li><span>Nikole Pašića 28, IV floor</span></li>
-                    <li><span>1800 Niš</span></li>
+                    <li><span>18000 Niš</span></li>
                     <li><span>Serbia</span></li>
                   </ul>
                 </div>

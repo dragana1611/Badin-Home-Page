@@ -1,31 +1,34 @@
 //colors
 $color-primary: #22252e;
-$color-primary-text: rgba(34, 37, 46, 0.8);//#22252e
+$color-primary-text: rgba(34, 37, 46, 0.8); //#22252e
 $color-secondary-text: #6b728e;
 $color-secondary-text-light: rgb(107, 114, 142, 0.5); //#6b728e
 $color-secondary-text-light-1: rgb(107, 114, 142, 0.8);
 
 $color-background-secondary: #f9fafe;
 $color-background-tertiary: #0e3378;
-$color-background-tertiary-light: rgba(14, 51, 120, .6);
+$color-background-tertiary-light: rgba(14, 51, 120, 0.6);
+$color-background-hover: #1e62be;
 
-$color-aurora-circle-one:#a327be;
-$color-aurora-circle-two:#317ade;
-$color-aurora-circle-three:#f7b500;
-$color-aurora-circle-four:#6dd400;
+$color-aurora-circle-one: #a327be;
+$color-aurora-circle-two: #317ade;
+$color-aurora-circle-three: #f7b500;
+$color-aurora-circle-four: #6dd400;
 
 $color-blue: #317ade;
 $color-red: #ed701d;
 $color-green: #1ebf73;
 
 $color-black: #1a1a1a;
-$color-black-base:black;
+$color-black-base: black;
+$color-black-hover: #2c2c2c;
 $color-white: #fff;
 $color_lightgrey: #f5f5f5;
 $color_lightgrey-1: #f8f8f8;
 $color-grey-dark-1: rgba(255, 255, 255, 0.5);
 $color-grey-dark: rgba(255, 255, 255, 0.15);
 $color-grey-dark-2: #393939;
+$color-grey-hover: #d9d9d9;
 
 $color-timeline: #dae0fe;
 
@@ -47,6 +50,8 @@ $font-family-secondary: lust, "Courier", serif;
 $padding-lr: 16px;
 $padding-dt-lr: 245px;
 
+//experience marquee animation
+$animation-parent-width: 100%;
 
-//animation
-$animation-parent-width: 100vw;
+// trustedby animation scroll-left
+$trustedby-gap: 10px;

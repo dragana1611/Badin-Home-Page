@@ -1,7 +1,41 @@
+//back to top button
+.progress {
+  height: 56px;
+  width: 56px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: none;
+  place-items: center;
+  border: 7px solid $color-black-base;
+  border-radius: 50%;  
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  z-index: 10;
+  cursor: pointer;
+
+  i {
+    font-size: 20px;
+    color: $color_white;
+  }
+}
+
+.progress-value {
+  display: block;
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+  background-color: $color-black-base;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+}
+
+//hero section
 .hero {
   .hero-desktop {
     display: none;
   }
+
   width: 100%;
   background-color: transparent;
   background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom,
@@ -73,6 +107,12 @@
     }
   }
 
+  &__text-content {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
   &__text-box {
     height: auto;
     padding: 250px $padding-lr 0;
@@ -81,27 +121,36 @@
   &__button-box {
     width: 100%;
     padding: 0 $padding-lr;
+  }
 
-    &__link {
-      width: 100%;
+  &__link {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 20px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     .button__header {
       width: 100%;
       height: 56px;
-      margin-bottom: 20px;
       padding: 16px 32px;
 
       &--first {
         background-color: $color-white;
+
+        &:hover {
+          background-color: $color-grey-hover;
+        }
       }
 
       &--second {
         background-color: $color-grey-dark-2;
+
+        &:hover {
+          background-color: $color-black-hover;
+        }
       }
     }
   }
@@ -187,6 +236,7 @@
   }
 }
 
+//campanies section
 .campanies {
   margin-top: 1000px;
   width: 100%;
@@ -204,6 +254,7 @@
   }
 }
 
+//about section
 .about {
   &__container {
     padding: 70px $padding-lr 100px;
@@ -233,6 +284,7 @@
   }
 }
 
+//services section
 .services {
   &__container {
     padding: 100px $padding-lr 50px;
@@ -256,6 +308,9 @@
   }
 
   .card {
+    display: block;
+    width: 100%;
+
     &:not(:last-child) {
       margin-bottom: 40px;
     }
@@ -342,6 +397,7 @@
 //   }
 // }
 
+//testimonials section
 .testimonials {
   .testimonials-desktop {
     display: none;
@@ -366,11 +422,11 @@
   }
 
   .carousel {
-    &__item-box {
-      &:not(:first-child) {
-        display: none;
-      }
-    }
+    // &__item-box {
+    //   &:not(:first-child) {
+    //     display: none;
+    //   }
+    // }
 
     &__list {
       position: relative;
@@ -385,10 +441,10 @@
         height: 80px;
       }
 
-      .active {
-        width: 129.6px;
-        height: 129.6px;
-      }
+      // .active {
+      //   width: 129.6px;
+      //   height: 129.6px;
+      // }
     }
 
     &__heading-subtitle {
@@ -413,6 +469,7 @@
   }
 }
 
+//hire-us section
 .hire-us {
   .projects {
     padding: 100px $padding-lr;
@@ -439,7 +496,11 @@
     }
   }
 
-  .trustedby {
+  .trustedby-dt {
+    display: none;
+  }
+
+  .trustedby-mob {
     height: 216px;
     padding: 50px 0;
     background-color: $color-background-secondary;
@@ -455,13 +516,18 @@
     }
 
     &__image-box {
-      $animation-parent-width: 100vw;
       height: 50px;
-      animation: scroll-left 20s linear infinite;
+      display: flex;
+      gap: $trustedby-gap;
+    }
 
-      display: inline-flex;
-      justify-content: center;
+    &__marquee-content {
+      display: flex;
+      justify-content: space-around;
       align-items: center;
+
+      gap: $trustedby-gap;
+      animation: scroll 15s linear infinite;
 
       img {
         height: 50px;
@@ -470,6 +536,7 @@
   }
 }
 
+//positions section
 .positions {
   &__container {
     padding: 100px $padding-lr;
@@ -515,6 +582,7 @@
   }
 }
 
+//gallery section
 .gallery {
   .gallery-desktop {
     display: none;
@@ -538,8 +606,9 @@
   }
 }
 
+//experience section
 .experience {
-  width: $animation-parent-width;
+  width: 100%;
   height: 750px;
 
   &__container {
@@ -556,6 +625,7 @@
   }
 
   &__marquee {
+    width: $animation-parent-width;
     padding: 10px;
     margin-bottom: 60px;
     overflow-x: hidden;
@@ -589,6 +659,7 @@
   }
 }
 
+//info section
 .info {
   &__container {
     width: 100%;

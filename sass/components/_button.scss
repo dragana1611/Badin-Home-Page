@@ -1,14 +1,19 @@
-.button {  
+.button {
   height: 50px;
   border-radius: 150px;
-  border: none;  
+  border: none;
+  cursor: pointer;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   &__blue {
-    padding: 12px 33px;   
-    background-color: $color-blue;    
+    padding: 12px 33px;
+    background-color: $color-blue;
+
+    &:hover {
+      background-color: $color-background-hover;
+    }
   }
 }
