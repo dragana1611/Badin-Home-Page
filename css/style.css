@@ -848,7 +848,8 @@ li {
   background-color: #1e62be;
 }
 
-.home-img {
+.home-img,
+.home-img-dt {
   width: 100%;
   border-radius: 12px;
   box-shadow: rgba(17, 17, 26, 0.4) 0px 8px 24px, rgba(17, 17, 26, 0.2) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
@@ -952,7 +953,9 @@ li {
   height: 100px;
   z-index: 2;
   background-color: transparent;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .header__container {
   width: 100%;
@@ -1006,8 +1009,8 @@ li {
   background-color: transparent;
   background: url(../assets/images/grid-elem@2x.png) no-repeat center bottom, url(../assets/images/hero-bg.png) no-repeat center right;
   background-size: 150%, cover;
-  position: absolute;
-  top: -100px;
+  position: relative;
+  top: 0;
   left: 0;
   overflow: hidden;
 }
@@ -1171,7 +1174,6 @@ li {
 }
 
 .campanies {
-  margin-top: 1000px;
   width: 100%;
 }
 .campanies__container {
@@ -1482,7 +1484,8 @@ li {
 
 .navigation {
   width: 100vw;
-  height: 100px;
+  height: 100%;
+  position: relative;
 }
 .navigation__button {
   width: 24px;
@@ -1688,31 +1691,27 @@ li {
   }
   .navigation__hamurger-link {
     display: block;
-    width: 100px;
-    height: 100px;
-    position: absolute;
+    width: 70px;
+    height: 70px;
+    position: fixed;
     left: 60px;
-    top: 50%;
+    top: 30%;
+    z-index: 10;
     border: 1px solid rgb(255, 0, 0);
   }
-  .navigation__hamurger-link:hover .navigation__hamurger-link__button {
-    transform: scale(2);
-  }
   .navigation__button {
-    height: 80px;
+    height: 30px;
     width: 30px;
-    position: fixed;
-    top: 40%;
-    left: 120px;
     color: #22252e;
+    border: 1px solid rgb(0, 255, 213);
     background-color: transparent;
-    transform: translatex(-80px);
+    transform: translate(-10px, 0px);
   }
   .navigation__button::after {
     display: block;
     position: fixed;
-    top: 30px;
-    left: 20px;
+    top: 5px;
+    left: 30px;
     transform: rotate(-90deg);
     content: "MENU";
     font-size: 1.2rem;
@@ -1725,17 +1724,17 @@ li {
     left: 100px;
     transition: all 0.3s;
   }
-  .navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  .navigation__button__icon, .navigation__button__icon::before, .navigation__button__icon::after {
     background-color: black;
     width: 20px;
   }
-  .navigation__background.open .navigation__list {
+  .navigation__button__background.open .navigation__button__list {
     position: absolute;
     top: 0px;
     left: 245px;
     text-align: left;
   }
-  .navigation__background.open .navigation__list a {
+  .navigation__button__background.open .navigation__button__list a {
     font-size: 48px;
   }
 }
@@ -2125,7 +2124,7 @@ li {
     animation-delay: 1s;
   }
   .campanies {
-    margin: 1000px 245px 0 245px;
+    margin: 0 245px 0 245px;
   }
   .campanies__container {
     width: 1350px;
@@ -2314,6 +2313,7 @@ li {
     width: 100%;
     padding-left: 245px;
     padding-right: 32px;
+    position: relative;
     display: flex;
     flex-direction: row;
   }
@@ -2333,18 +2333,16 @@ li {
     padding-left: 60px;
     gap: 100px;
   }
-  .gallery__grid-wrap .home-img {
-    width: 100%;
-  }
   .gallery__image-wrap {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: relative;
   }
   .gallery__overlay {
     background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
     height: 100%;
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -2358,6 +2356,8 @@ li {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 30px;
+    cursor: pointer;
   }
   .gallery__overlay:hover {
     opacity: 1;
@@ -2375,7 +2375,27 @@ li {
     -webkit-transition-delay: 0.3s;
     transition-delay: 0.3s;
   }
-  .gallery .lightbox {
+  .gallery .arrow-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #317ade;
+    background-color: #f9fafe;
+  }
+  .gallery .arrow-btn--left {
+    position: absolute;
+    left: 25%;
+  }
+  .gallery .arrow-btn--right {
+    position: absolute;
+    right: 25%;
+  }
+  .gallery .picturePriview {
+    width: 100%;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
@@ -2387,25 +2407,17 @@ li {
     justify-content: center;
     align-items: center;
   }
-  .gallery .lightbox-content {
+  .gallery .picturePriview-content {
     width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 25px;
-    user-select: none;
   }
-  .gallery .lightbox-content img {
-    max-height: 600px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-  .gallery .lightbox-content i {
-    color: white;
-    font-size: 60px;
-    cursor: pointer;
-    flex-shrink: 0;
+  .gallery .picturePriview-image {
+    width: 30%;
+    border-radius: 20px;
   }
   .experience {
     height: 500px;
