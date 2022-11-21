@@ -559,6 +559,23 @@ a {
     transform: translateX(calc(-100% - 10px));
   }
 }
+@keyframes trustedbyFadeIn {
+  0% {
+    translatey: 30%;
+  }
+  100% {
+    opacity: 1;
+    translatey: 0;
+  }
+}
+@keyframes trustedbyFadeOut {
+  0% {
+    translateY: 0;
+  }
+  100% {
+    translateY: 0;
+  }
+}
 body,
 p,
 a,
@@ -1267,50 +1284,70 @@ li {
   height: 310px;
 }
 
-.testimonials {
-  overflow: hidden;
-}
-.testimonials .testimonials-desktop {
+.testimonials-desktop {
   display: none;
 }
-.testimonials__container {
+
+.testimonials-mob__container {
   padding: 50px 16px;
 }
-.testimonials__title-secondary {
+.testimonials-mob__title-secondary {
   margin-bottom: 24px;
 }
-.testimonials__paragraph-text-light {
+.testimonials-mob .heading-subtitle {
+  margin-bottom: 32px;
+}
+.testimonials-mob__paragraph-text-light {
   margin-bottom: 50px;
 }
-.testimonials__carousel {
+.testimonials-mob__carousel {
   width: 100%;
 }
-.testimonials .carousel__list {
+.testimonials-mob .carousel-mob__list {
   position: relative;
   margin-bottom: 32px;
   display: flex;
   align-items: flex-end;
   gap: 20px;
 }
-.testimonials .carousel__list img {
-  width: 80px;
+.testimonials-mob .carousel-mob__item {
+  min-width: 80px;
   height: 80px;
+  cursor: pointer;
+  border: 1px solid rgb(0, 187, 255);
 }
-.testimonials .carousel__heading-subtitle {
-  margin-bottom: 32px;
+.testimonials-mob .carousel-mob img {
+  width: 100%;
+  height: 100%;
 }
-.testimonials .carousel .buttons-box {
+.testimonials-mob .carousel-mob__item-content {
+  width: 100%;
+  height: 350px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border: 1px solid red;
+}
+.testimonials-mob .carousel-mob__item-box {
+  flex: 0 1 100%;
+  height: 350px;
+  border: 1px solid rgb(26, 255, 0);
+}
+.testimonials-mob .carousel-mob .buttons-box {
   position: absolute;
-  top: 0;
+  top: -50%;
   right: 5%;
   display: flex;
   justify-content: flex-end;
 }
-.testimonials .arrow-btn {
+.testimonials-mob .arrow-btn {
   width: 40px;
   height: 32px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .hire-us .projects {
@@ -1986,16 +2023,21 @@ li {
     flex-direction: column;
     background-color: #f9fafe;
   }
-  .hire-us .trustedby-dt__image-box {
+  .hire-us .trustedby-dt__image-box-hidden {
+    display: none;
+  }
+  .hire-us .trustedby-dt__image-box-visible {
     height: 700px;
     padding-top: 0;
+    animation: trustedbyFadeIn 5s ease;
+    animation: trustedbyFadeOut 5s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 80px;
   }
   .hire-us .trustedby-dt__image img {
-    transform: scale(1.8);
+    transform: scale(1);
   }
 }
 /* breakpoint 1660px */

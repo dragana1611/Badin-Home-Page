@@ -574,7 +574,7 @@
   }
 }
 
-//trustedby scroll-left animation
+//trustedby mobile scroll-left animation
 @keyframes scroll {
   from {
     transform: translateX(0);
@@ -582,5 +582,30 @@
 
   to {
     transform: translateX(calc(-100% - $trustedby-gap));
+  }
+}
+
+//trustedby desktop scroll-left animation
+@keyframes trustedbyFadeIn {
+  0% {
+    //opacity: 0;
+    translatey: 30%;
+  }
+
+  100% {
+    opacity: 1;
+    translatey: 0;
+  }
+}
+
+@keyframes trustedbyFadeOut {
+  0% {
+    
+    translateY: 0;
+  }
+
+  100% {
+    
+    translateY: 0;
   }
 }

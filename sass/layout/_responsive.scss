@@ -325,9 +325,14 @@
         background-color: $color-background-secondary;
       }
 
-      &__image-box {
+      &__image-box-hidden{
+        display: none;
+      }
+      &__image-box-visible {
         height: 700px;
         padding-top: 0;
+        animation: trustedbyFadeIn 5s ease;
+        animation: trustedbyFadeOut 5s ease;
 
         display: flex;
         flex-direction: column;
@@ -337,7 +342,7 @@
 
       &__image {
         img {
-          transform: scale(1.8);
+          transform: scale(1);
         }
       }
     }
