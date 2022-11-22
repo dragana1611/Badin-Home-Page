@@ -10,13 +10,13 @@
 
 @keyframes scroll-left {
   100% {
-    translate: calc(-100% - $animation-parent-width);
+    translate: calc(-100% + 100vw);
   }
 }
 
 @keyframes scroll-right {
   100% {
-    translate: calc(100% + $animation-parent-width);
+    translate: calc(100% - $animation-parent-width);
   }
 }
 
@@ -519,7 +519,7 @@
     opacity: 0;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
   }
 }
 

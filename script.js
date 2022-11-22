@@ -137,20 +137,14 @@ window.addEventListener("load", (e) => scrollToTop());
 
 //gallery picture preview modal
 const images = document.querySelectorAll(".home-img-dt");
-//console.log(images);
 let imgArray = [...images];
-// console.log(imgArray);
-
 const overlays = document.querySelectorAll(".gallery__overlay");
 let overlaysArray = [...overlays];
 
 const handleCreatePicturePriview = (e) => {
   const srcImage = e.target.previousElementSibling.getAttribute("src");
-  const galleryContainer = document.querySelector(".gallery__container");
-  console.log(galleryContainer);
-  console.log(srcImage);
-
-  // console.log(e.target);
+  const galleryContainer = document.querySelector(".gallery__container");  
+  
   const picturePriviewContent = `
     <div class="picturePriview">
       <button class="arrow-btn arrow-btn--left"">
@@ -173,15 +167,13 @@ const handleCreatePicturePriview = (e) => {
 };
 
 overlaysArray.forEach((item) => {
-  console.log(item);
   item.addEventListener("click", handleCreatePicturePriview);
 });
 
 let index = 0;
 
 const handleOutPicturePriview = (e) => {
-  const lightImage = document.querySelector(".picturePriview-image");
-  // console.log(lightImage);
+  const lightImage = document.querySelector(".picturePriview-image");  
   let imageSrc = "";
 
   const ChangeLinkImage = (index, lightImage) => {
@@ -227,13 +219,6 @@ window.addEventListener("click", handleOutPicturePriview);
 
 //TESTIMONIAL mobile
 
-const btnLeft = document.querySelector(".arrow-btn--left");
-const btnRight = document.querySelector(".arrow-btn--right");
-const carouselImgList = document.querySelector(".carousel-mob__list");
-const carouselItemName = document.querySelector(".carousel-mob__heading-title");
-const carouselItemJob = document.querySelector(".carousel-mob__heading-subtitle");
-const carouselItemText = document.querySelector(".carousel-mob__paragraph-text-italic");
-
 //Testimonial Data
 const testimonials = [
   {
@@ -278,26 +263,44 @@ const testimonials = [
   },
 ];
 
-let imgList = [];
+const btnLeft = document.querySelector(".arrow-btn--left");
+const btnRight = document.querySelector(".arrow-btn--right");
+let carouselImgList = document.querySelector(".carousel-mob__list");
+const carouselItemName = document.querySelector(".carousel-mob__heading-title");
+const carouselItemJob = document.querySelector(
+  ".carousel-mob__heading-subtitle"
+);
+const carouselItemText = document.querySelector(
+  ".carousel-mob__paragraph-text-italic"
+);
 
-  testimonials.forEach((el) => {
-    const imgEl = el.image;
-    return imgList.push(imgEl);
-    ` <li
-    class="carousel-mob__item activeItem"
-    data-id="#carousel-item1"
+testimonials.forEach((el) => {
+  const imgEl = el.image;
+  const imgListItem = ` <li
+    class="carousel-mob__item"    
   >
     <img
-      src="https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/1.png"
+      src= ${imgEl}
     />
-  </li>`
-  });
+  </li>`;
+  carouselImgList.insertAdjacentHTML("beforeend", imgListItem);
+});
 
+const carouselLiImg = document.querySelectorAll(".carousel-mob__item");
+//console.log({ carouselLiImg });
+const carouselImgArr = [...carouselLiImg];
+//console.log({ carouselImgArr });
+carouselImgArr[0].classList.add("activeItem");
+const imageIndicator = carouselImgArr.map((el) => [...el.children]).flat();
+console.log(imageIndicator);
 
+let currentTestimonialSlide = 0; //Current Testimonial Slide
+let totalTestimonialSlides = testimonials.length; //Total Testimonial Slides
 
-console.log(imgList);
 const lrButtonActive = () => {
-  if (carouselImgArr[0].classList.contains("activeItem")) {
+  if (
+    carouselImgArr[currentTestimonialSlide].classList.contains("activeItem")
+  ) {
     btnLeft.setAttribute("disabled", "disabled");
     btnLeft.firstElementChild.style.color = "#cbcaca";
     return;
@@ -307,7 +310,7 @@ const lrButtonActive = () => {
   }
 
   if (
-    carouselImgArr[carouselImgArr.length - 1].classList.contains("activeItem")
+    carouselImgArr[totalTestimonialSlides - 1].classList.contains("activeItem")
   ) {
     btnRight.setAttribute("disabled", "disabled");
     btnRight.firstElementChild.style.color = "#cbcaca";
@@ -317,49 +320,60 @@ const lrButtonActive = () => {
     btnRight.firstElementChild.style.color = "#317ade";
   }
 };
-index = 0;
-let imgXPosition = 0;
-const imgScaleValue = 1.5;
+// console.log(carouselImgArr);
+
+const displayTestimonial = () => {
+  carouselItemName.textContent = testimonials[currentTestimonialSlide].name;
+  carouselItemJob.textContent = testimonials[currentTestimonialSlide].job;
+  carouselItemText.textContent =
+    testimonials[currentTestimonialSlide].testimonial;
+};
+
+imageIndicator.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    console.log("image clicked", e.target);
+    displayTestimonial();
+  });
+});
 
 btnLeft.addEventListener("click", () => {
+  currentTestimonialSlide =
+    (totalTestimonialSlides + currentTestimonialSlide - 1) %
+    totalTestimonialSlides;
+
   console.log("left button clicked");
-  imgXPosition -= 100;
+
   carouselImgArr.forEach((ci) => {
-    ci.style.transform = `translateX(-${imgXPosition}px)`;
     if (ci.classList.contains("activeItem")) {
       ci.previousElementSibling.classList.add("activeItem");
-      ci.style.transform = `translateX(-${imgXPosition}px) scale(1)`;
-      ci.previousElementSibling.style.transform = `translateX(-${imgXPosition}px) scale(${imgScaleValue})`;
+      displayTestimonial();
+      ci.classList.remove("activeItem");
     }
-
-    carouselText.forEach((ct) => {
-      ct.classList.remove("activeItem");
-    });
-
-    ci.classList.remove("activeItem");
   });
   lrButtonActive();
 });
 
 btnRight.addEventListener("click", () => {
+  const ul = document.querySelector(
+    ".carousel-mob__list"
+  );
+  let foundActive = false;
+  currentTestimonialSlide =
+    (totalTestimonialSlides + currentTestimonialSlide + 1) %
+    totalTestimonialSlides;
   console.log("right button clicked");
-  imgXPosition += 100;
-  let carouselImgId;
-  carouselImgArr.forEach((ci) => {
-    ci.style.transform = `translateX(-${imgXPosition}px)`;
-  });
-  for (let i = 0; i < carouselImgArr.length - 1; i++) {
-    if (carouselImgArr[i].classList.contains("activeItem")) {
-      carouselImgArr[i].nextElementSibling.classList.add("activeItem");
-      carouselImgArr[
-        i
-      ].nextElementSibling.style.transform = `translateX(-${imgXPosition}px) scale(${imgScaleValue})`;
 
-      carouselText.forEach((ct) => {});
-      carouselImgArr[i].classList.remove("activeItem");
-      break;
+  carouselImgArr.forEach((ci) => {
+    // console.log(ci);
+    if (ci.classList.contains("activeItem") && !foundActive) {
+      ci.nextElementSibling.classList.add("activeItem");
+      displayTestimonial();
+      ci.classList.remove("activeItem");
+      foundActive = true;
     }
-  }
+  });
+  ul.style.transform = `translateX(calc(-100px * ${currentTestimonialSlide}))`;
+  console.log({ul});
   lrButtonActive();
 });
 
@@ -367,14 +381,8 @@ btnRight.addEventListener("click", () => {
 const dataTrustedbyAnimation = document.querySelector(
   ".trustedby-dt__image-box-visible"
 );
-console.log({ dataTrustedbyAnimation });
-
 const dataTrustedbyImg = document.querySelectorAll(".trustedby-dt__image");
-console.log({ dataTrustedbyImg });
-
 const dataTrustedbyImgArr = [...dataTrustedbyImg];
-console.log({ dataTrustedbyImgArr });
-
 const clonedImgArr = dataTrustedbyImgArr.map((data) => data.cloneNode(true));
 
 const animationInterval = 4000;
