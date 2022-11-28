@@ -1,25 +1,34 @@
 .navigation {
   width: 100vw;
-  height: 100%;
-  position: relative;
-  
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid red;
+
+  &__hamburger-link {
+    display: block;
+    width: 25px;
+    height: 22px;
+    position: absolute;
+    top: 50px;
+    right: 16px;
+    z-index: 6;
+    border: 1px solid rgb(255, 174, 0);
+  }
 
   &__button {
     width: 24px;
     height: 21px;
     all: unset;
-    position: absolute;
-    top: 30px;
-    right: 16px;
-    z-index: 6;
 
     display: flex;
     justify-content: center;
 
     &.full-menu {
       padding: 0;
-      position: absolute;
-      top: 30px;
+      position: fixed;
+      top: 50px;
       right: 16px;
       transition: all 0.3s;
     }
@@ -40,10 +49,9 @@
   }
 
   &__icon {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;    
+    transform-origin: right;
 
     &,
     &::before,
@@ -58,7 +66,7 @@
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      right: 0;
       transition: all 0.2s;
     }
 
@@ -71,30 +79,30 @@
     }
   }
 
-  &__background {
+  &__modal-menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 0%;
+    height: 100vh;
     opacity: 0;
-    visibility: hidden;
     overflow: hidden;
     background-image: radial-gradient(
       circle at 1% 5%,
       $color-blue,
       $color-background-tertiary 92%
     );
-    z-index: 50;
+    z-index: 4;
 
     &.open {
       opacity: 1;
-      visibility: visible;
-      height: 100vh;
+      height: 100%;
 
       .navigation__navbar {
-        height: 512px;
-        top: 200px;
+        position: relative;
+
+        top: 30%;
+        border: 1px solid rgb(251, 255, 0);
       }
 
       .navigation__item {
@@ -154,18 +162,9 @@
     }
   }
 
-  &__navbar {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 75;
-  }
-
   &__list {
     position: relative;
-    margin: -50px auto;
+    margin: -150px auto;
     text-align: center;
   }
 
@@ -242,12 +241,6 @@
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
   .navigation {
-    &__navbar {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
     &__logo {
       position: absolute;
       top: 31px;
@@ -259,29 +252,29 @@
       }
     }
 
-    &__hamurger-link {
+    &__hamburger-link {
       display: block;
       width: 70px;
       height: 70px;
       position: fixed;
       left: 60px;
-      top: 30%;
+      top: 50%;
       z-index: 10;
-      border: 1px solid rgb(255, 0, 0);       
-      
-    }
+      }
 
     &__button {
-      height: 30px;
-      width: 30px;      
-      color: $color-primary;border: 1px solid rgb(0, 255, 213);
-
+      position: absolute;
+      top: 25%;
+      height: 25px;
+      width: 24px;
+      color: $color-primary;
+      border: 1px solid rgb(0, 255, 213);
       background-color: transparent;
-      transform: translate(-10px, 0px);
+      
 
       &::after {
         display: block;
-        position: fixed;
+        position: absolute;
         top: 5px;
         left: 30px;
         transform: rotate(-90deg);
@@ -306,7 +299,7 @@
         width: 20px;
       }
 
-      &__background.open &__list {
+      &__modal-menu.open &__list {
         position: absolute;
         top: 0px;
         left: 245px;
@@ -315,6 +308,20 @@
         a {
           font-size: 48px;
         }
+      }
+    }
+
+    &__button-open:hover {
+      .navigation__icon {
+        position: absolute;
+        right: 0;
+        width: 48px;
+      }
+
+      .navigation__icon::after {
+        position: absolute;
+        right: 0;
+        width: 34px;
       }
     }
   }

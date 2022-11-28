@@ -325,7 +325,7 @@
         background-color: $color-background-secondary;
       }
 
-      &__image-box-hidden{
+      &__image-box-hidden {
         display: none;
       }
       &__image-box-visible {
@@ -359,6 +359,7 @@
     .hero-mobile {
       display: none;
     }
+
     width: 100%;
     height: 1125px;
     background: url(../assets/images/grid-elem@2x.png) no-repeat center center,
@@ -367,15 +368,15 @@
 
     .hero-desktop {
       display: block;
-      width: 100%;
+      width: 100vw;
       height: 1029px;
       overflow: hidden;
 
       background-size: 50%;
 
       .hero-dt {
-        width: 100vw;
-        height: 1029px;
+        width: inherit;
+        height: inherit;
 
         &__text-content {
           width: 100%;
@@ -623,34 +624,30 @@
       &__item-box {
         padding: 100px;
         position: absolute;
+        opacity: 0;
 
         &::before,
         &::after {
           content: "";
           display: block;
-          width: 100px;
-          height: 100px;
+          width: 130px;
+          height: 130px;
           background-size: contain;
           position: absolute;
         }
         &::before {
+          top: -40px;
           background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-open.svg")
             no-repeat center center;
         }
         &::after {
-          background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg")
-            no-repeat center center;
-        }
-
-        &::before {
-          top: -40px;
-        }
-
-        &::after {
           bottom: 100px;
           right: 100px;
-        }
+          background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg")
+            no-repeat center center;
+        }     
 
+        
         &--one {
           animation: swipeTextOne 30s infinite;
         }
@@ -661,6 +658,14 @@
 
         &--three {
           animation: swipeTextThree 30s infinite;
+        }
+
+        &--four {
+          animation: swipeTextFour 30s infinite;
+        }
+
+        &--five {
+          animation: swipeTextFive 30s infinite;
         }
       }
 
@@ -740,14 +745,31 @@
       display: block;
     }
 
-    &__container {
+    &__container,
+    .parallax-wrapper {
       width: 100%;
       padding-left: 245px;
       padding-right: 32px;
       position: relative;
+      perspective: 50px;
+      transform-style: preserve-3d;
+      overflow-x: hidden;
+      overflow-y: auto;
 
       display: flex;
       flex-direction: row;
+    }
+
+    .parallax-layer {
+      transform-style: preserve-3d;
+      .gallery__grid-wrap--first,
+      .gallery__grid-wrap--third {
+        transform: translateZ(-110px);
+      }
+
+      .gallery__grid-wrap--second {
+        transform: translateZ(110px);
+      }
     }
 
     &__grid-wrap {
@@ -823,12 +845,11 @@
       width: 32px;
       height: 32px;
       border: none;
-      border-radius: 7px;      
+      border-radius: 7px;
       font-size: 16px;
       font-weight: 700;
       color: $color-blue;
       background-color: $color-background-secondary;
-      
 
       &--left {
         position: absolute;
@@ -844,7 +865,7 @@
     .picturePriview {
       width: 100%;
       height: 100%;
-      position: fixed;      
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
@@ -858,7 +879,7 @@
     }
 
     .picturePriview-content {
-      width:100%;
+      width: 100%;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -866,7 +887,7 @@
       padding: 0 25px;
     }
 
-    .picturePriview-image{
+    .picturePriview-image {
       width: 30%;
       border-radius: 20px;
     }

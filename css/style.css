@@ -425,11 +425,11 @@ a {
     background-color: #317ade;
     border: 1px solid #317ade;
   }
-  55% {
+  54% {
     background-color: #317ade;
     border: 1px solid #317ade;
   }
-  56% {
+  55% {
     background-color: #f9fafe;
     border: 2px solid #dae0fe;
   }
@@ -447,11 +447,11 @@ a {
     background-color: #317ade;
     border: 1px solid #317ade;
   }
-  75% {
+  74% {
     background-color: #317ade;
     border: 1px solid #317ade;
   }
-  76% {
+  75% {
     background-color: #f9fafe;
     border: 2px solid #dae0fe;
   }
@@ -469,7 +469,7 @@ a {
     background-color: #f9fafe;
     border: 2px solid #dae0fe;
   }
-  77% {
+  76% {
     background-color: #317ade;
     border: 1px solid #317ade;
   }
@@ -490,65 +490,64 @@ a {
   0% {
     opacity: 1;
   }
-  15% {
+  16% {
     opacity: 1;
-    transform: translate(0, 0);
   }
   17% {
-    transform: translate(0, 60px);
-    opacity: 0;
-  }
-  95% {
-    transform: translate(0, -40px);
-    opacity: 0;
-  }
-  96% {
-    opacity: 0;
-  }
-  100% {
     opacity: 0;
   }
 }
 @keyframes swipeTextTwo {
-  0% {
+  17% {
     opacity: 0;
   }
-  35% {
-    transform: translate(0, -600px);
-    opacity: 0;
-  }
-  37% {
-    transform: translate(0, -540px);
+  18% {
     opacity: 1;
   }
-  100% {
+  35% {
+    opacity: 1;
+  }
+  36% {
     opacity: 0;
   }
 }
 @keyframes swipeTextThree {
-  0% {
-    opacity: 1;
-  }
-  33% {
-    transform: translate(0, -40px);
-  }
   36% {
+    opacity: 0;
+  }
+  37% {
     opacity: 1;
   }
-  40% {
-    transform: translate(0, 0);
+  54% {
+    opacity: 1;
   }
   55% {
-    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+@keyframes swipeTextFour {
+  55% {
+    opacity: 0;
+  }
+  56% {
     opacity: 1;
   }
-  57% {
+  73% {
+    opacity: 1;
+  }
+  74% {
     opacity: 0;
-    transform: translate(0, 60px);
+  }
+}
+@keyframes swipeTextFive {
+  74% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
   }
   100% {
-    transform: translate(0, -120px);
-    opacity: 0;
+    opacity: 1;
   }
 }
 @keyframes scroll {
@@ -570,10 +569,10 @@ a {
 }
 @keyframes trustedbyFadeOut {
   0% {
-    translateY: 0;
+    translatey: 0;
   }
   100% {
-    translateY: 0;
+    translatey: 0;
   }
 }
 body,
@@ -978,6 +977,7 @@ li {
   width: 100%;
   height: inherit;
   padding: 50px 16px;
+  border: 1px solid green;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1332,7 +1332,6 @@ li {
 }
 .testimonials-mob .carousel-mob__item.activeItem {
   min-width: 80px;
-  margin-left: 28px;
   margin-right: 20px;
   scale: 1.5;
   transform-origin: bottom;
@@ -1343,8 +1342,6 @@ li {
 }
 .testimonials-mob .carousel-mob__item-content {
   width: 100%;
-  height: 350px;
-  overflow-y: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1353,7 +1350,6 @@ li {
 }
 .testimonials-mob .carousel-mob__item-box {
   flex: 0 1 100%;
-  height: 350px;
   border: 1px solid rgb(26, 255, 0);
 }
 .testimonials-mob .arrow-btn {
@@ -1483,27 +1479,31 @@ li {
   padding-left: 16px;
 }
 .experience__marquee {
+  width: 100vw;
   padding: 10px;
   margin-bottom: 60px;
   position: relative;
 }
 .experience__marquee-content {
-  position: relative;
   position: absolute;
   white-space: nowrap;
   opacity: 0.65;
 }
 .experience__marquee-content--first, .experience__marquee-content--third {
+  left: 0;
+  padding-right: 50px;
   display: flex;
   flex-direction: row;
   gap: 40px;
-  animation: scroll-left 20s linear infinite alternate;
+  animation: scroll-left 40s linear infinite alternate;
 }
 .experience__marquee-content--second, .experience__marquee-content--fourth {
+  right: 0;
+  padding-left: 50px;
   display: flex;
   flex-direction: row-reverse;
   gap: 40px;
-  animation: scroll-right 20s linear infinite alternate;
+  animation: scroll-right 40s linear infinite alternate;
 }
 .experience__marquee-content .tool {
   display: inline-block;
@@ -1538,24 +1538,33 @@ li {
 
 .navigation {
   width: 100vw;
-  height: 100%;
-  position: relative;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid red;
+}
+.navigation__hamburger-link {
+  display: block;
+  width: 25px;
+  height: 22px;
+  position: absolute;
+  top: 50px;
+  right: 16px;
+  z-index: 6;
+  border: 1px solid rgb(255, 174, 0);
 }
 .navigation__button {
   width: 24px;
   height: 21px;
   all: unset;
-  position: absolute;
-  top: 30px;
-  right: 16px;
-  z-index: 6;
   display: flex;
   justify-content: center;
 }
 .navigation__button.full-menu {
   padding: 0;
-  position: absolute;
-  top: 30px;
+  position: fixed;
+  top: 50px;
   right: 16px;
   transition: all 0.3s;
 }
@@ -1571,10 +1580,9 @@ li {
   transform: rotate(-135deg);
 }
 .navigation__icon {
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  transform-origin: right;
 }
 .navigation__icon, .navigation__icon::before, .navigation__icon::after {
   display: inline-block;
@@ -1585,7 +1593,7 @@ li {
 .navigation__icon::before, .navigation__icon::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
   transition: all 0.2s;
 }
 .navigation__icon::before {
@@ -1594,56 +1602,55 @@ li {
 .navigation__icon::after {
   top: 7px;
 }
-.navigation__background {
+.navigation__modal-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 0%;
+  height: 100vh;
   opacity: 0;
-  visibility: hidden;
   overflow: hidden;
   background-image: radial-gradient(circle at 1% 5%, #317ade, #0e3378 92%);
-  z-index: 50;
+  z-index: 4;
 }
-.navigation__background.open {
+.navigation__modal-menu.open {
   opacity: 1;
-  visibility: visible;
-  height: 100vh;
+  height: 100%;
 }
-.navigation__background.open .navigation__navbar {
-  height: 512px;
-  top: 200px;
+.navigation__modal-menu.open .navigation__navbar {
+  position: relative;
+  top: 30%;
+  border: 1px solid rgb(251, 255, 0);
 }
-.navigation__background.open .navigation__item {
+.navigation__modal-menu.open .navigation__item {
   color: #fff;
   font-size: 40px;
   opacity: 0;
   animation: fadeIn 2s forwards;
   animation-delay: 0.3s;
 }
-.navigation__background.open .navigation__item:nth-of-type(2) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(2) {
   animation-delay: 0.6s;
 }
-.navigation__background.open .navigation__item:nth-of-type(3) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(3) {
   animation-delay: 0.8s;
 }
-.navigation__background.open .navigation__item:nth-of-type(4) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(4) {
   animation-delay: 1s;
 }
-.navigation__background.open .navigation__item:nth-of-type(5) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(5) {
   animation-delay: 1.2s;
 }
-.navigation__background.open .navigation__item:nth-of-type(6) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(6) {
   animation-delay: 1.4s;
 }
-.navigation__background.open .navigation__item:nth-of-type(7) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(7) {
   animation-delay: 1.6s;
 }
-.navigation__background.open .navigation__item:not(:last-child) {
+.navigation__modal-menu.open .navigation__item:not(:last-child) {
   margin-bottom: 20px;
 }
-.navigation__background.open .navigation__item a {
+.navigation__modal-menu.open .navigation__item a {
   font-size: 40px;
 }
 .navigation__logo {
@@ -1657,17 +1664,9 @@ li {
   width: inherit;
   height: inherit;
 }
-.navigation__navbar {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 75;
-}
 .navigation__list {
   position: relative;
-  margin: -50px auto;
+  margin: -150px auto;
   text-align: center;
 }
 .navigation__item {
@@ -1729,11 +1728,6 @@ li {
 
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
-  .navigation__navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
   .navigation__logo {
     position: absolute;
     top: 31px;
@@ -1743,27 +1737,27 @@ li {
     width: inherit;
     height: inherit;
   }
-  .navigation__hamurger-link {
+  .navigation__hamburger-link {
     display: block;
     width: 70px;
     height: 70px;
     position: fixed;
     left: 60px;
-    top: 30%;
+    top: 50%;
     z-index: 10;
-    border: 1px solid rgb(255, 0, 0);
   }
   .navigation__button {
-    height: 30px;
-    width: 30px;
+    position: absolute;
+    top: 25%;
+    height: 25px;
+    width: 24px;
     color: #22252e;
     border: 1px solid rgb(0, 255, 213);
     background-color: transparent;
-    transform: translate(-10px, 0px);
   }
   .navigation__button::after {
     display: block;
-    position: fixed;
+    position: absolute;
     top: 5px;
     left: 30px;
     transform: rotate(-90deg);
@@ -1782,14 +1776,24 @@ li {
     background-color: black;
     width: 20px;
   }
-  .navigation__button__background.open .navigation__button__list {
+  .navigation__button__modal-menu.open .navigation__button__list {
     position: absolute;
     top: 0px;
     left: 245px;
     text-align: left;
   }
-  .navigation__button__background.open .navigation__button__list a {
+  .navigation__button__modal-menu.open .navigation__button__list a {
     font-size: 48px;
+  }
+  .navigation__button-open:hover .navigation__icon {
+    position: absolute;
+    right: 0;
+    width: 48px;
+  }
+  .navigation__button-open:hover .navigation__icon::after {
+    position: absolute;
+    right: 0;
+    width: 34px;
   }
 }
 /* breakpoint 768px */
@@ -2073,14 +2077,14 @@ li {
   }
   .hero .hero-desktop {
     display: block;
-    width: 100%;
+    width: 100vw;
     height: 1029px;
     overflow: hidden;
     background-size: 50%;
   }
   .hero .hero-desktop .hero-dt {
-    width: 100vw;
-    height: 1029px;
+    width: inherit;
+    height: inherit;
   }
   .hero .hero-desktop .hero-dt__text-content {
     width: 100%;
@@ -2281,27 +2285,24 @@ li {
   .testimonials .carousel__item-box {
     padding: 100px;
     position: absolute;
+    opacity: 0;
   }
   .testimonials .carousel__item-box::before, .testimonials .carousel__item-box::after {
     content: "";
     display: block;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     background-size: contain;
     position: absolute;
   }
   .testimonials .carousel__item-box::before {
-    background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-open.svg") no-repeat center center;
-  }
-  .testimonials .carousel__item-box::after {
-    background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg") no-repeat center center;
-  }
-  .testimonials .carousel__item-box::before {
     top: -40px;
+    background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-open.svg") no-repeat center center;
   }
   .testimonials .carousel__item-box::after {
     bottom: 100px;
     right: 100px;
+    background: url("https://www.badinsoft.com/wp-content/themes/badin-soft-theme/assets/badin-photo/testimonials/home/quote-close.svg") no-repeat center center;
   }
   .testimonials .carousel__item-box--one {
     animation: swipeTextOne 30s infinite;
@@ -2311,6 +2312,12 @@ li {
   }
   .testimonials .carousel__item-box--three {
     animation: swipeTextThree 30s infinite;
+  }
+  .testimonials .carousel__item-box--four {
+    animation: swipeTextFour 30s infinite;
+  }
+  .testimonials .carousel__item-box--five {
+    animation: swipeTextFive 30s infinite;
   }
   .testimonials .carousel__paragraph-text-italic {
     margin-bottom: 32px;
@@ -2368,13 +2375,28 @@ li {
   .gallery .gallery-desktop {
     display: block;
   }
-  .gallery__container {
+  .gallery__container,
+.gallery .parallax-wrapper {
     width: 100%;
     padding-left: 245px;
     padding-right: 32px;
     position: relative;
+    perspective: 50px;
+    transform-style: preserve-3d;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: row;
+  }
+  .gallery .parallax-layer {
+    transform-style: preserve-3d;
+  }
+  .gallery .parallax-layer .gallery__grid-wrap--first,
+.gallery .parallax-layer .gallery__grid-wrap--third {
+    transform: translateZ(-110px);
+  }
+  .gallery .parallax-layer .gallery__grid-wrap--second {
+    transform: translateZ(110px);
   }
   .gallery__grid-wrap {
     flex: 0 1 33%;

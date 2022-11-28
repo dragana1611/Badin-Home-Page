@@ -1,28 +1,29 @@
 "use strict";
 
 //animated hamburger button
-const menuHamburgerBtn = document.querySelector("#toggle");
+const menuHamburgerBtn = document.querySelector("#toggle"); //button
 //console.log("menuHamburgerBtn", menuHamburgerBtn);
 
-const hamburger = document.getElementById("hamburger");
+const hamburger = document.getElementById("hamburger"); //span hamburger
 //console.log(hamburger);
 
-const navMenu = document.getElementById("nav-menu");
+const navMenu = document.getElementById("nav-menu"); //ul
 
-const menuItems = document.querySelector("#overlay");
+const menuItems = document.querySelector("#overlay"); //modal-menu background
 //console.log(menuItems);
 
+const heroDTSection = document.querySelector(".hero-dt");
+
 const toggleMenu = (e) => {
-  e.preventDefault();
+  
   menuItems.classList.toggle("open");
   menuHamburgerBtn.classList.toggle("full-menu");
 };
 
-menuHamburgerBtn.addEventListener("click", toggleMenu);
-document.querySelectorAll(".navigation__link").forEach((lnk) => {
-  lnk.addEventListener("click", () => {
-    menuHamburgerBtn.classList.remove(".open");
-  });
+menuHamburgerBtn.addEventListener("click", () => {
+  heroDTSection.style.clipPath = "inset(10% 11% 10% 63% round 5%)";
+  heroDTSection.style.zIndex = "222";
+  toggleMenu();
 });
 
 //scroll - change hamburger button color
@@ -143,8 +144,8 @@ let overlaysArray = [...overlays];
 
 const handleCreatePicturePriview = (e) => {
   const srcImage = e.target.previousElementSibling.getAttribute("src");
-  const galleryContainer = document.querySelector(".gallery__container");  
-  
+  const galleryContainer = document.querySelector(".gallery__container");
+
   const picturePriviewContent = `
     <div class="picturePriview">
       <button class="arrow-btn arrow-btn--left"">
@@ -173,7 +174,7 @@ overlaysArray.forEach((item) => {
 let index = 0;
 
 const handleOutPicturePriview = (e) => {
-  const lightImage = document.querySelector(".picturePriview-image");  
+  const lightImage = document.querySelector(".picturePriview-image");
   let imageSrc = "";
 
   const ChangeLinkImage = (index, lightImage) => {
@@ -265,7 +266,7 @@ const testimonials = [
 
 const btnLeft = document.querySelector(".arrow-btn--left");
 const btnRight = document.querySelector(".arrow-btn--right");
-let carouselImgList = document.querySelector(".carousel-mob__list");
+const carouselImgList = document.querySelector(".carousel-mob__list");
 const carouselItemName = document.querySelector(".carousel-mob__heading-title");
 const carouselItemJob = document.querySelector(
   ".carousel-mob__heading-subtitle"
@@ -289,18 +290,17 @@ testimonials.forEach((el) => {
 const carouselLiImg = document.querySelectorAll(".carousel-mob__item");
 //console.log({ carouselLiImg });
 const carouselImgArr = [...carouselLiImg];
-//console.log({ carouselImgArr });
+console.log({ carouselImgArr });
 carouselImgArr[0].classList.add("activeItem");
-const imageIndicator = carouselImgArr.map((el) => [...el.children]).flat();
-console.log(imageIndicator);
+const imageIndicatorArr = carouselImgArr.map((el) => [...el.children]).flat();
+console.log(imageIndicatorArr);
 
-let currentTestimonialSlide = 0; //Current Testimonial Slide
-let totalTestimonialSlides = testimonials.length; //Total Testimonial Slides
+let currentTestimonialSlide = 0;
+let totalTestimonialSlides = testimonials.length;
 
 const lrButtonActive = () => {
-  if (
-    carouselImgArr[currentTestimonialSlide].classList.contains("activeItem")
-  ) {
+  let foundActive = false;
+  if (carouselImgArr[0].classList.contains("activeItem")) {
     btnLeft.setAttribute("disabled", "disabled");
     btnLeft.firstElementChild.style.color = "#cbcaca";
     return;
@@ -310,7 +310,7 @@ const lrButtonActive = () => {
   }
 
   if (
-    carouselImgArr[totalTestimonialSlides - 1].classList.contains("activeItem")
+    carouselImgArr[carouselImgArr.length - 1].classList.contains("activeItem")
   ) {
     btnRight.setAttribute("disabled", "disabled");
     btnRight.firstElementChild.style.color = "#cbcaca";
@@ -329,14 +329,25 @@ const displayTestimonial = () => {
     testimonials[currentTestimonialSlide].testimonial;
 };
 
-imageIndicator.forEach((img) => {
+imageIndicatorArr.forEach((img) => {
   img.addEventListener("click", (e) => {
-    console.log("image clicked", e.target);
+    console.log({ e });
+    console.log("target", e.target);
+    for (const pic of carouselImgArr) {
+      pic.classList.remove("activeItem");
+    }
+    let i = imageIndicatorArr.indexOf(e.target);
+    console.log({ i });
+    carouselImgArr[i].classList.add("activeItem");
+    currentTestimonialSlide = i;
     displayTestimonial();
+    carouselImgList.style.transform = `translateX(calc(-100px * ${i}))`;
+    lrButtonActive();
   });
 });
 
 btnLeft.addEventListener("click", () => {
+  let foundActive = false;
   currentTestimonialSlide =
     (totalTestimonialSlides + currentTestimonialSlide - 1) %
     totalTestimonialSlides;
@@ -344,19 +355,20 @@ btnLeft.addEventListener("click", () => {
   console.log("left button clicked");
 
   carouselImgArr.forEach((ci) => {
-    if (ci.classList.contains("activeItem")) {
+    if (ci.classList.contains("activeItem") && !foundActive) {
       ci.previousElementSibling.classList.add("activeItem");
       displayTestimonial();
       ci.classList.remove("activeItem");
+      foundActive = true;
     }
   });
+
+  carouselImgList.style.transform = `translateX(calc(-120px * ${currentTestimonialSlide}))`;
+
   lrButtonActive();
 });
 
 btnRight.addEventListener("click", () => {
-  const ul = document.querySelector(
-    ".carousel-mob__list"
-  );
   let foundActive = false;
   currentTestimonialSlide =
     (totalTestimonialSlides + currentTestimonialSlide + 1) %
@@ -364,7 +376,6 @@ btnRight.addEventListener("click", () => {
   console.log("right button clicked");
 
   carouselImgArr.forEach((ci) => {
-    // console.log(ci);
     if (ci.classList.contains("activeItem") && !foundActive) {
       ci.nextElementSibling.classList.add("activeItem");
       displayTestimonial();
@@ -372,8 +383,8 @@ btnRight.addEventListener("click", () => {
       foundActive = true;
     }
   });
-  ul.style.transform = `translateX(calc(-100px * ${currentTestimonialSlide}))`;
-  console.log({ul});
+
+  carouselImgList.style.transform = `translateX(calc(-100px * ${currentTestimonialSlide}))`;
   lrButtonActive();
 });
 

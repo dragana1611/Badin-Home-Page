@@ -28,6 +28,8 @@
 
   <body>
     <div class="container">
+
+      <!-- back to top button-->
       <div id="progress" class="progress">
         <span id="progress-value" class="progress-value"
           ><i class="fa-solid fa-arrow-up"></i
@@ -41,13 +43,16 @@
           </a>
         </div>
       </header>
+
+      <!-- navigation -->
       <div class="navigation">
-        <a href="#" class="navigation__hamurger-link"
-          ><button class="navigation__button" id="toggle">
+        <a href="#" class="navigation__hamburger-link"
+          >
+          <button class="navigation__button navigation__button-open navigation__button-exit" id="toggle">
             <span class="navigation__icon" id="hamburger"></span>
-          </button>
+          </button>          
         </a>
-        <div class="navigation__background" id="overlay">
+        <div class="navigation__modal-menu" id="overlay">
           <div class="logo__container">
             <a href="https://www.badinsoft.com/" class="navigation__logo">
               <img src="./assets/images/1-asset-3.png" class="logo" />
@@ -1200,8 +1205,8 @@
           </div>
 
           <div class="gallery-desktop">
-            <div class="gallery__container">
-              <div class="gallery__grid-wrap gallery__grid-wrap--first appear">
+            <div class="gallery__container parallax-wrapper">
+              <div class="gallery__grid-wrap gallery__grid-wrap--first appear parallax-layer">
                 <div class="gallery__image-wrap">
                   <img
                     class="home-img-dt"
@@ -1237,7 +1242,7 @@
                 </div>
               </div>
 
-              <div class="gallery__grid-wrap gallery__grid-wrap--second">
+              <div class="gallery__grid-wrap gallery__grid-wrap--second parallax-layer">
                 <div class="gallery__image-wrap">
                   <img
                     class="home-img-dt"
@@ -1251,7 +1256,7 @@
                 </div>
               </div>
 
-              <div class="gallery__grid-wrap gallery__grid-wrap--third appear">
+              <div class="gallery__grid-wrap gallery__grid-wrap--third appear parallax-layer">
                 <div class="gallery__image-wrap">
                   <img
                     class="home-img-dt"
