@@ -3,26 +3,40 @@
 //animated hamburger button
 const menuHamburgerBtn = document.querySelector("#toggle"); //button
 //console.log("menuHamburgerBtn", menuHamburgerBtn);
-
 const hamburger = document.getElementById("hamburger"); //span hamburger
 //console.log(hamburger);
-
 const navMenu = document.getElementById("nav-menu"); //ul
-
 const menuItems = document.querySelector("#overlay"); //modal-menu background
 //console.log(menuItems);
+const linkMenuBtn = document.querySelector(".navigation__hamburger-link");
+const bigBorderOverlay = document.querySelector(".big-border-overlay");
+//console.log({bigBorderOverlay});
 
-const heroDTSection = document.querySelector(".hero-dt");
+linkMenuBtn.addEventListener("mouseenter", (e) => {
+  // e.preventDefault();
+
+  linkMenuBtn.classList.add("hover");
+  bigBorderOverlay.classList.add("visible");
+});
+
+linkMenuBtn.addEventListener("mouseleave", (e) => {
+  // e.preventDefault();
+
+  linkMenuBtn.classList.remove("hover");
+  bigBorderOverlay.classList.remove("visible");
+});
 
 const toggleMenu = (e) => {
-  
   menuItems.classList.toggle("open");
   menuHamburgerBtn.classList.toggle("full-menu");
 };
 
-menuHamburgerBtn.addEventListener("click", () => {
-  heroDTSection.style.clipPath = "inset(10% 11% 10% 63% round 5%)";
-  heroDTSection.style.zIndex = "222";
+linkMenuBtn.addEventListener("click", (e) => {
+  console.log("click");
+  e.preventDefault();
+  e.target.classList.remove("hover");
+
+  bigBorderOverlay.classList.toggle("open-shrink");
   toggleMenu();
 });
 
@@ -57,16 +71,21 @@ const handleScrollHamburgerButton = () => {
     });
     return foundSection;
   };
+  
   //console.log(foundDarkSection());
+  const hamburgerCSBefore = window.getComputedStyle(hamburger, "::before");
+  const hamburgerCSAfter = window.getComputedStyle(hamburger, "::after");
+
   if (foundDarkSection()) {
-    menuBtn.style.color = "red";
-    // console.log("if");
+    menuBtn.style.color = "#ffffff";
+    hamburger.style.backgroundColor = "#ffffff";
+    hamburger.style.setProperty("--pseudoEl", "#ffffff");
   } else {
-    menuBtn.style.color = "green";
-    // console.log("else");
+    menuBtn.style.color = "#22252ecc";
+    hamburger.style.backgroundColor = "#22252ecc";
+    hamburger.style.setProperty("--pseudoEl", "#22252ecc");
   }
 
-  //
   // if (
   //   lastKnownScrollPosition >= sectionTop &&
   //   lastKnownScrollPosition < sectionBottom
@@ -78,8 +97,6 @@ const handleScrollHamburgerButton = () => {
   //   menuBtn.style.color = "green";
   //   // console.log("else");
   // };
-
-  //
 
   // console.log({ menuBtnScrollHeight });
   // console.log(
@@ -331,8 +348,8 @@ const displayTestimonial = () => {
 
 imageIndicatorArr.forEach((img) => {
   img.addEventListener("click", (e) => {
-    console.log({ e });
-    console.log("target", e.target);
+    //console.log({ e });
+    //console.log("target", e.target);
     for (const pic of carouselImgArr) {
       pic.classList.remove("activeItem");
     }
@@ -432,3 +449,5 @@ const startFadeAnimation = () => {
 };
 
 window.addEventListener("DOMContentLoaded", startFadeAnimation);
+
+//

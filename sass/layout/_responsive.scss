@@ -361,7 +361,7 @@
     }
 
     width: 100%;
-    height: 1125px;
+    height: 1029px;
     background: url(../assets/images/grid-elem@2x.png) no-repeat center center,
       url(../assets/images/hero-bg.png) no-repeat;
     background-size: 50%, cover;
@@ -370,11 +370,12 @@
       display: block;
       width: 100vw;
       height: 1029px;
-      overflow: hidden;
-
+      //overflow: hidden;
+      position: relative;
       background-size: 50%;
 
       .hero-dt {
+        position: relative;
         width: inherit;
         height: inherit;
 
@@ -434,13 +435,13 @@
             &__img--p1 {
               width: 100%;
               position: absolute;
-              top: 100px;
+              top: 0;
               right: 0;
             }
 
             &__img--p2 {
               position: absolute;
-              top: 100px;
+              top: 0;
               right: 200px;
             }
           }
@@ -493,7 +494,7 @@
           &__img--p4 {
             width: 106px;
             position: absolute;
-            top: -150px;
+            top: -250px;
             left: 400px;
             animation-delay: 1s;
           }

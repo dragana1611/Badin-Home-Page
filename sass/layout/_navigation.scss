@@ -4,7 +4,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid red;
 
   &__hamburger-link {
     display: block;
@@ -14,7 +13,6 @@
     top: 50px;
     right: 16px;
     z-index: 6;
-    border: 1px solid rgb(255, 174, 0);
   }
 
   &__button {
@@ -28,8 +26,8 @@
     &.full-menu {
       padding: 0;
       position: fixed;
-      top: 50px;
-      right: 16px;
+      top: 55px;
+      right: 0;
       transition: all 0.3s;
     }
   }
@@ -50,16 +48,16 @@
 
   &__icon {
     position: absolute;
-    top: 50%;    
-    transform-origin: right;
-
+    top: 50%;
+    right: 0;
+    
     &,
     &::before,
     &::after {
       display: inline-block;
       width: 24px;
       height: 2px;
-      background-color: $color-white;
+      background-color: var(--pseudoEl, #fff);
     }
 
     &::before,
@@ -79,12 +77,30 @@
     }
   }
 
+  .logo__container {
+    width: 98px;
+    height: 35px;
+    position: relative;
+    top: 31px;
+    left: 16px;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .logo {
+    width: inherit;
+    height: inherit;
+  }
+
   &__modal-menu {
+    width: 100%;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100vh;
     opacity: 0;
     overflow: hidden;
     background-image: radial-gradient(
@@ -96,75 +112,20 @@
 
     &.open {
       opacity: 1;
-      height: 100%;
-
-      .navigation__navbar {
-        position: relative;
-
-        top: 30%;
-        border: 1px solid rgb(251, 255, 0);
-      }
-
-      .navigation__item {
-        color: $color-white;
-        font-size: 40px;
-        opacity: 0;
-
-        animation: fadeIn 2s forwards;
-        animation-delay: 0.3s;
-
-        &:nth-of-type(2) {
-          animation-delay: 0.6s;
-        }
-
-        &:nth-of-type(3) {
-          animation-delay: 0.8s;
-        }
-
-        &:nth-of-type(4) {
-          animation-delay: 1s;
-        }
-
-        &:nth-of-type(5) {
-          animation-delay: 1.2s;
-        }
-
-        &:nth-of-type(6) {
-          animation-delay: 1.4s;
-        }
-
-        &:nth-of-type(7) {
-          animation-delay: 1.6s;
-        }
-
-        &:not(:last-child) {
-          margin-bottom: 20px;
-        }
-
-        a {
-          font-size: 40px;
-        }
-      }
     }
   }
 
-  &__logo {
-    width: 98px;
-    height: 35px;
-
+  &__navbar {
+    width: 20%;
+    height: 70vh;
     position: absolute;
-    top: 31px;
-    left: 16px;
-
-    .logo {
-      width: inherit;
-      height: inherit;
-    }
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &__list {
-    position: relative;
-    margin: -150px auto;
+    height: auto;
     text-align: center;
   }
 
@@ -173,8 +134,43 @@
     width: auto;
     height: calc(100% / 7);
     min-height: 50px;
-    position: relative;
+    color: $color-white;
     opacity: 0;
+
+    animation: fadeIn 2s forwards;
+    animation-delay: 0.3s;
+
+    &:nth-of-type(2) {
+      animation-delay: 0.6s;
+    }
+
+    &:nth-of-type(3) {
+      animation-delay: 0.8s;
+    }
+
+    &:nth-of-type(4) {
+      animation-delay: 1s;
+    }
+
+    &:nth-of-type(5) {
+      animation-delay: 1.2s;
+    }
+
+    &:nth-of-type(6) {
+      animation-delay: 1.4s;
+    }
+
+    &:nth-of-type(7) {
+      animation-delay: 1.6s;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-size: 30px;
+    }
   }
 
   &__link {
@@ -192,7 +188,6 @@
       content: "";
       width: 0;
       height: 45px;
-
       background-color: $color-background-tertiary-light;
       position: absolute;
       transform: translateX(-15px);
@@ -203,7 +198,6 @@
 
     &--first {
       position: relative;
-
       &::before {
         display: block;
         content: "";
@@ -227,7 +221,8 @@
   &__contact-wrapper {
     position: absolute;
     bottom: 100px;
-    left: calc((100% - 250px) / 2);
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
 
     a,
@@ -240,16 +235,38 @@
 
 /* breakpoint 1660px */
 @media screen and (min-width: 1660px) {
+  
+    .big-border-overlay.visible {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    border-left: 112px solid;
+    border-top: 50px solid;
+    border-bottom: 50px solid;
+    border-image: linear-gradient(45deg, #317ade, #0e3378) 1;
+    border-right: 0;
+    z-index: 6;
+    transition: all 0.5s;
+  }
+
+  .big-border-overlay.open-shrink {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    border-left: 1380px solid;
+    border-top: 100px solid;
+    border-right: 100px solid;
+    border-bottom: 100px solid;
+    border-image: linear-gradient(45deg, #317ade, #0e3378) 1;    
+    z-index: 6;
+    transition: all 0.5s;
+  }
+
   .navigation {
-    &__logo {
-      position: absolute;
+    .logo__container {
+      position: relative;
       top: 31px;
       left: 245px;
-
-      .logo {
-        width: inherit;
-        height: inherit;
-      }
     }
 
     &__hamburger-link {
@@ -260,7 +277,26 @@
       left: 60px;
       top: 50%;
       z-index: 10;
+      transition: all 0.5s;
+
+      &.hover {
+        .navigation__button::after {
+          letter-spacing: 7px;
+        }
+
+        .navigation__icon {
+          position: absolute;
+          right: 0;
+          width: 48px;
+        }
+
+        .navigation__icon::after {
+          position: absolute;
+          right: 0;
+          width: 34px;
+        }
       }
+    }
 
     &__button {
       position: absolute;
@@ -268,9 +304,7 @@
       height: 25px;
       width: 24px;
       color: $color-primary;
-      border: 1px solid rgb(0, 255, 213);
       background-color: transparent;
-      
 
       &::after {
         display: block;
@@ -290,6 +324,10 @@
         top: 40%;
         left: 100px;
         transition: all 0.3s;
+
+        &::after {
+          display: none;
+        }
       }
 
       &__icon,
@@ -298,31 +336,26 @@
         background-color: $color-black-base;
         width: 20px;
       }
+    }
 
-      &__modal-menu.open &__list {
-        position: absolute;
-        top: 0px;
-        left: 245px;
-        text-align: left;
-
-        a {
-          font-size: 48px;
-        }
+    &__modal-menu {
+      &.open {        
+        background-image: none;
+        z-index: 6;
       }
     }
 
-    &__button-open:hover {
-      .navigation__icon {
-        position: absolute;
-        right: 0;
-        width: 48px;
-      }
+    &__navbar {
+      width: 20%;
+      height: 70vh;
+      position: absolute;
+      top: 20%;
+      left: 245px;
+      transform: none;
+    }
 
-      .navigation__icon::after {
-        position: absolute;
-        right: 0;
-        width: 34px;
-      }
+    &__list {
+      text-align: left;
     }
   }
 }
