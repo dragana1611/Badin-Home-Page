@@ -1581,13 +1581,13 @@ li {
   display: inline-block;
   width: 24px;
   height: 2px;
-  background-color: var(--pseudoEl, #fff);
 }
 .navigation__icon::before, .navigation__icon::after {
   content: "";
   position: absolute;
   right: 0;
   transition: all 0.2s;
+  background-color: var(--pseudoEl, #fff);
 }
 .navigation__icon::before {
   top: -7px;
@@ -1624,7 +1624,7 @@ li {
 .navigation__modal-menu.open {
   opacity: 1;
 }
-.navigation__navbar {
+.navigation__modal-menu.open .navigation__navbar {
   width: 20%;
   height: 70vh;
   position: absolute;
@@ -1632,11 +1632,11 @@ li {
   left: 50%;
   transform: translateX(-50%);
 }
-.navigation__list {
+.navigation__modal-menu.open .navigation__list {
   height: auto;
   text-align: center;
 }
-.navigation__item {
+.navigation__modal-menu.open .navigation__item {
   display: block;
   width: auto;
   height: 14.2857142857%;
@@ -1646,28 +1646,28 @@ li {
   animation: fadeIn 2s forwards;
   animation-delay: 0.3s;
 }
-.navigation__item:nth-of-type(2) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(2) {
   animation-delay: 0.6s;
 }
-.navigation__item:nth-of-type(3) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(3) {
   animation-delay: 0.8s;
 }
-.navigation__item:nth-of-type(4) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(4) {
   animation-delay: 1s;
 }
-.navigation__item:nth-of-type(5) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(5) {
   animation-delay: 1.2s;
 }
-.navigation__item:nth-of-type(6) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(6) {
   animation-delay: 1.4s;
 }
-.navigation__item:nth-of-type(7) {
+.navigation__modal-menu.open .navigation__item:nth-of-type(7) {
   animation-delay: 1.6s;
 }
-.navigation__item:not(:last-child) {
+.navigation__modal-menu.open .navigation__item:not(:last-child) {
   margin-bottom: 20px;
 }
-.navigation__item a {
+.navigation__modal-menu.open .navigation__item a {
   font-size: 30px;
 }
 .navigation__link {
@@ -1761,15 +1761,15 @@ li {
     z-index: 10;
     transition: all 0.5s;
   }
-  .navigation__hamburger-link.hover .navigation__button::after {
+  .navigation__hamburger-link.closed.hover .navigation__button::after {
     letter-spacing: 7px;
   }
-  .navigation__hamburger-link.hover .navigation__icon {
+  .navigation__hamburger-link.closed.hover .navigation__icon {
     position: absolute;
     right: 0;
     width: 48px;
   }
-  .navigation__hamburger-link.hover .navigation__icon::after {
+  .navigation__hamburger-link.closed.hover .navigation__icon::after {
     position: absolute;
     right: 0;
     width: 34px;

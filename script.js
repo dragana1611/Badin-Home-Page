@@ -2,42 +2,34 @@
 
 //animated hamburger button
 const menuHamburgerBtn = document.querySelector("#toggle"); //button
-//console.log("menuHamburgerBtn", menuHamburgerBtn);
 const hamburger = document.getElementById("hamburger"); //span hamburger
-//console.log(hamburger);
 const navMenu = document.getElementById("nav-menu"); //ul
 const menuItems = document.querySelector("#overlay"); //modal-menu background
-//console.log(menuItems);
 const linkMenuBtn = document.querySelector(".navigation__hamburger-link");
 const bigBorderOverlay = document.querySelector(".big-border-overlay");
-//console.log({bigBorderOverlay});
 
 linkMenuBtn.addEventListener("mouseenter", (e) => {
-  // e.preventDefault();
-
-  linkMenuBtn.classList.add("hover");
+  e.target.classList.add("hover");
   bigBorderOverlay.classList.add("visible");
 });
 
-linkMenuBtn.addEventListener("mouseleave", (e) => {
-  // e.preventDefault();
-
-  linkMenuBtn.classList.remove("hover");
+linkMenuBtn.addEventListener("mouseleave", (e) => { 
+  e.target.classList.remove("hover");
   bigBorderOverlay.classList.remove("visible");
 });
 
 const toggleMenu = (e) => {
+  console.log(e.target);
   menuItems.classList.toggle("open");
   menuHamburgerBtn.classList.toggle("full-menu");
+  linkMenuBtn.classList.toggle("closed");
+  bigBorderOverlay.classList.toggle("open-shrink");
 };
 
 linkMenuBtn.addEventListener("click", (e) => {
-  console.log("click");
-  e.preventDefault();
-  e.target.classList.remove("hover");
-
-  bigBorderOverlay.classList.toggle("open-shrink");
-  toggleMenu();
+  console.log('link', e);
+  e.preventDefault();      
+  toggleMenu(e);
 });
 
 //scroll - change hamburger button color

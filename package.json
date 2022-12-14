@@ -11,5 +11,31 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.54.4"
-  }
+  },
+  "dependencies": {
+    "binary-extensions": "^2.2.0",
+    "anymatch": "^3.1.2",
+    "chokidar": "^3.5.3",
+    "immutable": "^4.1.0",
+    "fill-range": "^7.0.1",
+    "is-binary-path": "^2.1.0",
+    "braces": "^3.0.2",
+    "is-number": "^7.0.0",
+    "source-map-js": "^1.0.2",
+    "to-regex-range": "^5.0.1",
+    "is-glob": "^4.0.3",
+    "glob-parent": "^5.1.2",
+    "picomatch": "^2.3.1",
+    "is-extglob": "^2.1.1",
+    "normalize-path": "^3.0.0",
+    "readdirp": "^3.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragana1611/Badin-Home-Page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dragana1611/Badin-Home-Page/issues"
+  },
+  "homepage": "https://github.com/dragana1611/Badin-Home-Page#readme"
 }
